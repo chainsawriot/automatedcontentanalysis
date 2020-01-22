@@ -19,9 +19,16 @@ corner of the spectator stand.
 
 # A Whole game
 
-Get the readers’ hands dirty with a simple example. Give a sense of what
-a typical automated content analysis scenerio looks like. And use that
-in the next chapter to illustrate the best practice.
+We are going to use an example to illustrate the whole process of a
+typical automated content analysis scenario. In this example, we start
+with a simple research question or hypothesis. Let’s say I want to
+reproduce a very famous analysis of Donald Trump’s tweets. This example
+is very well-known in the data science scene, probably because one of
+the authors of the tidytext package used this example to demonstrate the
+power of his package (and made him on the television). The research
+question is very simple: are tweets from Donald Trump’s twitter account
+tweeted using an iPhone less angry than those tweeted using an Android
+phone?
 
 # What is automated content analysis?
 
