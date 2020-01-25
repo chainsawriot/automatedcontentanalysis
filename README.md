@@ -30,6 +30,110 @@ question is very simple: are tweets from Donald Trump’s twitter account
 tweeted using an iPhone less angry than those tweeted using an Android
 phone?
 
+There are many elements to unpack in the above paragraph. The utmost
+important issue is that, all automated content analysis project should
+have hypotheses to test or research questions to answer. If a project
+without hypotheses or research questions, it can hardly be called
+automated content analysis (see Chapter 2 for longer discussion). Then
+we can think of the context we are interested to analyze (Donald Trump
+and his Twitter), operationalization of variables (what is angry?), data
+collection plan and data analysis strategy.
+
+In this book, however, we are not going to focus on 1) how to form
+hypotheses or research questions and 2) how to collect your (text) data.
+The reason for excluding the former is that, it needs to be supported by
+communication theories. As a book that is intented as an research
+methods book, it is an off-shoot. For the latter, the exclusion of it is
+due to the fact that there are good papers and textbooks available. The
+book chapter by Liang & Zhu (2017) is probably a good start. Simon
+Munzert et al (2015) ’s Automated Data collection is an indepth manual.
+
+In the companion website of this book, you can find the tweets from
+Donald Trump’s tweet account before he assumes duty as the president of
+the United States. The data looks like this:
+
+``` r
+require(tidyverse)
+```
+
+    ## Loading required package: tidyverse
+
+    ## ── Attaching packages ────────────────────────────────── tidyverse 1.2.1 ──
+
+    ## ✔ ggplot2 3.2.1     ✔ purrr   0.3.3
+    ## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
+    ## ✔ tidyr   0.8.3     ✔ stringr 1.4.0
+    ## ✔ readr   1.3.1     ✔ forcats 0.4.0
+
+    ## ── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+
+``` r
+require(quanteda)
+```
+
+    ## Loading required package: quanteda
+
+    ## Package version: 1.5.2
+
+    ## Parallel computing: 2 of 4 threads used.
+
+    ## See https://quanteda.io for tutorials and examples.
+
+    ## 
+    ## Attaching package: 'quanteda'
+
+    ## The following object is masked from 'package:utils':
+    ## 
+    ##     View
+
+``` r
+require(rio)
+```
+
+    ## Loading required package: rio
+
+    ## 
+    ## Attaching package: 'rio'
+
+    ## The following object is masked from 'package:quanteda':
+    ## 
+    ##     convert
+
+``` r
+require(lubridate)
+```
+
+    ## Loading required package: lubridate
+
+    ## 
+    ## Attaching package: 'lubridate'
+
+    ## The following object is masked from 'package:base':
+    ## 
+    ##     date
+
+``` r
+trump_tweets <- import('./data/trump.json') %>% as_tibble
+trump_tweets
+```
+
+    ## # A tibble: 17,936 x 7
+    ##    source  text   created_at retweet_count favorite_count is_retweet id_str
+    ##    <chr>   <chr>  <chr>              <int>          <int> <lgl>      <chr> 
+    ##  1 Twitte… Heads… Mon Dec 3…         20519          74566 FALSE      10798…
+    ##  2 Twitte… ....S… Mon Dec 3…         17027          63013 FALSE      10798…
+    ##  3 Twitte… It’s … Mon Dec 3…         29355         125931 FALSE      10797…
+    ##  4 Twitte… I’m i… Mon Dec 3…         30742         131151 FALSE      10797…
+    ##  5 Twitte… I’m i… Mon Dec 3…          1123           4217 FALSE      10797…
+    ##  6 Twitte… I am … Mon Dec 3…         25252         111582 FALSE      10797…
+    ##  7 Twitte… I cam… Mon Dec 3…         21960          90883 FALSE      10797…
+    ##  8 Twitte… .....… Mon Dec 3…         15081          72353 FALSE      10797…
+    ##  9 Twitte… ...I … Mon Dec 3…         22000         100819 FALSE      10797…
+    ## 10 Twitte… If an… Mon Dec 3…         17379          79095 FALSE      10797…
+    ## # … with 17,926 more rows
+
 # What is automated content analysis?
 
 ## What is Content analysis
