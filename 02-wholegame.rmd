@@ -1,17 +1,20 @@
 # The whole game
 
-We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. In this example, we start with a simple research question or hypothesis. Let's say I want to reproduce a very famous analysis of Donald Trump's tweets. This example is very well-known in the data science scene, probably because one of the authors of the tidytext package used this example to demonstrate the power of his package (and made him on the television). The research question is very simple: are tweets from Donald Trump's twitter account tweeted using an iPhone less angry than those tweeted using an Android phone?
+We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. In this example, we start with a simple research question or hypothesis. Let's say I want to reproduce a very famous analysis of Donald Trump's tweets. This example is very well-known in the data science scene, probably because one of the authors of the tidytext package used this example to demonstrate the power of his package (and made him on the television). The research question is very simple: are tweets from Donald Trump's twitter account tweeted using an iPhone more positive than those tweeted using an Android phone?
 
-There are many elements to unpack in the above paragraph. The utmost important issue is that, all automated content analysis project should have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). Then we can think of the context we are interested to analyze (Donald Trump and his Twitter), operationalization of variables (what is angry?), data collection plan and data analysis strategy.
+There are many elements to unpack in the above paragraph. The utmost important element is: All automated content analysis project should have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). Then we can think of the context we are interested to analyze (Donald Trump and his Twitter), operationalization of variables (what is positive?), data collection plan and data analysis strategy.
 
 In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is that, it needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much. For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by Liang & Zhu (2017) is probably a good start. Simon Munzert et al (2015) 's *Automated Data Collection with R* is an in-depth manual.
 
-In the companion website of this book, you can find the tweets from Donald Trump's tweet account before he assumes duty as the president of the United States. The data looks like this:
+In the companion website of this book, you can find the file with tweets from Donald Trump's tweet account before he assumes duty as the president of the United States. The data looks like this:
 
 ```{r}
 require(tidyverse)
 require(quanteda)
 require(rio)
+```
+
+```{r}
 trump_tweets <- import('./data/trump.json') %>% as_tibble
 trump_tweets
 ```
