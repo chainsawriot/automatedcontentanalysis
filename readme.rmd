@@ -22,7 +22,7 @@ We are going to use an example to illustrate the whole process of a typical auto
 
 There are many elements to unpack in the above paragraph. The utmost important issue is that, all automated content analysis project should have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). Then we can think of the context we are interested to analyze (Donald Trump and his Twitter), operationalization of variables (what is angry?), data collection plan and data analysis strategy.
 
-In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is that, it needs to be supported by communication theories. As a book that is intented as an research methods book, it is an off-shoot. For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by Liang & Zhu (2017) is probably a good start. Simon Munzert et al (2015) 's Automated Data collection is an indepth manual.
+In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is that, it needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much. For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by Liang & Zhu (2017) is probably a good start. Simon Munzert et al (2015) 's *Automated Data Collection with R* is an in-depth manual.
 
 In the companion website of this book, you can find the tweets from Donald Trump's tweet account before he assumes duty as the president of the United States. The data looks like this:
 
@@ -30,7 +30,6 @@ In the companion website of this book, you can find the tweets from Donald Trump
 require(tidyverse)
 require(quanteda)
 require(rio)
-require(lubridate)
 trump_tweets <- import('./data/trump.json') %>% as_tibble
 trump_tweets
 ```
