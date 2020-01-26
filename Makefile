@@ -1,2 +1,2 @@
-README: readme.rmd
-	Rscript -e "rmarkdown::render('readme.rmd', output_file = 'docs/index.html')"
+README: index.rmd
+	Rscript -e "bookdown::render_book('index.rmd')"

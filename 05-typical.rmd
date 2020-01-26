@@ -1,0 +1,17 @@
+# Typical automated content analytic methods
+
+## dictionary-based method
+
+* how it works
+* off-the-shelf
+* creating domain specific one
+
+### validation
+
+* suggestions
+
+## topic-model
+
+### validation
+
+* daniel maier / Chang

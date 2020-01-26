@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Automated Content Analysis</title>
+  <title>3 The whole game | Automated Content Analysis</title>
   <meta name="description" content="Make automated content analysis uncool again!" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Automated Content Analysis" />
+  <meta property="og:title" content="3 The whole game | Automated Content Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Automated Content Analysis" />
+  <meta name="twitter:title" content="3 The whole game | Automated Content Analysis" />
   
   <meta name="twitter:description" content="Make automated content analysis uncool again!" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="intro.html"/>
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="what-is-automated-content-analysis.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -182,19 +182,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Automated Content Analysis</h1>
-<p class="author"><em>Chung-hong Chan</em></p>
-<p class="date"><em>2020-01-26</em></p>
-</div>
-<div id="prerequisites" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> Prerequisites</h1>
-<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
-<span id="cb1-2"><a href="index.html#cb1-2"></a><span class="co"># or the development version</span></span>
-<span id="cb1-3"><a href="index.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
-<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
-<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
+<div id="the-whole-game" class="section level1" number="3">
+<h1 number="3"><span class="header-section-number">3</span> The whole game</h1>
+<p>We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. In this example, we start with a simple research question or hypothesis. Let’s say I want to reproduce a very famous analysis of Donald Trump’s tweets. This example is very well-known in the data science scene, probably because one of the authors of the tidytext package used this example to demonstrate the power of his package (and made him on the television). The research question is very simple: are tweets from Donald Trump’s twitter account tweeted using an iPhone less angry than those tweeted using an Android phone?</p>
+<p>There are many elements to unpack in the above paragraph. The utmost important issue is that, all automated content analysis project should have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). Then we can think of the context we are interested to analyze (Donald Trump and his Twitter), operationalization of variables (what is angry?), data collection plan and data analysis strategy.</p>
+<p>In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is that, it needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much. For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by Liang &amp; Zhu (2017) is probably a good start. Simon Munzert et al (2015) ’s <em>Automated Data Collection with R</em> is an in-depth manual.</p>
+<p>In the companion website of this book, you can find the tweets from Donald Trump’s tweet account before he assumes duty as the president of the United States. The data looks like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="the-whole-game.html#cb2-1"></a><span class="kw">require</span>(tidyverse)</span></code></pre></div>
+<pre><code>## Loading required package: tidyverse</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.2.1     ✔ purrr   0.3.3
+## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
+## ✔ tidyr   0.8.3     ✔ stringr 1.4.0
+## ✔ readr   1.3.1     ✔ forcats 0.4.0</code></pre>
+<pre><code>## ── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="the-whole-game.html#cb7-1"></a><span class="kw">require</span>(quanteda)</span></code></pre></div>
+<pre><code>## Loading required package: quanteda</code></pre>
+<pre><code>## Package version: 1.5.2</code></pre>
+<pre><code>## Parallel computing: 2 of 4 threads used.</code></pre>
+<pre><code>## See https://quanteda.io for tutorials and examples.</code></pre>
+<pre><code>## 
+## Attaching package: &#39;quanteda&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:utils&#39;:
+## 
+##     View</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="the-whole-game.html#cb14-1"></a><span class="kw">require</span>(rio)</span></code></pre></div>
+<pre><code>## Loading required package: rio</code></pre>
+<pre><code>## 
+## Attaching package: &#39;rio&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:quanteda&#39;:
+## 
+##     convert</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="the-whole-game.html#cb18-1"></a>trump_tweets &lt;-<span class="st"> </span><span class="kw">import</span>(<span class="st">&#39;./data/trump.json&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span>as_tibble</span>
+<span id="cb18-2"><a href="the-whole-game.html#cb18-2"></a>trump_tweets</span></code></pre></div>
+<pre><code>## # A tibble: 17,936 x 7
+##    source  text   created_at retweet_count favorite_count is_retweet id_str
+##    &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;              &lt;int&gt;          &lt;int&gt; &lt;lgl&gt;      &lt;chr&gt; 
+##  1 Twitte… Heads… Mon Dec 3…         20519          74566 FALSE      10798…
+##  2 Twitte… ....S… Mon Dec 3…         17027          63013 FALSE      10798…
+##  3 Twitte… It’s … Mon Dec 3…         29355         125931 FALSE      10797…
+##  4 Twitte… I’m i… Mon Dec 3…         30742         131151 FALSE      10797…
+##  5 Twitte… I’m i… Mon Dec 3…          1123           4217 FALSE      10797…
+##  6 Twitte… I am … Mon Dec 3…         25252         111582 FALSE      10797…
+##  7 Twitte… I cam… Mon Dec 3…         21960          90883 FALSE      10797…
+##  8 Twitte… .....… Mon Dec 3…         15081          72353 FALSE      10797…
+##  9 Twitte… ...I … Mon Dec 3…         22000         100819 FALSE      10797…
+## 10 Twitte… If an… Mon Dec 3…         17379          79095 FALSE      10797…
+## # … with 17,926 more rows</code></pre>
 
 </div>
             </section>
@@ -202,8 +238,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="what-is-automated-content-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

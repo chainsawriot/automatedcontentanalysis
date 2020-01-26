@@ -1,0 +1,11 @@
+# Advance topics
+
+## bag-of-embeddings
+
+## semantic network
+
+## machine learning
+
+## multimodal analysis
+
+## crosslingual analysis

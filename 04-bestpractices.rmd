@@ -1,0 +1,5 @@
+
+# Creating gold standard & validation
+
+* avocate a workflow of making gold standard first!
+

@@ -1,0 +1,17 @@
+# What is automated content analysis?
+## What is Content analysis
+
+As a super express summary of Krippendorff and Neuendorf. But don't do it like Leetaru!
+
+## What get automated?
+
+What the current literature says about ACA.
+
+## Best practices
+
+* Validation
+
+* Contrasting Confirmatory / exploratory
+
+* Methodological transparency
+
