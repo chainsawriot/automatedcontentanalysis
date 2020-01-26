@@ -6,9 +6,9 @@ There are many elements to unpack in the above paragraph. The utmost important e
 
 In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is that, it needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much. For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by Liang & Zhu (2017) is probably a good start. Simon Munzert et al (2015) 's *Automated Data Collection with R* is an in-depth manual.
 
-In the companion website of this book, you can find the file with tweets from Donald Trump's tweet account before he assumes duty as the president of the United States. The data looks like this:
+At this point, you should probably go to preregister the hypotheses of this automated content analysis project. And then you should study the rtweet package by the wonderful Michael Kearney. Let's suppose your data is now magically available. In the companion website of this book, you can find the data file with tweets from Donald Trump's tweet account before he assumes duty as the president of the United States. The data looks like this:
 
-```{r}
+```{r loadingpkg, echo = FALSE}
 require(tidyverse)
 require(quanteda)
 require(rio)
