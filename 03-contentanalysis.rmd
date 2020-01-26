@@ -3,7 +3,7 @@
 
 As a super express summary of Krippendorff and Neuendorf. But don't do it like Leetaru!
 
-## What get automated?
+## What gets automated?
 
 What the current literature says about ACA.
 
