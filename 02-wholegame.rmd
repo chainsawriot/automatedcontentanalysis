@@ -1,14 +1,16 @@
 # The whole game
 
-We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. In this example, we start with a simple research question or hypothesis. Let's say I want to reproduce a very famous analysis of Donald Trump's tweets. This example is very well-known in the data science scene, probably because one of the authors of the tidytext package used this example to demonstrate the power of his package (and made him on the television). The research question is very simple: are tweets from Donald Trump's twitter account tweeted using an iPhone more positive than those tweeted using an Android phone?
+## Analysing Trump's tweets
 
-There are many elements to unpack in the above paragraph. The utmost important element is: All automated content analysis project should have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). Then we can think of the context we are interested to analyze (Donald Trump and his Twitter), operationalization of variables (what is positive?), data collection plan and data analysis strategy.
+We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. In this example, we start with a simple research question or hypothesis. Let's say I want to reproduce a very [famous analysis of Donald Trump's tweets](http://varianceexplained.org/r/trump-tweets/). This example is very well-known in the data science world, probably because one of the authors of the tidytext package used this example to demonstrate the power of his package (and made him on the [television](https://www.youtube.com/watch?v=vD11aSCpF4s&feature=share)). The research question is very simple: are tweets from Donald Trump's twitter account tweeted using an iPhone more positive than those tweeted using an Android phone?
 
-In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is that, it needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much. For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by Liang & Zhu (2017) is probably a good start. Simon Munzert et al (2015) 's *Automated Data Collection with R* is an in-depth manual.
+There are many elements to unpack from the above paragraph, but the above paragraph illustrates how data scientists and automated content analysis practitioners approach the problem differently. The utmost important element is: All automated content analysis project must have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). We also need to specify the context we are interested to analyze (Donald Trump and his Twitter). Later on, we need to think about the operationalization of variables (*what is positive?*), data collection plan and data analysis strategy.
+
+In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is simple: It needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much to ask. ^[The author of this book admits that he is not an expert in communication theories.] For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by @liang2017 is probably a good start. @munzert2014 's *Automated Data Collection with R* is an in-depth manual.
 
 At this point, you should probably go to preregister the hypotheses of this automated content analysis project. And then you should study the rtweet package by the wonderful Michael Kearney. Let's suppose your data is now magically available. In the companion website of this book, you can find the data file with tweets from Donald Trump's tweet account before he assumes duty as the president of the United States. The data looks like this:
 
-```{r loadingpkg, echo = FALSE}
+```{r loadingpkg}
 require(tidyverse)
 require(quanteda)
 require(rio)
@@ -18,3 +20,96 @@ require(rio)
 trump_tweets <- import('./data/trump.json') %>% as_tibble
 trump_tweets
 ```
+
+Up to this point, you might notice this book uses tidyverse---or more precisely, dplyr---for data manipulation. Yes. If you are not familar with dplyr, it is a good idea for you to read the book R4DS (available online). The book you are reading now is not an introduction to dplyr. But as a refresher, let me show you all the dplyr you will need to deal with 80% of the situations. You probably only need to know 5 *verbs* and then combine them together. You may call these 6 verbs "Big Six" if you like.
+
+## An express summary of tidyverse
+
+The first verb is __select__. It is used to select particular column(s) from a data frame. By the way, our data is a __tibble__, an arguably nicer version of data frame. Suppose we want to select only the columns source and text.
+
+```{r}
+trump_tweets %>% select(source, text)
+```
+
+The second verb is __filter__. It is used to filter rows from a tibble based on certain criteria. Suppose you want to get all the rows which were tweeted from an Android phone.
+
+```{r}
+trump_tweets %>% filter(str_detect(source, "Android")) %>% select(source, text)
+```
+
+In the above example, we combine two verbs (*filter* and *select*) using the pipe (%>%) operator. Some might disagree, but this method is more elegant. If you can tell a story using your dplyr code, it is probably a good code. For example, you can tell a story using the above code as such: We have our *trump_tweets* data, __and then__ we *filter* all tweets where *source* contains "Android", __and then__ we *select* only the *source* and *text* columns. 
+
+So, the pipe operators in the above code are corresponding to all "and then" in the story.
+
+From the above story, you might notice that the *source* column is recording from which device the tweet was tweeted, e.g. Android.
+
+It is a good idea to see what are the other variants of "source" in our data. The next verb that we need to know is __group_by__. 
+
+```{r}
+trump_tweets %>% group_by(source)
+```
+
+It seems that we have done nothing here. But you might notice the output says "Groups: source [16]". *group_by* works the best when it is combined with __summarise__. dplyr is smart enough to accept both British and American spellings. So you can use *summarize* if you want. ^[This code should be replaced with __count()__, but for the sake of education, let's bear with me with a combination of *group_by* and *summarise*] We use *summarise* to generate one-element summary of your data. For example, you want to get the total number of rows of this data.
+
+```{r}
+trump_tweets %>% summarise(ntweets = n())
+```
+
+Using the above code, we can tell a story as such: We have our *trump_tweets* data, and then we want to summarise our data as *ntweets* whereas ntweets equals to n(), i.e. number of rows. Let's try to use this verb with *group_by*:
+
+```{r}
+trump_tweets %>% group_by(source) %>% summarise(ntweets = n())
+```
+
+The story of the above code is: We have our *trump_tweets* ... probably I can skip this part now, and then we group our data by *source* and then we summarise our data as *ntweets* whereas ntweets equals to n(), i.e. number of rows. So, what *group_by* does, is to split the data into groups by a certain column (or columns). The subsequent steps are then became group-based analysis. This principle is called "Split-Apply-Combine strategy" by @wickham2011.
+
+this group-based analysis shows that there are many variants! In this analysis, we keep only those tweets from iPhone and Android only. So, which verb we should use? I give you 10 seconds to think.
+
+Well...
+
+```{r}
+trump_tweets %>% filter(str_detect(source, "Android|iPhone"))
+```
+
+**mutate** is for creating new columns.
+
+```{r}
+trump_tweets %>% filter(str_detect(source, "Android|iPhone")) %>% mutate(android = str_detect(source, "Android")) %>% select(android, text)
+```
+
+Last but not least, **arrange** is for sorting.
+
+```{r}
+trump_tweets %>% filter(str_detect(source, "Android|iPhone")) %>% mutate(android = str_detect(source, "Android")) %>% select(android, text) %>% arrange(android)
+```
+
+It seems that it did nothing. We can set it to arrange by descending order. So that the tweets from Android are on top.
+
+```{r}
+trump_tweets %>% filter(str_detect(source, "Android|iPhone")) %>% mutate(android = str_detect(source, "Android")) %>% select(android, text) %>% arrange(desc(android))
+```
+
+Oh, yea! We have our data! So we should do our sentiment analysis now, right?
+
+**NO!** Nein! Non! いいえ! 唔係!
+
+## Creating ground truth data
+
+This is another split-path between data scientists and automated content analysts. 
+
+If you know nothing about automated content analysis, the traditional way of dealing with our data is to manually **code** all tweets. The word "code" as a verb can create confusion here, because it can also mean "programming" ^[Probably social scientists used the word "code" as a verb earlier than programmers. This is a problem of English. German has two different verbs: kodieren and coden.]. In this programming-heavy book, I am going to use another verb for "coding" (in the social sciences' sense): data categorizing. I believe this term can still capture most, but not all, nuances of the verb "coding" (in the social sciences' sense). For the verb "coding" in the programming's sense, I am going to use, as you can guess, programming.
+
+Sorry for the detour. Traditionally, social scientists approach this problem by catagorizing the unstructured data into a form suitable for computer analysis. A tweet is a bunch of characters that a (naive) computer cannot extract meanings---or semantics---out of it. However, whether or not a tweet is positive is a semantic problem. Homo sapiens have a brain and some of us have the knowledge in English to determine the semantics of a piece of text. We need to tell the computer, what semantically is expressed in a tweet. This procedure is called data categorization.
+
+In an academic setting, it usually means the principal investigator of this project (i.e. you) would assemble a team of student assistants to categorize all tweets by reading them one by one and then asserting every one of them if they are positive or not. In order to ensure interrater reliability, we usually assign at least two student assistants to read one tweet.
+
+This procedure of data categorization is notoriously expensive. In Germany, for instance, one needs to pay a student assistant €15.8 per hour in 2020. Let's assume a student assistant can read 4 tweets per minute. In order to read every single tweets (n = 15,267) by two students, it takes (15,267 x 2) / 4 = 7,633.5 man-minutes or 127.2 man-hours. Therefore, the principal investigator (i.e you) needs to pay €2009.76 just for the data categorization. It is not a handsome amount of money: You can buy 4464 packs of instant ramen that you can eat for about a year. But remember, now you are not doing this for your PhD thesis. It is just an exercise of a stupid book. If you are willing to pay this: "Danke schön!", your student assistants say. If you are not willing to pay this, what should you do?
+
+Instead of asking your student assistants to categorize all data, we can use a computer to categorize the data. But as I said previously, a (naive) computer cannot extract semantics from a piece of text. However, it can extract an approximated version of semantics ---or a proxy measure--- from text content. 
+
+how about we just ask them to code some of them? As an excercise, let's say a random sample of 30 tweets?
+
+```{r}
+trump_tweets %>% sample_n(30) %>% select(text)
+```
+

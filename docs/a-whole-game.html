@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 A Whole game | Automated Content Analysis</title>
+  <title>Chapter 9 A Whole game | Automated Content Analysis</title>
   <meta name="description" content="Make automated content analysis uncool again!" />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 A Whole game | Automated Content Analysis" />
+  <meta property="og:title" content="Chapter 9 A Whole game | Automated Content Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 A Whole game | Automated Content Analysis" />
+  <meta name="twitter:title" content="Chapter 9 A Whole game | Automated Content Analysis" />
   
   <meta name="twitter:description" content="Make automated content analysis uncool again!" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Chung-hong Chan" />
 
 
-<meta name="date" content="2020-01-26" />
+<meta name="date" content="2020-01-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="introduction.html"/>
-
+<link rel="next" href="from-theory-to-aca-back-to-theory.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,67 +53,41 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -134,37 +108,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="the-whole-game.html"><a href="the-whole-game.html"><i class="fa fa-check"></i><b>3</b> The whole game</a></li>
-<li class="chapter" data-level="4" data-path="what-is-automated-content-analysis.html"><a href="what-is-automated-content-analysis.html"><i class="fa fa-check"></i><b>4</b> What is automated content analysis?</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="what-is-automated-content-analysis.html"><a href="what-is-automated-content-analysis.html#what-is-content-analysis"><i class="fa fa-check"></i><b>4.1</b> What is Content analysis</a></li>
-<li class="chapter" data-level="4.2" data-path="what-is-automated-content-analysis.html"><a href="what-is-automated-content-analysis.html#what-get-automated"><i class="fa fa-check"></i><b>4.2</b> What get automated?</a></li>
-<li class="chapter" data-level="4.3" data-path="what-is-automated-content-analysis.html"><a href="what-is-automated-content-analysis.html#best-practice"><i class="fa fa-check"></i><b>4.3</b> Best practice</a></li>
+<li class="chapter" data-level="3" data-path="the-whole-game.html"><a href="the-whole-game.html"><i class="fa fa-check"></i><b>3</b> The whole game</a><ul>
+<li class="chapter" data-level="3.1" data-path="the-whole-game.html"><a href="the-whole-game.html#analysing-trumps-tweets"><i class="fa fa-check"></i><b>3.1</b> Analysing Trump’s tweets</a></li>
+<li class="chapter" data-level="3.2" data-path="the-whole-game.html"><a href="the-whole-game.html#an-express-summary-of-tidyverse"><i class="fa fa-check"></i><b>3.2</b> An express summary of tidyverse</a></li>
+<li class="chapter" data-level="3.3" data-path="the-whole-game.html"><a href="the-whole-game.html#creating-ground-truth-data"><i class="fa fa-check"></i><b>3.3</b> Creating ground truth data</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="4" data-path="what-is-automated-content-analysis.html"><a href="what-is-automated-content-analysis.html"><i class="fa fa-check"></i><b>4</b> What is automated content analysis?</a><ul>
+<li class="chapter" data-level="4.1" data-path="what-is-automated-content-analysis.html"><a href="what-is-automated-content-analysis.html#what-is-content-analysis"><i class="fa fa-check"></i><b>4.1</b> What is Content analysis</a></li>
+<li class="chapter" data-level="4.2" data-path="what-is-automated-content-analysis.html"><a href="what-is-automated-content-analysis.html#what-gets-automated"><i class="fa fa-check"></i><b>4.2</b> What gets automated?</a></li>
+<li class="chapter" data-level="4.3" data-path="what-is-automated-content-analysis.html"><a href="what-is-automated-content-analysis.html#best-practices"><i class="fa fa-check"></i><b>4.3</b> Best practices</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="creating-gold-standard-validation.html"><a href="creating-gold-standard-validation.html"><i class="fa fa-check"></i><b>5</b> Creating gold standard &amp; validation</a></li>
-<li class="chapter" data-level="6" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html"><i class="fa fa-check"></i><b>6</b> Typical automated content analytic methods</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#dictionary-based-method"><i class="fa fa-check"></i><b>6.1</b> dictionary-based method</a>
-<ul>
+<li class="chapter" data-level="6" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html"><i class="fa fa-check"></i><b>6</b> Typical automated content analytic methods</a><ul>
+<li class="chapter" data-level="6.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#dictionary-based-method"><i class="fa fa-check"></i><b>6.1</b> dictionary-based method</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#validation"><i class="fa fa-check"></i><b>6.1.1</b> validation</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#topic-model"><i class="fa fa-check"></i><b>6.2</b> topic-model</a>
-<ul>
+<li class="chapter" data-level="6.2" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#topic-model"><i class="fa fa-check"></i><b>6.2</b> topic-model</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#validation-1"><i class="fa fa-check"></i><b>6.2.1</b> validation</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="advance-topics.html"><a href="advance-topics.html"><i class="fa fa-check"></i><b>7</b> Advance topics</a>
-<ul>
+<li class="chapter" data-level="7" data-path="advance-topics.html"><a href="advance-topics.html"><i class="fa fa-check"></i><b>7</b> Advance topics</a><ul>
 <li class="chapter" data-level="7.1" data-path="advance-topics.html"><a href="advance-topics.html#bag-of-embeddings"><i class="fa fa-check"></i><b>7.1</b> bag-of-embeddings</a></li>
 <li class="chapter" data-level="7.2" data-path="advance-topics.html"><a href="advance-topics.html#semantic-network"><i class="fa fa-check"></i><b>7.2</b> semantic network</a></li>
 <li class="chapter" data-level="7.3" data-path="advance-topics.html"><a href="advance-topics.html#machine-learning"><i class="fa fa-check"></i><b>7.3</b> machine learning</a></li>
 <li class="chapter" data-level="7.4" data-path="advance-topics.html"><a href="advance-topics.html#multimodal-analysis"><i class="fa fa-check"></i><b>7.4</b> multimodal analysis</a></li>
 <li class="chapter" data-level="7.5" data-path="advance-topics.html"><a href="advance-topics.html#crosslingual-analysis"><i class="fa fa-check"></i><b>7.5</b> crosslingual analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="automated-content-analysis.html"><a href="automated-content-analysis.html"><i class="fa fa-check"></i><b>8</b> Automated Content Analysis</a></li>
-<li class="chapter" data-level="9" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>9</b> Introduction</a></li>
-<li class="chapter" data-level="10" data-path="a-whole-game.html"><a href="a-whole-game.html"><i class="fa fa-check"></i><b>10</b> A Whole game</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="8" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>8</b> Introduction</a></li>
+<li class="chapter" data-level="9" data-path="a-whole-game.html"><a href="a-whole-game.html"><i class="fa fa-check"></i><b>9</b> A Whole game</a></li>
+<li class="chapter" data-level="10" data-path="from-theory-to-aca-back-to-theory.html"><a href="from-theory-to-aca-back-to-theory.html"><i class="fa fa-check"></i><b>10</b> From theory to ACA, back to theory</a><ul>
+<li class="chapter" data-level="10.1" data-path="from-theory-to-aca-back-to-theory.html"><a href="from-theory-to-aca-back-to-theory.html#content-analysis"><i class="fa fa-check"></i><b>10.1</b> Content analysis</a></li>
+<li class="chapter" data-level="10.2" data-path="from-theory-to-aca-back-to-theory.html"><a href="from-theory-to-aca-back-to-theory.html#automated-content-analysis"><i class="fa fa-check"></i><b>10.2</b> Automated content analysis</a></li>
+<li class="chapter" data-level="10.3" data-path="from-theory-to-aca-back-to-theory.html"><a href="from-theory-to-aca-back-to-theory.html#best-practices-1"><i class="fa fa-check"></i><b>10.3</b> Best practices</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="creating-gold-standard-validation-1.html"><a href="creating-gold-standard-validation-1.html"><i class="fa fa-check"></i><b>11</b> Creating gold standard &amp; validation</a></li>
+<li class="chapter" data-level="12" data-path="typical-automated-content-analytic-methods-1.html"><a href="typical-automated-content-analytic-methods-1.html"><i class="fa fa-check"></i><b>12</b> Typical automated content analytic methods</a><ul>
+<li class="chapter" data-level="12.1" data-path="typical-automated-content-analytic-methods-1.html"><a href="typical-automated-content-analytic-methods-1.html#dictionary-based-method-1"><i class="fa fa-check"></i><b>12.1</b> dictionary-based method</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="typical-automated-content-analytic-methods-1.html"><a href="typical-automated-content-analytic-methods-1.html#validation-2"><i class="fa fa-check"></i><b>12.1.1</b> validation</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="typical-automated-content-analytic-methods-1.html"><a href="typical-automated-content-analytic-methods-1.html#topic-model-1"><i class="fa fa-check"></i><b>12.2</b> topic-model</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="typical-automated-content-analytic-methods-1.html"><a href="typical-automated-content-analytic-methods-1.html#validation-3"><i class="fa fa-check"></i><b>12.2.1</b> validation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="advance.html"><a href="advance.html"><i class="fa fa-check"></i><b>13</b> Advance</a><ul>
+<li class="chapter" data-level="13.1" data-path="advance.html"><a href="advance.html#embeddings"><i class="fa fa-check"></i><b>13.1</b> embeddings</a></li>
+<li class="chapter" data-level="13.2" data-path="advance.html"><a href="advance.html#semantic-network-1"><i class="fa fa-check"></i><b>13.2</b> semantic network</a></li>
+<li class="chapter" data-level="13.3" data-path="advance.html"><a href="advance.html#machine-learning-1"><i class="fa fa-check"></i><b>13.3</b> machine learning</a></li>
+<li class="chapter" data-level="13.4" data-path="advance.html"><a href="advance.html#multimodal-analysis-1"><i class="fa fa-check"></i><b>13.4</b> multimodal analysis</a></li>
+<li class="chapter" data-level="13.5" data-path="advance.html"><a href="advance.html#crosslingual-analysis-1"><i class="fa fa-check"></i><b>13.5</b> crosslingual analysis</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -185,40 +178,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="a-whole-game" class="section level1" number="10">
-<h1 number="10"><span class="header-section-number">10</span> A Whole game</h1>
-<p>We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. In this example, we start with a simple research question or hypothesis. Let’s say I want to reproduce a very famous analysis of Donald Trump’s tweets. This example is very well-known in the data science scene, probably because one of the authors of the tidytext package used this example to demonstrate the power of his package (and made him on the television). The research question is very simple: are tweets from Donald Trump’s twitter account tweeted using an iPhone less angry than those tweeted using an Android phone?</p>
-<p>There are many elements to unpack in the above paragraph. The utmost important issue is that, all automated content analysis project should have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). Then we can think of the context we are interested to analyze (Donald Trump and his Twitter), operationalization of variables (what is angry?), data collection plan and data analysis strategy.</p>
-<p>In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is that, it needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much. For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by Liang &amp; Zhu (2017) is probably a good start. Simon Munzert et al (2015) ’s <em>Automated Data Collection with R</em> is an in-depth manual.</p>
-<p>In the companion website of this book, you can find the tweets from Donald Trump’s tweet account before he assumes duty as the president of the United States. The data looks like this:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="a-whole-game.html#cb20-1"></a><span class="kw">require</span>(tidyverse)</span>
-<span id="cb20-2"><a href="a-whole-game.html#cb20-2"></a><span class="kw">require</span>(quanteda)</span>
-<span id="cb20-3"><a href="a-whole-game.html#cb20-3"></a><span class="kw">require</span>(rio)</span>
-<span id="cb20-4"><a href="a-whole-game.html#cb20-4"></a>trump_tweets &lt;-<span class="st"> </span><span class="kw">import</span>(<span class="st">&#39;./data/trump.json&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span>as_tibble</span>
-<span id="cb20-5"><a href="a-whole-game.html#cb20-5"></a>trump_tweets</span></code></pre></div>
-<pre><code>## # A tibble: 17,936 x 7
-##    source  text   created_at retweet_count favorite_count is_retweet id_str
-##    &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;              &lt;int&gt;          &lt;int&gt; &lt;lgl&gt;      &lt;chr&gt; 
-##  1 Twitte… Heads… Mon Dec 3…         20519          74566 FALSE      10798…
-##  2 Twitte… ....S… Mon Dec 3…         17027          63013 FALSE      10798…
-##  3 Twitte… It’s … Mon Dec 3…         29355         125931 FALSE      10797…
-##  4 Twitte… I’m i… Mon Dec 3…         30742         131151 FALSE      10797…
-##  5 Twitte… I’m i… Mon Dec 3…          1123           4217 FALSE      10797…
-##  6 Twitte… I am … Mon Dec 3…         25252         111582 FALSE      10797…
-##  7 Twitte… I cam… Mon Dec 3…         21960          90883 FALSE      10797…
-##  8 Twitte… .....… Mon Dec 3…         15081          72353 FALSE      10797…
-##  9 Twitte… ...I … Mon Dec 3…         22000         100819 FALSE      10797…
-## 10 Twitte… If an… Mon Dec 3…         17379          79095 FALSE      10797…
-## # … with 17,926 more rows</code></pre>
-
+<div id="a-whole-game" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> A Whole game</h1>
+<p>Get the readers’ hands dirty with a simple example. Give a sense of what a typical ACA scenerio looks like. And use that in the next chapter to illustrate the best practice.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="from-theory-to-aca-back-to-theory.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -237,12 +207,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -254,6 +223,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
