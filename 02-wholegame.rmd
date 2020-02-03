@@ -138,6 +138,16 @@ trump_tweet30_coded <-  rio::import("data/trump_tweet30_coded.rds")
 trump_tweet30_coded
 ```
 
+We consider the two columns of `coder1` and `coder2` our ground truth data. In the next section, we will use these ground truth data to validate the automatically extracted semantics from Trump's tweets.
+
+## Automated sentiment analysis: AFINN
+
+Now, with the ground truth data, we can finally do the so called 'sentiment analysis'. Before, we really do it, I would like to remind you for one last time that the semantics extracted by these method are an approximated version of the true semantics. Thus, it is a surrogate at best.
+
+The simpliest method for doing a sentiment analysis is using a dictionary-based method. These methods are explained in Chapter 6. In short, these methods rely on two simple assumptions to calculate the overall sentiment of a piece of text. A dictionary is a collection of words. For example, a negative dictionary might have words that contain negative meanings, for example, f... _fool_, f... _foolish_, or f... _faulty_. A positive dictionary might have words such as _good_, _nice_, _wonderful_. A piece of text with a lot of words in the negative dictionary should have a higher negativity.
+
+There are many of these dictionaries available. These readily available dictionaries are called __off-the-shelf dictionaries__. In Chapter 6, we will discuss the problems of using them. But one way to avoid those problems is to first create ground truth data and validate these dictionaries before use. But another way to avod those problems is a to use a theory-informed dictionary. We will also talk about how to choose a dictionary in Chapter 6. Here, we are going to use the AFINN dictionary @nielsen2011. It is a dictionary designed for measuring sentiment of social media data.
+
 ```{r}
 afinn <- readRDS("data/afinn.RDS")
 dfm(trump_tweet30_coded$text, remove_punct = TRUE) %>% dfm_lookup(afinn) %>% quanteda::convert(to = "data.frame") %>% mutate(score = neg5 * -5 + neg4 * -4 + neg3 * -3 + neg2 * -2 + neg1 * -1 + zero * 0 + pos1 * 1 + pos2 * 2 + pos3 * 3 + pos4 * 4 + pos5 * 5) %>% pull(score) -> afinn_score
