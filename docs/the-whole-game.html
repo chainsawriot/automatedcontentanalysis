@@ -24,7 +24,7 @@
 <meta name="author" content="Chung-hong Chan" />
 
 
-<meta name="date" content="2020-01-28" />
+<meta name="date" content="2020-02-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -175,7 +175,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(quanteda)</code></pre></div>
 <pre><code>## Loading required package: quanteda</code></pre>
-<pre><code>## Package version: 1.9.9007</code></pre>
+<pre><code>## Package version: 1.9.9009</code></pre>
 <pre><code>## Parallel computing: 2 of 4 threads used.</code></pre>
 <pre><code>## See https://quanteda.io for tutorials and examples.</code></pre>
 <pre><code>## 
@@ -365,22 +365,34 @@ trump_tweets</code></pre></div>
 <p>Sorry for the detour. Traditionally, social scientists approach this problem by catagorizing the unstructured data into a form suitable for computer analysis. A tweet is a bunch of characters that a (naive) computer cannot extract meanings—or semantics—out of it. However, whether or not a tweet is positive is a semantic problem. Homo sapiens have a brain and some of us have the knowledge in English to determine the semantics of a piece of text. We need to tell the computer, what semantically is expressed in a tweet. This procedure is called data categorization.</p>
 <p>In an academic setting, it usually means the principal investigator of this project (i.e. you) would assemble a team of student assistants to categorize all tweets by reading them one by one and then asserting every one of them if they are positive or not. In order to ensure interrater reliability, we usually assign at least two student assistants to read one tweet.</p>
 <p>This procedure of data categorization is notoriously expensive. In Germany, for instance, one needs to pay a student assistant €15.8 per hour in 2020. Let’s assume a student assistant can read 4 tweets per minute. In order to read every single tweets (n = 15,267) by two students, it takes (15,267 x 2) / 4 = 7,633.5 man-minutes or 127.2 man-hours. Therefore, the principal investigator (i.e you) needs to pay €2009.76 just for the data categorization. It is not a handsome amount of money: You can buy 4464 packs of instant ramen that you can eat for about a year. But remember, now you are not doing this for your PhD thesis. It is just an exercise of a stupid book. If you are willing to pay this: “Danke schön!”, your student assistants say. If you are not willing to pay this, what should you do?</p>
-<p>Instead of asking your student assistants to categorize all data, we can use a computer to categorize the data. But as I said previously, a (naive) computer cannot extract semantics from a piece of text. However, it can extract an approximated version of semantics —or a proxy measure— from text content.</p>
-<p>how about we just ask them to code some of them? As an excercise, let’s say a random sample of 30 tweets?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sample_n</span>(<span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(text)</code></pre></div>
+<p>Instead of asking your student assistants to categorize all data, we can use a computer to categorize the data. But as I said previously, a (naive) computer cannot extract semantics from a piece of text. However, it can extract an approximated version of semantics —or a <strong>surrogate measure</strong>— from text content. So, what is a surrogate surrogate? The dictionary by <span class="citation">Upton and Cook (<a href="#ref-upton2014">2014</a>)</span> gives this definition: “A variable that can be measured (or is easy to measure) that is used in place of one that cannot be measured (or is difficult to measure)”. A very similar term is “proxy measure” but there is one crucial difference: Proxy measure is a variable that is used in place of one that cannot be measure. Period. There is no “or” after it. As indicated previously, we <strong>can</strong> measure the negativity or a tweet by manual data categorization, it is just “diffuclt to measure” due to the cost. Thus, we use a surrogate measure instead.</p>
+<p>A good surrogate measure should have a strong correlation with the original variable. For example, it is difficult to assess the wealth of a family. It is just difficult, not impossible. As a surrogate measure, we can use the value of the family’s house as an approximation. We know that in normal circumstances, the two variables (the wealth of the family and the value of the family’s house) should be correlated. But for this correlation to be valid, there are many assumptions: people can actually afford a house, rich people buy expensive houses and the housing market is not regulated, just to name three. A surrogate measure is good only when the <strong>domain</strong> of the measurement can hold the assumptions that maintain the correlation between the surrogate measure and the actual measure. We will come back to this point in Chapter 4.</p>
+<p>We —as a practitioner of automated content analysis— cannot blindly accept a surrogate measure is always good. It is related to the fact that we are doing automated content analysis, which is actually a content analysis. In the next chapter, we will come back to the validity requirement of <strong>any</strong> content analysis, automated or not.</p>
+<p>Up to this point, we have a dilemma: Manual data categorization is too expensive but automated content analysis is just a surrogate measure. What should we do?</p>
+<p>A simple solution is to test whether the domain of our measurement fits the original assumptions. Therefore, we need to test the correlation between the approximated semantics extracted by the computer and the semantics extracted by humans. As said before, a good surrogate measure should have a strong correlation with the original measurement. For this, we do not need to manually categorize a lot of tweets. A randomly selected handful of tweets will do. We have a name for these manually categorized data for testing the validity of a tool: <strong>ground truth data</strong>.</p>
+<p>We will talk more on how to create ground truth data in Chapter 4. As an excercise of creating ground truth data, let’s say we want to create a set of ground truth data with a random sample of 30 tweets. It can be done easily with:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
+trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sample_n</span>(<span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(text) <span class="op">%&gt;%</span><span class="st"> </span>rio<span class="op">::</span><span class="kw">export</span>(<span class="st">&#39;data/trump_tweet30.rds&#39;</span>)</code></pre></div>
+<p>And then, I ask my team of two student assistants to manually categorize these 30 tweets. This task should take (30 x 2) / 4 = 15 man-minutes. The cost of it (€3.95) is only a few packs of instant ramen. Or, if you are middle class and don’t mind damaging the environment, it is the cost of a “coffee to go”.</p>
+<p>The coding procedure is simple, or even simplified. The two student assistants categorize the 30 tweets into a binary category of whether or not the tweet is negative with a 5-point likert scale, i.e.</p>
+<pre><code> Cruz came to Mississippi, there was nobody there, he left the state. I had a rally in Madison, MS with 10,000!  Thank you!
+ </code></pre>
+<p><strong>How negative is the above tweet? 1 - Very negative, 2 - Negative, 3 - Neutral, 4 - Positive, 5 - Very positive</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(tidyverse)
+rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&#39;data/trump_tweet30.rds&#39;</span>)</code></pre></div>
 <pre><code>## # A tibble: 30 x 1
 ##    text                                                                         
 ##    &lt;chr&gt;                                                                        
-##  1 &quot;\&quot;@ScoodieGolden Twitter loves Trump. 1000&#39;s of retweets for Mr. Trump whil…
-##  2 &quot;The FAKE NEWS media (failing @nytimes, @NBCNews, @ABC, @CBS, @CNN) is not m…
-##  3 &quot;Women defy media narrative, love Trump at packed Michigan rally.\nVIDEO: ht…
-##  4 &quot;Uncomfortable looking NBC reporter Willie Geist calls me to ask for favors …
-##  5 &quot;The new Fake News narrative is that there is CHAOS in the White House. Wron…
-##  6 &quot;The \&quot;deplorables\&quot; came back to haunt Hillary.They expressed their feeling…
-##  7 &quot;Ivanka Trump will be interviewed on @foxandfriends.&quot;                        
-##  8 &quot;Denzel Washington gave a wonderful commencement speech over the weekend. Fr…
-##  9 &quot;Crooked Hillary&#39;s bad judgement forced her to announce that she would go to…
-## 10 &quot;\&quot;@StephanieKrista: @realDonaldTrump THANK-YOU!!! I hope you are running fo…
+##  1 &quot;Cruz came to Mississippi, there was nobody there, he left the state. I had …
+##  2 &quot;RT @WhiteHouse: .@realDonaldTrump and @FLOTUS visited the Flight 93 Nationa…
+##  3 &quot;#TBT Trump and Gekko- http://t.co/JhEKn4IoJf&quot;                               
+##  4 &quot;\&quot;@Trumptbird: Dear  I&#39;m starting to believe that you&#39;re actually going to …
+##  5 &quot;Love seeing union &amp;amp; non-union members alike are defecting to Trump. I w…
+##  6 &quot;\&quot;@RW84JR: @realDonaldTrump Glad U R Man Enough 2 Speak the Truth in this P…
+##  7 &quot;\&quot;@Bobzilla305: @realDonaldTrump @krauthammer is a progressive making money…
+##  8 &quot;\&quot;@ThisIsBillG: West Coast, get ready! @realDonaldTrump truly delivers on t…
+##  9 &quot;Join @mike_pence at the University of Northwestern Ohio- tonight at 7pm. Ti…
+## 10 &quot;Ralph Northam will allow crime to be rampant in Virginia. He’s weak on crim…
 ## # … with 20 more rows</code></pre>
 
 </div>
@@ -392,6 +404,9 @@ trump_tweets</code></pre></div>
 </div>
 <div id="ref-munzert2014">
 <p>Munzert, Simon, Christian Rubba, Peter Meißner, and Dominic Nyhuis. 2014. <em>Automated Data Collection with R: A Practical Guide to Web Scraping and Text Mining</em>. John Wiley &amp; Sons.</p>
+</div>
+<div id="ref-upton2014">
+<p>Upton, Graham, and Ian Cook. 2014. <em>A Dictionary of Statistics 3e</em>. Oxford university press.</p>
 </div>
 <div id="ref-wickham2011">
 <p>Wickham, Hadley. 2011. “The Split-Apply-Combine Strategy for Data Analysis.” <em>Journal of Statistical Software</em> 40 (1). Citeseer: 1–29. doi:<a href="https://doi.org/10.18637/jss.v040.i01">10.18637/jss.v040.i01</a>.</p>

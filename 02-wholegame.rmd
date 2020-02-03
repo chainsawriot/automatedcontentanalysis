@@ -105,11 +105,54 @@ In an academic setting, it usually means the principal investigator of this proj
 
 This procedure of data categorization is notoriously expensive. In Germany, for instance, one needs to pay a student assistant €15.8 per hour in 2020. Let's assume a student assistant can read 4 tweets per minute. In order to read every single tweets (n = 15,267) by two students, it takes (15,267 x 2) / 4 = 7,633.5 man-minutes or 127.2 man-hours. Therefore, the principal investigator (i.e you) needs to pay €2009.76 just for the data categorization. It is not a handsome amount of money: You can buy 4464 packs of instant ramen that you can eat for about a year. But remember, now you are not doing this for your PhD thesis. It is just an exercise of a stupid book. If you are willing to pay this: "Danke schön!", your student assistants say. If you are not willing to pay this, what should you do?
 
-Instead of asking your student assistants to categorize all data, we can use a computer to categorize the data. But as I said previously, a (naive) computer cannot extract semantics from a piece of text. However, it can extract an approximated version of semantics ---or a proxy measure--- from text content. 
+Instead of asking your student assistants to categorize all data, we can use a computer to categorize the data. But as I said previously, a (naive) computer cannot extract semantics from a piece of text. However, it can extract an approximated version of semantics ---or a **surrogate measure**--- from text content. So, what is a surrogate surrogate? The dictionary by @upton2014 gives this definition: "A variable that can be measured (or is easy to measure) that is used in place of one that cannot be measured (or is difficult to measure)". A very similar term is "proxy measure" but there is one crucial difference: Proxy measure is a variable that is used in place of one that cannot be measure. Period. There is no "or" after it. As indicated previously, we **can** measure the negativity or a tweet by manual data categorization, it is just "diffuclt to measure" due to the cost. Thus, we use a surrogate measure instead.
 
-how about we just ask them to code some of them? As an excercise, let's say a random sample of 30 tweets?
+A good surrogate measure should have a strong correlation with the original variable. For example, it is difficult to assess the wealth of a family. It is just difficult, not impossible. As a surrogate measure, we can use the value of the family's house as an approximation. We know that in normal circumstances, the two variables (the wealth of the family and the value of the family's house) should be correlated. But for this correlation to be valid, there are many assumptions: people can actually afford a house, rich people buy expensive houses and the housing market is not regulated, just to name three. A surrogate measure is good only when the **domain** of the measurement can hold the assumptions that maintain the correlation between the surrogate measure and the actual measure. We will come back to this point in Chapter 4.
+
+We ---as a practitioner of automated content analysis--- cannot blindly accept a surrogate measure is always good. It is related to the fact that we are doing automated content analysis, which is actually a content analysis. In the next chapter, we will come back to the validity requirement of **any** content analysis, automated or not.
+
+Up to this point, we have a dilemma: Manual data categorization is too expensive but automated content analysis is just a surrogate measure. What should we do?
+
+A simple solution is to test whether the domain of our measurement fits the original assumptions. Therefore, we need to test the correlation between the approximated semantics extracted by the computer and the semantics extracted by humans. As said before, a good surrogate measure should have a strong correlation with the original measurement. For this, we do not need to manually categorize a lot of tweets. A randomly selected handful of tweets will do. We have a name for these manually categorized data for testing the validity of a tool: **ground truth data**. 
+
+We will talk more on how to create ground truth data in Chapter 4. As an excercise of creating ground truth data, let's say we want to create a set of ground truth data with a random sample of 30 tweets. It can be done easily with:
 
 ```{r}
-trump_tweets %>% sample_n(30) %>% select(text)
+set.seed(42)
+trump_tweets %>% sample_n(30) %>% select(text) %>% rio::export('data/trump_tweet30.rds')
+```
+
+And then, I ask my team of two student assistants to manually categorize these 30 tweets. This task should take (30 x 2) / 4 = 15 man-minutes. The cost of it (€3.95) is only a few packs of instant ramen. Or, if you are middle class and don't mind damaging the environment, it is the cost of a "coffee to go".
+
+The coding procedure is simple, or even simplified. The two student assistants categorize the 30 tweets into a binary category of whether or not the tweet is negative with a 5-point likert scale, i.e.
+
+     Cruz came to Mississippi, there was nobody there, he left the state. I had a rally in Madison, MS with 10,000!  Thank you!
+	 
+__How negative is the above tweet? 1 - Very negative, 2 - Negative, 3 - Neutral, 4 - Positive, 5 - Very positive__
+
+
+And the data looks like this:
+
+```{r}
+trump_tweet30_coded <-  rio::import("data/trump_tweet30_coded.rds")
+trump_tweet30_coded
+```
+
+```{r}
+afinn <- readRDS("data/afinn.RDS")
+dfm(trump_tweet30_coded$text, remove_punct = TRUE) %>% dfm_lookup(afinn) %>% quanteda::convert(to = "data.frame") %>% mutate(score = neg5 * -5 + neg4 * -4 + neg3 * -3 + neg2 * -2 + neg1 * -1 + zero * 0 + pos1 * 1 + pos2 * 2 + pos3 * 3 + pos4 * 4 + pos5 * 5) %>% pull(score) -> afinn_score
+afinn_score
+```
+
+```{r}
+cor.test(trump_tweet30_coded$coder1, afinn_score)
+```
+
+```{r}
+cor.test(trump_tweet30_coded$coder2, afinn_score)
+```
+
+```{r}
+trump_tweet30_coded %>% mutate(afinn_score = afinn_score) %>% mutate(avg_human = (coder1 + coder2) / 2) %>% ggplot(aes(x = avg_human, y = afinn_score)) + geom_point() + geom_smooth(method = "lm")
 ```
 
