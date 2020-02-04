@@ -166,7 +166,7 @@ cor.test(trump_tweet30_coded$coder1, afinn_score)
 cor.test(trump_tweet30_coded$coder2, afinn_score)
 ```
 
-```{r}
+```{r corafinn_human}
 trump_tweet30_coded %>% mutate(afinn_score = afinn_score) %>% mutate(avg_human = (coder1 + coder2) / 2) %>% ggplot(aes(x = avg_human, y = afinn_score)) + geom_point() + geom_smooth(method = "lm")
 ```
 

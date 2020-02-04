@@ -24,7 +24,7 @@
 <meta name="author" content="Chung-hong Chan" />
 
 
-<meta name="date" content="2020-02-03" />
+<meta name="date" content="2020-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -448,7 +448,7 @@ afinn_score</code></pre></div>
 ##       cor 
 ## 0.4372723</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweet30_coded <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">afinn_score =</span> afinn_score) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">avg_human =</span> (coder1 <span class="op">+</span><span class="st"> </span>coder2) <span class="op">/</span><span class="st"> </span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> avg_human, <span class="dt">y =</span> afinn_score)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
-<p><img src="automatedcontentanalysis_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="automatedcontentanalysis_files/figure-html/corafinn_human-1.png" width="672" /></p>
 
 </div>
 </div>
