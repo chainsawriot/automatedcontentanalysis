@@ -113,6 +113,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.2" data-path="the-whole-game.html"><a href="the-whole-game.html#an-express-summary-of-tidyverse"><i class="fa fa-check"></i><b>3.2</b> An express summary of tidyverse</a></li>
 <li class="chapter" data-level="3.3" data-path="the-whole-game.html"><a href="the-whole-game.html#creating-ground-truth-data"><i class="fa fa-check"></i><b>3.3</b> Creating ground truth data</a></li>
 <li class="chapter" data-level="3.4" data-path="the-whole-game.html"><a href="the-whole-game.html#automated-sentiment-analysis-afinn"><i class="fa fa-check"></i><b>3.4</b> Automated sentiment analysis: AFINN</a></li>
+<li class="chapter" data-level="3.5" data-path="the-whole-game.html"><a href="the-whole-game.html#comparing-tweets-from-android-and-iphone"><i class="fa fa-check"></i><b>3.5</b> Comparing tweets from Android and iPhone</a></li>
+<li class="chapter" data-level="3.6" data-path="the-whole-game.html"><a href="the-whole-game.html#zusammenfassung"><i class="fa fa-check"></i><b>3.6</b> Zusammenfassung</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="what-is-automated-content-analysis.html"><a href="what-is-automated-content-analysis.html"><i class="fa fa-check"></i><b>4</b> What is automated content analysis?</a><ul>
 <li class="chapter" data-level="4.1" data-path="what-is-automated-content-analysis.html"><a href="what-is-automated-content-analysis.html#what-is-content-analysis"><i class="fa fa-check"></i><b>4.1</b> What is Content analysis</a></li>
@@ -158,11 +160,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="the-whole-game" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> The whole game</h1>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="figs/megamanx.png" alt="Screenshot of the first level of Megaman X (Capcom, 1993)"  />
+<p class="caption">
+Figure 3.1: Screenshot of the first level of Megaman X (Capcom, 1993)
+</p>
+</div>
 <div id="analysing-trumps-tweets" class="section level2">
 <h2><span class="header-section-number">3.1</span> Analysing Trump’s tweets</h2>
-<p>We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. In this example, we start with a simple research question or hypothesis. Let’s say I want to reproduce a very <a href="http://varianceexplained.org/r/trump-tweets/">famous analysis of Donald Trump’s tweets</a>. This example is very well-known in the data science world, probably because one of the authors of the tidytext package used this example to demonstrate the power of his package (and made him on the <a href="https://www.youtube.com/watch?v=vD11aSCpF4s&amp;feature=share">television</a>). The research question is very simple: are tweets from Donald Trump’s twitter account tweeted using an iPhone more positive than those tweeted using an Android phone?</p>
-<p>There are many elements to unpack from the above paragraph, but the above paragraph illustrates how data scientists and automated content analysis practitioners approach the problem differently. The utmost important element is: All automated content analysis project must have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). We also need to specify the context we are interested to analyze (Donald Trump and his Twitter). Later on, we need to think about the operationalization of variables (<em>what is positive?</em>), data collection plan and data analysis strategy.</p>
-<p>In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is simple: It needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much to ask.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by <span class="citation">Liang and Zhu (<a href="#ref-liang2017">2017</a>)</span> is probably a good start. <span class="citation">Munzert et al. (<a href="#ref-munzert2014">2014</a>)</span> ’s <em>Automated Data Collection with R</em> is an in-depth manual.</p>
+<p>We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. This is called the “Play the Whole Game” approach by <span class="citation">Perkins (<a href="#ref-perkins2010">2010</a>)</span>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> In this example, we start with a simple research question or hypothesis. Let’s say I want to reproduce a very <a href="http://varianceexplained.org/r/trump-tweets/">famous analysis of Donald Trump’s tweets</a>. This example is very well-known in the data science world, probably because David Robinsom (one of the authors of the tidytext package) used this example to demonstrate the power of his package (and made him on the <a href="https://www.youtube.com/watch?v=vD11aSCpF4s&amp;feature=share">television</a>). The research question is very simple: are tweets from Donald Trump’s twitter account tweeted using an iPhone more positive than those tweeted using an Android phone?</p>
+<p>There are many elements to unpack from the above paragraph, but the above paragraph illustrates how data scientists and automated content analysis practitioners approach the problem differently. The utmost important element is: All automated content analysis project must have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). We also need to specify the context we are interested in analyzing (Donald Trump and his Twitter). Later on, we need to think about the operationalization of variables (<em>what is positive?</em>), data collection plan and data analysis strategy.</p>
+<p>In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is simple: It needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much to ask.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by <span class="citation">Liang and Zhu (<a href="#ref-liang2017">2017</a>)</span> is probably a good start. <span class="citation">Munzert et al. (<a href="#ref-munzert2014">2014</a>)</span> ’s <em>Automated Data Collection with R</em> is an in-depth manual.</p>
 <p>At this point, you should probably go to preregister the hypotheses of this automated content analysis project. And then you should study the rtweet package by the wonderful Michael Kearney. Let’s suppose your data is now magically available. In the companion website of this book, you can find the data file with tweets from Donald Trump’s tweet account before he assumes duty as the president of the United States. The data looks like this:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(tidyverse)</code></pre></div>
 <pre><code>## Loading required package: tidyverse</code></pre>
@@ -263,7 +271,7 @@ trump_tweets</code></pre></div>
 ##  9 Twitte… ...I camp… Mon Dec 31…         22000         100819 FALSE      10797…
 ## 10 Twitte… If anybod… Mon Dec 31…         17379          79095 FALSE      10797…
 ## # … with 17,926 more rows</code></pre>
-<p>It seems that we have done nothing here. But you might notice the output says “Groups: source [16]”. <em>group_by</em> works the best when it is combined with <strong>summarise</strong>. dplyr is smart enough to accept both British and American spellings. So you can use <em>summarize</em> if you want.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> We use <em>summarise</em> to generate one-element summary of your data. For example, you want to get the total number of rows of this data.</p>
+<p>It seems that we have done nothing here. But you might notice the output says “Groups: source [16]”. <em>group_by</em> works the best when it is combined with <strong>summarise</strong>. dplyr is smart enough to accept both British and American spellings. So you can use <em>summarize</em> if you want.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> We use <em>summarise</em> to generate one-element summary of your data. For example, you want to get the total number of rows of this data.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">ntweets =</span> <span class="kw">n</span>())</code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   ntweets
@@ -362,7 +370,7 @@ trump_tweets</code></pre></div>
 <div id="creating-ground-truth-data" class="section level2">
 <h2><span class="header-section-number">3.3</span> Creating ground truth data</h2>
 <p>This is another split-path between data scientists and automated content analysts.</p>
-<p>If you know nothing about automated content analysis, the traditional way of dealing with our data is to manually <strong>code</strong> all tweets. The word “code” as a verb can create confusion here, because it can also mean “programming.”<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> In this programming-heavy book, I am going to use another verb for “coding” (in the social sciences’ sense): data categorizing. I believe this term can still capture most, but not all, nuances of the verb “coding” (in the social sciences’ sense). For the verb “coding” in the programming’s sense, I am going to use, as you can guess, programming.</p>
+<p>If you know nothing about automated content analysis, the traditional way of dealing with our data is to manually <strong>code</strong> all tweets. The word “code” as a verb can create confusion here, because it can also mean “programming.”<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> In this programming-heavy book, I am going to use another verb for “coding” (in the social sciences’ sense): data categorizing. I believe this term can still capture most, but not all, nuances of the verb “coding” (in the social sciences’ sense). For the verb “coding” in the programming’s sense, I am going to use, as you can guess, programming.</p>
 <p>Sorry for the detour. Traditionally, social scientists approach this problem by catagorizing the unstructured data into a form suitable for computer analysis. A tweet is a bunch of characters that a (naive) computer cannot extract meanings—or semantics—out of it. However, whether or not a tweet is positive is a semantic problem. Homo sapiens have a brain and some of us have the knowledge in English to determine the semantics of a piece of text. We need to tell the computer, what semantically is expressed in a tweet. This procedure is called data categorization.</p>
 <p>In an academic setting, it usually means the principal investigator of this project (i.e. you) would assemble a team of student assistants to categorize all tweets by reading them one by one and then asserting every one of them if they are positive or not. In order to ensure interrater reliability, we usually assign at least two student assistants to read one tweet.</p>
 <p>This procedure of data categorization is notoriously expensive. In Germany, for instance, one needs to pay a student assistant €15.8 per hour in 2020. Let’s assume a student assistant can read 4 tweets per minute. In order to read every single tweets (n = 15,267) by two students, it takes (15,267 x 2) / 4 = 7,633.5 man-minutes or 127.2 man-hours. Therefore, the principal investigator (i.e you) needs to pay €2009.76 just for the data categorization. It is not a handsome amount of money: You can buy 4464 packs of instant ramen that you can eat for about a year. But remember, now you are not doing this for your PhD thesis. It is just an exercise of a stupid book. If you are willing to pay this: “Danke schön!”, your student assistants say. If you are not willing to pay this, what should you do?</p>
@@ -375,7 +383,7 @@ trump_tweets</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
 trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sample_n</span>(<span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(text) <span class="op">%&gt;%</span><span class="st"> </span>rio<span class="op">::</span><span class="kw">export</span>(<span class="st">&#39;data/trump_tweet30.rds&#39;</span>)</code></pre></div>
 <p>And then, I ask my team of two student assistants to manually categorize these 30 tweets. This task should take (30 x 2) / 4 = 15 man-minutes. The cost of it (€3.95) is only a few packs of instant ramen. Or, if you are middle class and don’t mind damaging the environment, it is the cost of a “coffee to go”.</p>
-<p>The coding procedure is simple, or even simplified. The two student assistants categorize the 30 tweets into a binary category of whether or not the tweet is negative with a 5-point likert scale, i.e.</p>
+<p>The coding procedure is simple, or even simplified. The two student assistants categorize the 30 tweets into a category of whether or not the tweet is negative with a 5-point likert scale, i.e.</p>
 <pre><code> Cruz came to Mississippi, there was nobody there, he left the state. I had a rally in Madison, MS with 10,000!  Thank you!
  </code></pre>
 <p><strong>How negative is the above tweet? 1 - Very negative, 2 - Negative, 3 - Neutral, 4 - Positive, 5 - Very positive</strong></p>
@@ -402,7 +410,7 @@ trump_tweet30_coded</code></pre></div>
 <h2><span class="header-section-number">3.4</span> Automated sentiment analysis: AFINN</h2>
 <p>Now, with the ground truth data, we can finally do the so called ‘sentiment analysis’. Before, we really do it, I would like to remind you for one last time that the semantics extracted by these method are an approximated version of the true semantics. Thus, it is a surrogate at best.</p>
 <p>The simpliest method for doing a sentiment analysis is using a dictionary-based method. These methods are explained in Chapter 6. In short, these methods rely on two simple assumptions to calculate the overall sentiment of a piece of text. A dictionary is a collection of words. For example, a negative dictionary might have words that contain negative meanings, for example, f… <em>fool</em>, f… <em>foolish</em>, or f… <em>faulty</em>. A positive dictionary might have words such as <em>good</em>, <em>nice</em>, <em>wonderful</em>. A piece of text with a lot of words in the negative dictionary should have a higher negativity.</p>
-<p>There are many of these dictionaries available. These readily available dictionaries are called <strong>off-the-shelf dictionaries</strong>. In Chapter 6, we will discuss the problems of using them. But one way to avoid those problems is to first create ground truth data and validate these dictionaries before use. Another way to avoid those problems is a to use a theory-informed dictionary. We will also talk about how to choose a dictionary in Chapter 6. Here, we are going to use the AFINN dictionary <span class="citation">Nielsen (<a href="#ref-nielsen2011">2011</a>)</span>. It is a dictionary designed for measuring sentiment of social media data.</p>
+<p>There are many of these dictionaries available. These readily available dictionaries are called <strong>off-the-shelf dictionaries</strong>. In Chapter 6, we will discuss the problems of using them. But one way to avoid those problems is to first create ground truth data and validate these dictionaries before use. Another way to avoid those problems is a to use a theory-informed dictionary. We will also talk about how to choose a dictionary in Chapter 6. Here, we are going to use the AFINN dictionary <span class="citation">(Nielsen <a href="#ref-nielsen2011">2011</a>)</span>. It is a dictionary designed for measuring sentiment of microblog data, e.g. tweets.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">afinn &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/afinn.RDS&quot;</span>)
 afinn</code></pre></div>
 <pre><code>## Dictionary object with 11 key entries.
@@ -419,41 +427,148 @@ afinn</code></pre></div>
 ## - [zero]:
 ##   - some kind
 ## [ reached max_nkey ... 5 more keys ]</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dfm</span>(trump_tweet30_coded<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">dfm_lookup</span>(afinn) <span class="op">%&gt;%</span><span class="st"> </span>quanteda<span class="op">::</span><span class="kw">convert</span>(<span class="dt">to =</span> <span class="st">&quot;data.frame&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">score =</span> neg5 <span class="op">*</span><span class="st"> </span><span class="dv">-5</span> <span class="op">+</span><span class="st"> </span>neg4 <span class="op">*</span><span class="st"> </span><span class="dv">-4</span> <span class="op">+</span><span class="st"> </span>neg3 <span class="op">*</span><span class="st"> </span><span class="dv">-3</span> <span class="op">+</span><span class="st"> </span>neg2 <span class="op">*</span><span class="st"> </span><span class="dv">-2</span> <span class="op">+</span><span class="st"> </span>neg1 <span class="op">*</span><span class="st"> </span><span class="dv">-1</span> <span class="op">+</span><span class="st"> </span>zero <span class="op">*</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span>pos1 <span class="op">*</span><span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>pos2 <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>pos3 <span class="op">*</span><span class="st"> </span><span class="dv">3</span> <span class="op">+</span><span class="st"> </span>pos4 <span class="op">*</span><span class="st"> </span><span class="dv">4</span> <span class="op">+</span><span class="st"> </span>pos5 <span class="op">*</span><span class="st"> </span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(score) -&gt;<span class="st"> </span>afinn_score
+<p>Sorry for the strong language. AFINN contains categories of words sorted by valence values from -5 (neg5) to +5 (pos5). For example, the word ‘bastard’ is -5 in terms of valence value.</p>
+<p>According to original paper of AFINN <span class="citation">(Nielsen <a href="#ref-nielsen2011">2011</a>)</span>, the AFINN sentiment score of a tweet is calculated as the total valence values of matching words divided by the total number of words. For example, the AFINN sentiment score of the tweet “He is a bastard” is -5 / 4 = 1.25. The total valence values of matching words is 5 because there is only one matching word (bastard) and its valence value is -5. In total, this tweet has 4 words.</p>
+<p>The following program calculates the correponding AFINN score of each tweet using the R package quanteda <span class="citation">(Benoit et al. <a href="#ref-benoit2018">2018</a>)</span>. In short, this program creates a document-feature matrix (DFM) using Trump’s tweets and then look up this DFM by the AFINN dictionary to seek for matching words. And then, we convert this DFM into a data frame and then do our dplyr magic to calculate the AFINN sentiment score. It might look a bit scary and don’t worry, we will walk through this program again step-by-step in Chapter 6.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dfm</span>(trump_tweet30_coded<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">dfm_lookup</span>(afinn) <span class="op">%&gt;%</span><span class="st"> </span>quanteda<span class="op">::</span><span class="kw">convert</span>(<span class="dt">to =</span> <span class="st">&quot;data.frame&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">matching_word_valence =</span> neg5 <span class="op">*</span><span class="st"> </span><span class="dv">-5</span> <span class="op">+</span><span class="st"> </span>neg4 <span class="op">*</span><span class="st"> </span><span class="dv">-4</span> <span class="op">+</span><span class="st"> </span>neg3 <span class="op">*</span><span class="st"> </span><span class="dv">-3</span> <span class="op">+</span><span class="st"> </span>neg2 <span class="op">*</span><span class="st"> </span><span class="dv">-2</span> <span class="op">+</span><span class="st"> </span>neg1 <span class="op">*</span><span class="st"> </span><span class="dv">-1</span> <span class="op">+</span><span class="st"> </span>zero <span class="op">*</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span>pos1 <span class="op">*</span><span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>pos2 <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>pos3 <span class="op">*</span><span class="st"> </span><span class="dv">3</span> <span class="op">+</span><span class="st"> </span>pos4 <span class="op">*</span><span class="st"> </span><span class="dv">4</span> <span class="op">+</span><span class="st"> </span>pos5 <span class="op">*</span><span class="st"> </span><span class="dv">5</span>, <span class="dt">base =</span> <span class="kw">ntoken</span>(trump_tweet30_coded<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>), <span class="dt">afinn_score =</span> matching_word_valence <span class="op">/</span><span class="st"> </span>base) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(afinn_score) -&gt;<span class="st"> </span>afinn_score
 afinn_score</code></pre></div>
-<pre><code>##  [1]  2  2  0  6  4  1 -3  4  1 -6  2  0  5 -1  9  1  1  5  5 -5  2 -2  2  2  3
-## [26]  0  5 -2  4 -5</code></pre>
+<pre><code>##       text1       text2       text3       text4       text5       text6 
+##  0.08695652  0.10000000  0.00000000  0.33333333  0.16666667  0.05882353 
+##       text7       text8       text9      text10      text11      text12 
+## -0.18750000  0.25000000  0.06666667 -0.28571429  0.12500000  0.00000000 
+##      text13      text14      text15      text16      text17      text18 
+##  0.16666667 -0.05000000  0.50000000  0.20000000  0.02173913  0.22727273 
+##      text19      text20      text21      text22      text23      text24 
+##  0.20000000 -0.10638298  0.20000000 -0.08333333  0.04000000  0.18181818 
+##      text25      text26      text27      text28      text29      text30 
+##  0.33333333  0.00000000  0.20000000 -0.04081633  0.36363636 -0.19230769</code></pre>
+<p>Once again, this AFINN sentiment score is a surrogate measure of semantics. We can test the correlation between the AFINN score and the results from two human coders.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(trump_tweet30_coded<span class="op">$</span>coder1, afinn_score)</code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
 ## data:  trump_tweet30_coded$coder1 and afinn_score
-## t = 3.4129, df = 28, p-value = 0.001975
+## t = 4.6007, df = 28, p-value = 8.258e-05
 ## alternative hypothesis: true correlation is not equal to 0
 ## 95 percent confidence interval:
-##  0.2258582 0.7548831
+##  0.3874427 0.8220729
 ## sample estimates:
 ##       cor 
-## 0.5420231</code></pre>
+## 0.6561273</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(trump_tweet30_coded<span class="op">$</span>coder2, afinn_score)</code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
 ## data:  trump_tweet30_coded$coder2 and afinn_score
-## t = 2.5728, df = 28, p-value = 0.01568
+## t = 3.3471, df = 28, p-value = 0.00234
 ## alternative hypothesis: true correlation is not equal to 0
 ## 95 percent confidence interval:
-##  0.09140221 0.68899948
+##  0.2158833 0.7503365
 ## sample estimates:
 ##       cor 
-## 0.4372723</code></pre>
+## 0.5345753</code></pre>
+<p>The two correlation coefficients are statistically sigificant. The scatterplot of the two measures is like so:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweet30_coded <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">afinn_score =</span> afinn_score) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">avg_human =</span> (coder1 <span class="op">+</span><span class="st"> </span>coder2) <span class="op">/</span><span class="st"> </span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> avg_human, <span class="dt">y =</span> afinn_score)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
-<p><img src="automatedcontentanalysis_files/figure-html/corafinn_human-1.png" width="672" /></p>
+<div class="figure">
+<img src="automatedcontentanalysis_files/figure-html/corafinn_human-1.png" alt="Scatterplot of the correlation between human categorization and AFINN score." width="672" />
+<p class="caption">
+(#fig:corafinn_human)Scatterplot of the correlation between human categorization and AFINN score.
+</p>
+</div>
+<p>It seems that we have evidence to show the AFINN score is a good surrogate measure of sentiment because it has a good correlation with human judgements. Only after this step, we can apply the method to all of the tweets.</p>
+</div>
+<div id="comparing-tweets-from-android-and-iphone" class="section level2">
+<h2><span class="header-section-number">3.5</span> Comparing tweets from Android and iPhone</h2>
+<p>So, we have shown in the previous sections that AFINN score is a good surrogate measure of sentiment. Now, we can calculate the AFINN score of all tweets.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">android =</span> <span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(android, text) -&gt;<span class="st"> </span>trump_tweets_target
+trump_tweets_target</code></pre></div>
+<pre><code>## # A tibble: 15,267 x 2
+##    android text                                                                 
+##    &lt;lgl&gt;   &lt;chr&gt;                                                                
+##  1 FALSE   Heads of countries are calling wanting to know why Senator Schumer i…
+##  2 FALSE   ....Senator Schumer, more than a year longer than any other Administ…
+##  3 FALSE   It’s incredible how Democrats can all use their ridiculous sound bit…
+##  4 FALSE   I’m in the Oval Office. Democrats, come back from vacation now and g…
+##  5 FALSE   I’m in the Oval Office. Democrats, come back from vacation now and g…
+##  6 FALSE   I am the only person in America who could say that, “I’m bringing ou…
+##  7 FALSE   I campaigned on Border Security, which you cannot have without a str…
+##  8 FALSE   .....Except the results are FAR BETTER than I ever said they were go…
+##  9 FALSE   ...I campaigned on getting out of Syria and other places. Now when I…
+## 10 FALSE   If anybody but Donald Trump did what I did in Syria, which was an IS…
+## # … with 15,257 more rows</code></pre>
+<p>Once again, we use quanteda to calculate the AFINN score. The program below is actually the same as the one above.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dfm</span>(trump_tweets_target<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">dfm_lookup</span>(afinn) <span class="op">%&gt;%</span><span class="st"> </span>quanteda<span class="op">::</span><span class="kw">convert</span>(<span class="dt">to =</span> <span class="st">&quot;data.frame&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">matching_word_valence =</span> neg5 <span class="op">*</span><span class="st"> </span><span class="dv">-5</span> <span class="op">+</span><span class="st"> </span>neg4 <span class="op">*</span><span class="st"> </span><span class="dv">-4</span> <span class="op">+</span><span class="st"> </span>neg3 <span class="op">*</span><span class="st"> </span><span class="dv">-3</span> <span class="op">+</span><span class="st"> </span>neg2 <span class="op">*</span><span class="st"> </span><span class="dv">-2</span> <span class="op">+</span><span class="st"> </span>neg1 <span class="op">*</span><span class="st"> </span><span class="dv">-1</span> <span class="op">+</span><span class="st"> </span>zero <span class="op">*</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span>pos1 <span class="op">*</span><span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>pos2 <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>pos3 <span class="op">*</span><span class="st"> </span><span class="dv">3</span> <span class="op">+</span><span class="st"> </span>pos4 <span class="op">*</span><span class="st"> </span><span class="dv">4</span> <span class="op">+</span><span class="st"> </span>pos5 <span class="op">*</span><span class="st"> </span><span class="dv">5</span>, <span class="dt">base =</span> <span class="kw">ntoken</span>(trump_tweets_target<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>), <span class="dt">afinn_score =</span> matching_word_valence <span class="op">/</span><span class="st"> </span>base) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(afinn_score) -&gt;<span class="st"> </span>all_afinn_score</code></pre></div>
+<p>So now, we have the information about the device and the AFINN score.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android, trump_tweets_target<span class="op">$</span>text)</code></pre></div>
+<pre><code>## # A tibble: 15,267 x 3
+##      afinn android `trump_tweets_target$text`                                   
+##      &lt;dbl&gt; &lt;lgl&gt;   &lt;chr&gt;                                                        
+##  1  0.146  FALSE   Heads of countries are calling wanting to know why Senator S…
+##  2  0      FALSE   ....Senator Schumer, more than a year longer than any other …
+##  3 -0.0577 FALSE   It’s incredible how Democrats can all use their ridiculous s…
+##  4  0.0455 FALSE   I’m in the Oval Office. Democrats, come back from vacation n…
+##  5  0.0455 FALSE   I’m in the Oval Office. Democrats, come back from vacation n…
+##  6 -0.135  FALSE   I am the only person in America who could say that, “I’m bri…
+##  7  0.0222 FALSE   I campaigned on Border Security, which you cannot have witho…
+##  8  0.0870 FALSE   .....Except the results are FAR BETTER than I ever said they…
+##  9 -0.0909 FALSE   ...I campaigned on getting out of Syria and other places. No…
+## 10  0      FALSE   If anybody but Donald Trump did what I did in Syria, which w…
+## # … with 15,257 more rows</code></pre>
+<p>We can see the mean AFINN scores of tweets from Android and iPhone.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean_afinn =</span> <span class="kw">mean</span>(afinn), <span class="dt">se =</span> <span class="kw">sd</span>(afinn) <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">n</span>()), <span class="dt">lower =</span> mean_afinn <span class="op">-</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>se), <span class="dt">upper =</span> mean_afinn <span class="op">+</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>se))  <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">phone =</span> <span class="kw">ifelse</span>(android, <span class="st">&quot;Android&quot;</span>, <span class="st">&quot;iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>se, <span class="op">-</span>android)</code></pre></div>
+<pre><code>## # A tibble: 2 x 4
+##   mean_afinn  lower  upper phone  
+##        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  
+## 1     0.0786 0.0744 0.0828 iPhone 
+## 2     0.0962 0.0912 0.101  Android</code></pre>
+<p>Tweets from Android are actually having a <strong>higher</strong> sentiment (more positive) than those from iPhone. Please read the previous sentence once again, <strong>higher</strong>. We can also conduct a test to study the statistical significance of the difference.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">wilcox.test</span>(afinn <span class="op">~</span><span class="st"> </span>android, <span class="dt">data =</span> .)</code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  afinn by android
+## W = 28006493, p-value = 7.244e-05
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<p>It is statistically significant. You can see the distributions of AFINN scores of tweets from an Android and an iPhone with the following histogram.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> afinn, <span class="dt">fill =</span> android)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.05</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)</code></pre></div>
+<p><img src="automatedcontentanalysis_files/figure-html/dot-1.png" width="672" /></p>
+<p>In summary, Trump’s tweets from an Android phone are more positive than those from an iPhone. Therefore, using our automated content analysis approach, we have arrived at a completely different conclusion to David Robinson’s one. In David Robinson’s TV-worthy conclusion, he found that tweets from an Android phone (probably from Trump himshelf) are more negative than tweets from an iPhone (probably from his campaign).</p>
+<p>Our validated approach arrives at another conclusion: tweets from an Android phone (probably from Trump himshelf) are more positive than tweets from an iPhone. Unlike David Robinson’s “text mining” approach, we have validated our sentiment scores with human.</p>
+<p>The obvious question you may ask is: Why? And another question is: Whom should I trust? The legendary data scientist David Robinson or the author of this book?</p>
+<p>In Chapter 6, we will have a more detailed discussion about the pros and cons of using dictionary-based methods. Regarding the question of “whom should you trust?”, our approach has face validity and criterion validity. For face validity, We have used a dictionary designed for studying social media data (AFINN), whereas David Robinson used NRC dictionaries which are not designed for studying social media data. For criterion validity, we have validated our AFINN scores with some human-categorized tweets. We have evidence that our AFINN scores correlate well with human judgements of sentiment. David Robinson had no such information.</p>
+<p>There are some information which is important. Dictionary-based methods are very sensitive to content length. One thing you need to know is that Trump’s tweets from an android are in general shorter than tweets from an iPhone. Also, these tweets are in general more positive.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android, <span class="dt">text =</span> trump_tweets_target<span class="op">$</span>text, <span class="dt">ntokens =</span> <span class="kw">ntoken</span>(text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean_ntokens =</span> <span class="kw">mean</span>(ntokens), <span class="dt">mean_afinn =</span> <span class="kw">mean</span>(afinn))</code></pre></div>
+<pre><code>## # A tibble: 2 x 3
+##   android mean_ntokens mean_afinn
+##   &lt;lgl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
+## 1 FALSE           24.6     0.0786
+## 2 TRUE            17.9     0.0962</code></pre>
+<p>We can demonstrate it using a scatterplot.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android, <span class="dt">text =</span> trump_tweets_target<span class="op">$</span>text, <span class="dt">ntokens =</span> <span class="kw">ntoken</span>(text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> afinn, <span class="dt">x =</span> ntokens, <span class="dt">col =</span> android)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>)</code></pre></div>
+<p><img src="automatedcontentanalysis_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p>In Chapter 6, I will demonstrate further why we always need to check for the influence of content length. In our AFINN score calculation, we have adjusted for the effect of content length. However, our AFINN score is still correlated with content length with a correlation coefficient of -0.2.</p>
+<p>Unfortunately, David Robinson did not control for the influence of content length. Therefore, we don’t know whether his finding is indicating the actual sentiment, the residual effect of content length or a murky mixture of the two.</p>
+<p>OK, enough. This is not a diss track. Let’s go to the summary of this chapter, shall we?</p>
+</div>
+<div id="zusammenfassung" class="section level2">
+<h2><span class="header-section-number">3.6</span> Zusammenfassung</h2>
+<p>In this chapter, I have used a “whole game” to demonstrate the differences between automated content analysis and other approaches. It can be summarized into a few bullet points:</p>
+<ol style="list-style-type: decimal">
+<li>Automated content analysis always starts with research questions or hypotheses.</li>
+<li>Automated content analysis is a content analysis, therefore, we need to demonstrate the validity and reliability of our measurement.</li>
+<li>Automated content analysis is usually a cost-cutting measure because manual content analysis is very expensive when the n is getting larger.</li>
+<li>We can extract semantics from a piece of text using automated methods. But we must bear in mind that these extracted semantics are surrogate —Not always true—. Because we have the bullet point 2 above, we need to show that the surrogate measure is a good approximation of human judgement.</li>
+<li>There are many problems associated with automated extraction of semantics from a piece of text.</li>
+</ol>
+<p>I hope this chapter is a eye-opener for you and you want to dig deeper into the world of automated content analysis. In the next chapter, we are going to define (automated) content analysis and establish some best practices.</p>
 
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-benoit2018">
+<p>Benoit, Kenneth, Kohei Watanabe, Haiyan Wang, Paul Nulty, Adam Obeng, Stefan Müller, and Akitaka Matsuo. 2018. “Quanteda: An R Package for the Quantitative Analysis of Textual Data.” <em>Journal of Open Source Software</em> 3 (30): 774.</p>
+</div>
 <div id="ref-liang2017">
 <p>Liang, Hai, and Jonathan JH Zhu. 2017. “Big Data, Collection of (Social Media, Harvesting).” <em>The International Encyclopedia of Communication Research Methods</em>. Wiley Online Library, 1–18. doi:<a href="https://doi.org/10.1002/9781118901731.iecrm0015">10.1002/9781118901731.iecrm0015</a>.</p>
 </div>
@@ -462,6 +577,9 @@ afinn_score</code></pre></div>
 </div>
 <div id="ref-nielsen2011">
 <p>Nielsen, Finn Årup. 2011. “A New Anew: Evaluation of a Word List for Sentiment Analysis in Microblogs.” <em>arXiv Preprint arXiv:1103.2903</em>.</p>
+</div>
+<div id="ref-perkins2010">
+<p>Perkins, David. 2010. <em>Making Learning Whole: How Seven Principles of Teaching Can Transform Education</em>. John Wiley &amp; Sons.</p>
 </div>
 <div id="ref-upton2014">
 <p>Upton, Graham, and Ian Cook. 2014. <em>A Dictionary of Statistics 3e</em>. Oxford university press.</p>
@@ -473,9 +591,10 @@ afinn_score</code></pre></div>
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>The author of this book admits that he is not an expert in communication theories.<a href="the-whole-game.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>This code should be replaced with <strong>count()</strong>, but for the sake of education, let’s bear with me with a combination of <em>group_by</em> and <em>summarise</em><a href="the-whole-game.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>Probably social scientists used the word “code” as a verb earlier than programmers. This is a problem of English. German has two different verbs: kodieren and coden.<a href="the-whole-game.html#fnref3">↩</a></p></li>
+<li id="fn1"><p>Well, to the author of this book, this chapter is like the first level of the SNES hame ‘Megaman X’. This level demonstrates the mechanic of the game.<a href="the-whole-game.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>The author of this book admits that he is not an expert in communication theories.<a href="the-whole-game.html#fnref2">↩</a></p></li>
+<li id="fn3"><p>This code should be replaced with <strong>count()</strong>, but for the sake of education, let’s bear with me with a combination of <em>group_by</em> and <em>summarise</em><a href="the-whole-game.html#fnref3">↩</a></p></li>
+<li id="fn4"><p>Probably social scientists used the word “code” as a verb earlier than programmers. This is a problem of English. German has two different verbs: kodieren and coden.<a href="the-whole-game.html#fnref4">↩</a></p></li>
 </ol>
 </div>
             </section>
