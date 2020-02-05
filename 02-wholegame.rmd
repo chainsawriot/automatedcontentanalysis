@@ -6,22 +6,25 @@ knitr::include_graphics("figs/megamanx.png")
 
 ## Analysing Trump's tweets
 
-We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. This is called the "Play the Whole Game" approach by @perkins2010. ^[Well, to the author of this book, this chapter is like the first level of the SNES hame 'Megaman X'. This level demonstrates the mechanic of the game. ] In this example, we start with a simple research question or hypothesis. Let's say I want to reproduce a very [famous analysis of Donald Trump's tweets](http://varianceexplained.org/r/trump-tweets/). This example is very well-known in the data science world, probably because David Robinsom (one of the authors of the tidytext package) used this example to demonstrate the power of his package (and made him on the [television](https://www.youtube.com/watch?v=vD11aSCpF4s&feature=share)). The research question is very simple: are tweets from Donald Trump's twitter account tweeted using an iPhone more positive than those tweeted using an Android phone?
+We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. This is called the "Play the Whole Game" approach by @perkins2010. ^[Well, to the author of this book, this chapter is like the first level of the SNES hame 'Megaman X'. This level demonstrates the mechanic of the game. ] In this example, we start with a simple research question or hypothesis. Let's say I want to reproduce a very [famous analysis of Donald Trump's tweets](http://varianceexplained.org/r/trump-tweets/). This example is very well-known in the data science world, probably because David Robinsom (one of the authors of the tidytext package) used this example to demonstrate the power of his package (and made him on the [television](https://www.youtube.com/watch?v=vD11aSCpF4s&feature=share)). In David Robinson's TV-worthy conclusion, he found that tweets from an Android phone (probably from Trump himshelf) are more negative than tweets from an iPhone (probably from his campaign). We can refomulate this into a research question: are tweets from Donald Trump's twitter account tweeted using an iPhone more positive than those tweeted using an Android phone?
 
 There are many elements to unpack from the above paragraph, but the above paragraph illustrates how data scientists and automated content analysis practitioners approach the problem differently. The utmost important element is: All automated content analysis project must have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). We also need to specify the context we are interested in analyzing (Donald Trump and his Twitter). Later on, we need to think about the operationalization of variables (*what is positive?*), data collection plan and data analysis strategy.
 
 In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is simple: It needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much to ask. ^[The author of this book admits that he is not an expert in communication theories.] For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by @liang2017 is probably a good start. @munzert2014 's *Automated Data Collection with R* is an in-depth manual.
 
-At this point, you should probably go to preregister the hypotheses of this automated content analysis project. And then you should study the rtweet package by the wonderful Michael Kearney. Let's suppose your data is now magically available. In the companion website of this book, you can find the data file with tweets from Donald Trump's tweet account before he assumes duty as the president of the United States. The data looks like this:
+At this point, you should probably go to preregister the hypotheses of this automated content analysis project. And then you should study the rtweet package by the wonderful Michael Kearney. Let's suppose your data is now magically available. In the companion website of this book, you can find the data file with tweets from Donald Trump's tweet account before he assumes duty as the president of the United States (2015-Jan to 2016-Dec). We need to select this time range because Donald Trump's account did not tweet anymore using an Android phone after March, 2017.
 
-```{r loadingpkg}
+The data looks like this:
+
+```{r loadingpkg, message = FALSE}
 require(tidyverse)
 require(quanteda)
 require(rio)
+require(lubridate)
 ```
 
 ```{r}
-trump_tweets <- import('./data/trump.json') %>% as_tibble
+trump_tweets <- import('./data/trump.json') %>% as_tibble %>% mutate(created_at = parse_date_time(created_at, orders = '%a %b %d %H:%M:%S %z %Y')) %>% filter(created_at >= ymd_hms('2015-01-01 00:00:00') & created_at <= ymd_hms('2016-12-31 23:59:59')) 
 trump_tweets
 ```
 
@@ -130,10 +133,19 @@ And then, I ask my team of two student assistants to manually categorize these 3
 
 The coding procedure is simple, or even simplified. The two student assistants categorize the 30 tweets into a category of whether or not the tweet is negative with a 5-point likert scale, i.e.
 
-     Cruz came to Mississippi, there was nobody there, he left the state. I had a rally in Madison, MS with 10,000!  Thank you!
-	 
-__How negative is the above tweet? 1 - Very negative, 2 - Negative, 3 - Neutral, 4 - Positive, 5 - Very positive__
+---
 
+__Wow, I have had so many calls from high ranking people laughing at the stupidity of the failing \@nytimes piece. Massive front page for that!__
+	 
+How negative is the above tweet? 
+
+1.Very negative
+2.Negative
+3.Neutral
+4.Positive
+5.Very positive
+
+---
 
 And the data looks like this:
 
@@ -164,24 +176,24 @@ According to original paper of AFINN [@nielsen2011], the AFINN sentiment score o
 The following program calculates the correponding AFINN score of each tweet using the R package quanteda [@benoit2018]. In short, this program creates a document-feature matrix (DFM) using Trump's tweets and then look up this DFM by the AFINN dictionary to seek for matching words. And then, we convert this DFM into a data frame and then do our dplyr magic to calculate the AFINN sentiment score. It might look a bit scary and don't worry, we will walk through this program again step-by-step in Chapter 6.
 
 ```{r}
-dfm(trump_tweet30_coded$text, remove_punct = TRUE) %>% dfm_lookup(afinn) %>% quanteda::convert(to = "data.frame") %>% mutate(matching_word_valence = neg5 * -5 + neg4 * -4 + neg3 * -3 + neg2 * -2 + neg1 * -1 + zero * 0 + pos1 * 1 + pos2 * 2 + pos3 * 3 + pos4 * 4 + pos5 * 5, base = ntoken(trump_tweet30_coded$text, remove_punct = TRUE), afinn_score = matching_word_valence / base) %>% pull(afinn_score) -> afinn_score
+dfm(trump_tweet30_coded$text, remove_punct = TRUE) %>% dfm_lookup(afinn) %>% quanteda::convert(to = "data.frame") %>% mutate(matching_word_valence = (neg5 * -5) + (neg4 * -4) + (neg3 * -3) + (neg2 * -2) + (neg1 * -1) + (zero * 0) + (pos1 * 1) + (pos2 * 2) + (pos3 * 3) + (pos4 * 4) + (pos5 * 5), base = ntoken(trump_tweet30_coded$text, remove_punct = TRUE), afinn_score = matching_word_valence / base) %>% pull(afinn_score) -> afinn_score
 afinn_score
 ```
 
 Once again, this AFINN sentiment score is a surrogate measure of semantics. We can test the correlation between the AFINN score and the results from two human coders.
 
 ```{r}
-cor.test(trump_tweet30_coded$coder1, afinn_score)
+cor.test(trump_tweet30_coded$rater1, afinn_score)
 ```
 
 ```{r}
-cor.test(trump_tweet30_coded$coder2, afinn_score)
+cor.test(trump_tweet30_coded$rater2, afinn_score)
 ```
 
 The two correlation coefficients are statistically sigificant. The scatterplot of the two measures is like so:
 
 ```{r corafinn_human, fig.cap = "Scatterplot of the correlation between human categorization and AFINN score."}
-trump_tweet30_coded %>% mutate(afinn_score = afinn_score) %>% mutate(avg_human = (coder1 + coder2) / 2) %>% ggplot(aes(x = avg_human, y = afinn_score)) + geom_point() + geom_smooth(method = "lm")
+trump_tweet30_coded %>% mutate(afinn_score = afinn_score) %>% mutate(avg_human = (rater1 + rater2) / 2) %>% ggplot(aes(x = avg_human, y = afinn_score)) + geom_point() + geom_smooth(method = "lm")
 ```
 
 It seems that we have evidence to show the AFINN score is a good surrogate measure of sentiment because it has a good correlation with human judgements. Only after this step, we can apply the method to all of the tweets.
@@ -198,7 +210,7 @@ trump_tweets_target
 Once again, we use quanteda to calculate the AFINN score. The program below is actually the same as the one above.
 
 ```{r}
-dfm(trump_tweets_target$text, remove_punct = TRUE) %>% dfm_lookup(afinn) %>% quanteda::convert(to = "data.frame") %>% mutate(matching_word_valence = neg5 * -5 + neg4 * -4 + neg3 * -3 + neg2 * -2 + neg1 * -1 + zero * 0 + pos1 * 1 + pos2 * 2 + pos3 * 3 + pos4 * 4 + pos5 * 5, base = ntoken(trump_tweets_target$text, remove_punct = TRUE), afinn_score = matching_word_valence / base) %>% pull(afinn_score) -> all_afinn_score
+dfm(trump_tweets_target$text, remove_punct = TRUE) %>% dfm_lookup(afinn) %>% quanteda::convert(to = "data.frame") %>% mutate(matching_word_valence = (neg5 * -5) + (neg4 * -4) + (neg3 * -3) + (neg2 * -2) + (neg1 * -1) + (zero * 0) + (pos1 * 1) + (pos2 * 2) + (pos3 * 3) + (pos4 * 4) + (pos5 * 5), base = ntoken(trump_tweets_target$text, remove_punct = TRUE), afinn_score = matching_word_valence / base) %>% pull(afinn_score) -> all_afinn_score
 ```
 
 So now, we have the information about the device and the AFINN score.
@@ -213,7 +225,7 @@ We can see the mean AFINN scores of tweets from Android and iPhone.
 tibble(afinn = all_afinn_score, android = trump_tweets_target$android) %>% group_by(android) %>% summarise(mean_afinn = mean(afinn), se = sd(afinn) / sqrt(n()), lower = mean_afinn - (1.96 * se), upper = mean_afinn + (1.96 * se))  %>% mutate(phone = ifelse(android, "Android", "iPhone")) %>% select(-se, -android)
 ```
 
-Tweets from Android are actually having a **higher** sentiment (more positive) than those from iPhone. Please read the previous sentence once again, **higher**. We can also conduct a test to study the statistical significance of the difference.
+Tweets from Android are having a slightly lower sentiment score (more negative) than those from iPhone. We can also conduct a test to study the statistical significance of the difference.
 
 ```{r}
 tibble(afinn = all_afinn_score, android = trump_tweets_target$android) %>% wilcox.test(afinn ~ android, data = .)
@@ -225,15 +237,13 @@ It is statistically significant. You can see the distributions of AFINN scores o
 tibble(afinn = all_afinn_score, android = trump_tweets_target$android) %>% ggplot(aes(x = afinn, fill = android)) + geom_histogram(binwidth = 0.05, alpha = 0.5)
 ```
 
-In summary, Trump's tweets from an Android phone are more positive than those from an iPhone. Therefore, using our automated content analysis approach, we have arrived at a completely different conclusion to David Robinson's one. In David Robinson's TV-worthy conclusion, he found that tweets from an Android phone (probably from Trump himshelf) are more negative than tweets from an iPhone (probably from his campaign).
+In summary, Trump's tweets from an Android phone are more negative than those from an iPhone. We have arrived at a very similar conclusion to Robinson's, although the effect size is much smaller.
 
-Our validated approach arrives at another conclusion: tweets from an Android phone (probably from Trump himshelf) are more positive than tweets from an iPhone. Unlike David Robinson's "text mining" approach, we have validated our sentiment scores with human.
-
-The obvious question you may ask is: Why? And another question is: Whom should I trust? The legendary data scientist David Robinson or the author of this book?
+The obvious question you may ask is: Why could Robinson get such a large effect size? A more important question: Whom should you trust?
 
 In Chapter 6, we will have a more detailed discussion about the pros and cons of using dictionary-based methods. Regarding the question of "whom should you trust?", our approach has face validity and criterion validity. For face validity, We have used a dictionary designed for studying social media data (AFINN), whereas David Robinson used NRC dictionaries which are not designed for studying social media data. For criterion validity, we have validated our AFINN scores with some human-categorized tweets. We have evidence that our AFINN scores correlate well with human judgements of sentiment. David Robinson had no such information.
 
-There are some information which is important. Dictionary-based methods are very sensitive to content length. One thing you need to know is that Trump's tweets from an android are in general shorter than tweets from an iPhone. Also, these tweets are in general more positive.
+There are some information which is important. Dictionary-based methods are very sensitive to content length. One thing you need to know is that Trump's tweets from an android are in general longer than tweets from an iPhone. Also, these tweets are in general more negative.
 
 ```{r}
 tibble(afinn = all_afinn_score, android = trump_tweets_target$android, text = trump_tweets_target$text, ntokens = ntoken(text, remove_punct = TRUE)) %>% group_by(android) %>% summarise(mean_ntokens = mean(ntokens), mean_afinn = mean(afinn))
@@ -241,15 +251,20 @@ tibble(afinn = all_afinn_score, android = trump_tweets_target$android, text = tr
 
 We can demonstrate it using a scatterplot.
 
-```{r}
+```{r histo}
 tibble(afinn = all_afinn_score, android = trump_tweets_target$android, text = trump_tweets_target$text, ntokens = ntoken(text, remove_punct = TRUE)) %>% ggplot(aes(y = afinn, x = ntokens, col = android)) + geom_point() + geom_smooth(method = "loess")
 ```
 
-In Chapter 6, I will demonstrate further why we always need to check for the influence of content length. In our AFINN score calculation, we have adjusted for the effect of content length. However, our AFINN score is still correlated with content length with a correlation coefficient of -0.2.
+In Chapter 6, I will demonstrate further why we always need to check for the influence of content length. In our AFINN score calculation, we have adjusted for the effect of content length. However, our AFINN score is still correlated with content length with a correlation coefficient of `r round(cor(ntoken(trump_tweets_target$text, remove_punct = TRUE), all_afinn_score), 2)`.
 
-Unfortunately, David Robinson did not control for the influence of content length. Therefore, we don't know whether his finding is indicating the actual sentiment, the residual effect of content length or a murky mixture of the two.
+OK, enough. This is not a diss track. Let's move on and go to the summary of this chapter, shall we?
 
-OK, enough. This is not a diss track. Let's go to the summary of this chapter, shall we?
+```{r, echo = FALSE, include = FALSE}
+nrc <- readRDS("data/nrc.RDS")
+dfm(trump_tweets_target$text, remove_punct = TRUE) %>% dfm_lookup(nrc) %>% quanteda::convert(to = "data.frame") %>% as_tibble %>% mutate(ntokens = ntoken(trump_tweets_target$text, remove_punct = TRUE), android = trump_tweets_target$android) -> nrc_scores
+
+nrc_scores %>% group_by(android) %>% summarise_at(vars(anger:ntokens), mean)
+```
 
 ## Zusammenfassung
 
@@ -257,7 +272,7 @@ In this chapter, I have used a "whole game" to demonstrate the differences betwe
 
 1. Automated content analysis always starts with research questions or hypotheses.
 2. Automated content analysis is a content analysis, therefore, we need to demonstrate the validity and reliability of our measurement.
-3. Automated content analysis is usually a cost-cutting measure because manual content analysis is very expensive when the n is getting larger.
+3. Automated content analysis is usually a cost-cutting measure because manual content analysis is very expensive when _n_ is getting larger.
 4. We can extract semantics from a piece of text using automated methods. But we must bear in mind that these extracted semantics are surrogate ---Not always true---. Because we have the bullet point 2 above, we need to show that the surrogate measure is a good approximation of human judgement.
 5. There are many problems associated with automated extraction of semantics from a piece of text.
 
