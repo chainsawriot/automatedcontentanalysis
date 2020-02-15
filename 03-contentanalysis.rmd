@@ -1,7 +1,28 @@
-# What is automated content analysis?
-## What is Content analysis
+# What is Content analysis
 
-As a super express summary of Krippendorff and Neuendorf. But don't do it like Leetaru!
+In the previous chapter, we have gone through together in a whole game approach a typical scenario of automated content analysis. 
+
+In this chapter, we are going to go back to the theorectical foundation of automated content analysis. Unless the adjective before an objective functions as a negation, one should expect an object with an adjective should still belong to the category of that object. For example, a flying cat is still a cat. A liberal, popular and male dictator is still a dictator. However, fake news is not news, because 'fake' functions as a negation. 
+
+Based on this logic, in the previous chapter I have made a proclaimation that automated content analysis is still content analysis. It is similar to the fact that quantative content analysis is still content analysis. This seems to be a reasonable expectation, but one cannot always assume these long compound nouns created by researchers always have this simple, logical property. For example, thematic meta-analysis is not meta-analysis, eventhough 'thematic' does not function as a negation. [^ The reason for it is that the term was incorrectly coined. The coining this term has not carefully considered the original definition of meta-analysis.]
+
+So, what is automated content analysis all about? It is better for us to go back to the basic form: What is content analysis?
+
+### Definitions
+
+In the realm of content analysis, there are two bibles, so to speak. They are *"Content Analysis: An Introduction to Its Methodology"* by Klaus Krippendorff and *"The Content Analysis Guidebook"* by Kimberley A. Neuendorf. Except the fact that both books are written by communication researcher, both books give a very similar definition of content analysis. 
+
+Krippendorff defines content analysis as follow:
+
+    Content analysis is a research technique for making replicable and valid inferences from text (or other meaningful matter) to the context of their use.
+
+Neuendorf defines content analysis as follow:
+
+    Content analysis is a summarizing, quantitative analysis of messages that relies on the scientific method (including attention to objectivity-intersubjectivity, a priori design, reliability, validity, generalizability, replicability, and hypothesis testing) and is not limited as to the types of variables that may be measured or the context in which the message are created or presented.
+
+Both definitions emphasize the scientific aspect of the technique. Neuendorf has a six-part definition of content analysis as a scientific method.
+
+
 
 ## What gets automated?
 
