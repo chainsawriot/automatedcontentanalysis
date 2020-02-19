@@ -4,7 +4,7 @@ In the previous chapter, we have gone through together in a whole game approach 
 
 In this chapter, we are going to go back to the theorectical foundation of automated content analysis. Unless the adjective before an objective functions as a negation, one should expect an object with an adjective should still belong to the category of that object. For example, a flying cat is still a cat. A liberal, popular and male dictator is still a dictator. However, fake news is not news, because 'fake' functions as a negation. 
 
-Based on this logic, in the previous chapter I have made a proclaimation that automated content analysis is still content analysis. It is similar to the fact that quantative content analysis is still content analysis. This seems to be a reasonable expectation, but one cannot always assume these long compound nouns created by researchers always have this simple, logical property. For example, thematic meta-analysis is not meta-analysis, eventhough 'thematic' does not function as a negation. [^ The reason for it is that the term was incorrectly coined. The coining this term has not carefully considered the original definition of meta-analysis.]
+Based on this logic, in the previous chapter I have made a proclaimation that automated content analysis is still content analysis. It is similar to the fact that quantative content analysis is still content analysis. This seems to be a reasonable expectation, but one cannot always assume these long compound nouns created by researchers always have this simple, logical property. For example, thematic meta-analysis is not meta-analysis, eventhough 'thematic' does not function as a negation. ^[The reason for it is that the term was incorrectly coined. The coining this term has not carefully considered the original definition of meta-analysis.]
 
 So, what is automated content analysis all about? It is better for us to go back to the basic form: What is content analysis?
 
@@ -14,13 +14,33 @@ In the realm of content analysis, there are two bibles, so to speak. They are *"
 
 Krippendorff defines content analysis as follow:
 
-    Content analysis is a research technique for making replicable and valid inferences from text (or other meaningful matter) to the context of their use.
+---
+
+Content analysis is a research technique for making replicable and valid inferences from text (or other meaningful matter) to the context of their use.
+
+---
 
 Neuendorf defines content analysis as follow:
 
-    Content analysis is a summarizing, quantitative analysis of messages that relies on the scientific method (including attention to objectivity-intersubjectivity, a priori design, reliability, validity, generalizability, replicability, and hypothesis testing) and is not limited as to the types of variables that may be measured or the context in which the message are created or presented.
+---
 
-Both definitions emphasize the scientific aspect of the technique. Neuendorf has a six-part definition of content analysis as a scientific method.
+Content analysis is a summarizing, quantitative analysis of messages that relies on the scientific method (including attention to objectivity-intersubjectivity, a priori design, reliability, validity, generalizability, replicability, and hypothesis testing) and is not limited as to the types of variables that may be measured or the context in which the message are created or presented.
+
+---
+
+Both definitions emphasize the scientific aspect of the technique. Neuendorf has a six-part definition of content analysis as a scientific method, which explains each of the six nouns inside the parenthesis of her definition. Once again, all six nouns define how content analysis is a scientific method. In this discussion, I focus only on four important aspects in Neundorf's six nouns: a priori design, hypothesis testing, reliability and validity. These four aspects are important for our discussion of automatic content analysis and can draw distinctions between automatic content analysis and other forms of text analysis, e.g. text mining.
+
+#### An a priori Design
+
+A content analysis should have an "a priori" (i.e. "before the fact") design. Therefore, the research questions, hypotheses and operationalization of variables must be available before the text data were collected. A valid content analysis should not be exploratory. Therefore, there should be no room for researchers to play with the data and then choose the variables or even the hypotheses they want to study. Thus, any exploratory work should not be labeled as an (automated) content analysis. This draws a major distinct between automated content analysis and other approaches such as text mining or data science. Data science, as defined in @wickham2016 , is an exploratory, circular process of "transform" (data manipulation), "visualize" (data visualization) and "model" (data model). This repeated circular procedure is not compatible with the strict "a priori" requirement of (automated) content analysis.
+
+#### Hypothesis testing
+
+A content analysis as a scientific method should be "hypothetico-deductive". Therefore, an (automated) content analysis must have one or more theory driven hypotheses to be tested deductively. These hypotheses describe an anticipated prediction.  Research question can also be derived in a priori, if the existing theory is enough to support an anticipated prediction. Because of that, an (automated) content analysis must have an "a priori design" (the previous point). Any exploratory analysis, such as text mining or data science approaches, is merely for hypothesis generation.
+
+#### Reliability
+
+#### Validity
 
 
 
