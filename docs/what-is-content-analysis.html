@@ -24,7 +24,7 @@
 <meta name="author" content="Chung-hong Chan" />
 
 
-<meta name="date" content="2020-02-19" />
+<meta name="date" content="2020-02-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,7 +161,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="what-is-content-analysis" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> What is Content analysis</h1>
 <p>In the previous chapter, we have gone through together in a whole game approach a typical scenario of automated content analysis.</p>
-<p>In this chapter, we are going to go back to the theorectical foundation of automated content analysis. Unless the adjective before an objective functions as a negation, one should expect an object with an adjective should still belong to the category of that object. For example, a flying cat is still a cat. A liberal, popular and male dictator is still a dictator. However, fake news is not news, because ‘fake’ functions as a negation.</p>
+<p>In this chapter, we are going to go back to the theorectical foundation of automated content analysis. Unless the adjective before an objective functions is a negation, one should expect an object with an adjective should still belong to the category of that object. For example, a flying cat is still a cat. A liberal, popular, male dictator is still a dictator. However, fake news is not news, because ‘fake’ functions as a negation.</p>
 <p>Based on this logic, in the previous chapter I have made a proclaimation that automated content analysis is still content analysis. It is similar to the fact that quantative content analysis is still content analysis. This seems to be a reasonable expectation, but one cannot always assume these long compound nouns created by researchers always have this simple, logical property. For example, thematic meta-analysis is not meta-analysis, eventhough ‘thematic’ does not function as a negation.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
 <p>So, what is automated content analysis all about? It is better for us to go back to the basic form: What is content analysis?</p>
 <div id="definitions" class="section level3">
@@ -169,26 +169,33 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In the realm of content analysis, there are two bibles, so to speak. They are <em>“Content Analysis: An Introduction to Its Methodology”</em> by Klaus Krippendorff and <em>“The Content Analysis Guidebook”</em> by Kimberley A. Neuendorf. Except the fact that both books are written by communication researcher, both books give a very similar definition of content analysis.</p>
 <p>Krippendorff defines content analysis as follow:</p>
 <hr />
-<p>Content analysis is a research technique for making replicable and valid inferences from text (or other meaningful matter) to the context of their use.</p>
+<p><strong>Content analysis is a research technique for making replicable and valid inferences from text (or other meaningful matter) to the context of their use.</strong></p>
 <hr />
 <p>Neuendorf defines content analysis as follow:</p>
 <hr />
-<p>Content analysis is a summarizing, quantitative analysis of messages that relies on the scientific method (including attention to objectivity-intersubjectivity, a priori design, reliability, validity, generalizability, replicability, and hypothesis testing) and is not limited as to the types of variables that may be measured or the context in which the message are created or presented.</p>
+<p><strong>Content analysis is a summarizing, quantitative analysis of messages that relies on the scientific method (including attention to objectivity-intersubjectivity, a priori design, reliability, validity, generalizability, replicability, and hypothesis testing) and is not limited as to the types of variables that may be measured or the context in which the message are created or presented.</strong></p>
 <hr />
-<p>Both definitions emphasize the scientific aspect of the technique. Neuendorf has a six-part definition of content analysis as a scientific method, which explains each of the six nouns inside the parenthesis of her definition. Once again, all six nouns define how content analysis is a scientific method. In this discussion, I focus only on four important aspects in Neundorf’s six nouns: a priori design, hypothesis testing, reliability and validity. These four aspects are important for our discussion of automatic content analysis and can draw distinctions between automatic content analysis and other forms of text analysis, e.g. text mining.</p>
-<div id="an-a-priori-design" class="section level4">
-<h4><span class="header-section-number">4.0.1.1</span> An a priori Design</h4>
-<p>A content analysis should have an “a priori” (i.e. “before the fact”) design. Therefore, the research questions, hypotheses and operationalization of variables must be available before the text data were collected. A valid content analysis should not be exploratory. Therefore, there should be no room for researchers to play with the data and then choose the variables or even the hypotheses they want to study. Thus, any exploratory work should not be labeled as an (automated) content analysis. This draws a major distinct between automated content analysis and other approaches such as text mining or data science. Data science, as defined in <span class="citation">Wickham and Grolemund (<a href="#ref-wickham2016">2016</a>)</span> , is an exploratory, circular process of “transform” (data manipulation), “visualize” (data visualization) and “model” (data model). This repeated circular procedure is not compatible with the strict “a priori” requirement of (automated) content analysis.</p>
+<p>Both definitions emphasize the scientific aspect of the technique. Neuendorf has a six-part definition of content analysis as a scientific method, which explains each of the six elements inside the parenthesis of her definition. Once again, all six elements define how content analysis is a scientific method. In this discussion, I focus only on four important elements: a priori design, hypothesis testing, reliability and validity. These four elements are important for our discussion of automated content analysis and can draw distinctions between automated content analysis and other forms of text analysis, e.g. text mining. In the following two subsection, the four elements are discussed in the following two subsections: Principle and measurement.</p>
+<div id="the-principle-of-automated-content-analysis" class="section level4">
+<h4><span class="header-section-number">4.0.1.1</span> The principle of (automated) content analysis</h4>
+<div id="an-a-priori-design" class="section level5">
+<h5><span class="header-section-number">4.0.1.1.1</span> An a priori Design</h5>
+<p>A content analysis should have an <em>a priori</em> (i.e. “before the fact”) design. Therefore, the research questions, hypotheses and operationalization of variables must be available before the text data were collected. A valid content analysis should be no room for researchers to play with the data and then choose the variables or even the hypotheses they want to study, thereby makes any content analysis be confirmatory, not exploratory. Thus, any exploratory work should not be labeled as an (automated) content analysis. This draws a major distinct between (automated) content analysis and other text analytic approaches such as text mining, “big data” or data science.</p>
+<p>Data science, as defined in <span class="citation">Wickham and Grolemund (<a href="#ref-wickham2016">2016</a>)</span> , is a circular process of “transform” (coding / data manipulation), “visualize” (data visualization) and “model” (data modeling). This repeated circular procedure – for instance, it is possible to go back from an analytic step of data modling back to coding, is not compatible with the strict <em>a priori</em> requirement of (automated) content analysis. (Automated) content analysis must be a linear process. In Neuendorf’s book, she derive a flowchart of content analysis.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> In that flowchart, there is no split-path and the linear process consists of nine steps: theory and rationale, conceptualization decisions, operationalization measures, creation of coding schemes, sampling, training and initial reliability, coding, and, final reliability and tabulation and reporting. If (automated) content analysis is content analysis, it should follow the same linear process. There is only a slight difference in the assessment of reliability (next subsection).</p>
+</div>
 </div>
 <div id="hypothesis-testing" class="section level4">
 <h4><span class="header-section-number">4.0.1.2</span> Hypothesis testing</h4>
-<p>A content analysis as a scientific method should be “hypothetico-deductive”. Therefore, an (automated) content analysis must have one or more theory driven hypotheses to be tested deductively. These hypotheses describe an anticipated prediction. Research question can also be derived in a priori, if the existing theory is enough to support an anticipated prediction. Because of that, an (automated) content analysis must have an “a priori design” (the previous point). Any exploratory analysis, such as text mining or data science approaches, is merely for hypothesis generation.</p>
+<p>A content analysis as a scientific method should be “hypothetico-deductive”. Therefore, an (automated) content analysis must have one or more theory driven hypotheses to be tested deductively. These hypotheses describe an anticipated prediction. Research question can also be derived in a priori, if the existing theory is enough to support an anticipated prediction. Because of that, an (automated) content analysis must have an “a priori design” (the previous point). An exploratory analysis, such as text mining or data science approaches, is for hypothesis generation.</p>
 </div>
-<div id="reliability" class="section level4">
-<h4><span class="header-section-number">4.0.1.3</span> Reliability</h4>
+<div id="the-measurement-in-automated-content-analysis" class="section level4">
+<h4><span class="header-section-number">4.0.1.3</span> The measurement in (automated) content analysis</h4>
+<div id="reliability" class="section level5">
+<h5><span class="header-section-number">4.0.1.3.1</span> Reliability</h5>
 </div>
-<div id="validity" class="section level4">
-<h4><span class="header-section-number">4.0.1.4</span> Validity</h4>
+<div id="validity" class="section level5">
+<h5><span class="header-section-number">4.0.1.3.2</span> Validity</h5>
+</div>
 </div>
 </div>
 <div id="what-gets-automated" class="section level2">
@@ -215,6 +222,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <hr />
 <ol start="5">
 <li id="fn5"><p>The reason for it is that the term was incorrectly coined. The coining this term has not carefully considered the original definition of meta-analysis.<a href="what-is-content-analysis.html#fnref5">↩</a></p></li>
+<li id="fn6"><p>This flowchart is also <a href="https://academic.csuohio.edu/neuendorf_ka/content/flowchart.html">available online</a><a href="what-is-content-analysis.html#fnref6">↩</a></p></li>
 </ol>
 </div>
             </section>
