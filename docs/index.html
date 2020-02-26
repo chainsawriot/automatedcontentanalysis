@@ -24,7 +24,7 @@
 <meta name="author" content="Chung-hong Chan" />
 
 
-<meta name="date" content="2020-02-20" />
+<meta name="date" content="2020-02-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,7 +161,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Automated Content Analysis</h1>
 <p class="author"><em>Chung-hong Chan</em></p>
-<p class="date"><em>2020-02-20</em></p>
+<p class="date"><em>2020-02-26</em></p>
 </div>
 <div id="prerequisites" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
@@ -229,6 +229,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

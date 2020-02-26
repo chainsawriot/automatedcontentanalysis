@@ -38,17 +38,25 @@ A content analysis should have an *a priori* (i.e. "before the fact") design. Th
 
 Data science, as defined in @wickham2016 , is a circular process of "transform" (coding / data manipulation), "visualize" (data visualization) and "model" (data modeling). This repeated circular procedure -- for instance, it is possible to go back from an analytic step of data modling back to coding, is not compatible with the strict *a priori* requirement of (automated) content analysis. (Automated) content analysis must be a linear process. In Neuendorf's book, she derive a flowchart of content analysis. ^[This flowchart is also [available online](https://academic.csuohio.edu/neuendorf_ka/content/flowchart.html)] In that flowchart, there is no split-path and the linear process consists of nine steps: theory and rationale, conceptualization decisions, operationalization measures, creation of coding schemes, sampling, training and initial reliability, coding, and, final reliability and tabulation and reporting. If (automated) content analysis is content analysis, it should follow the same linear process. There is only a slight difference in the assessment of reliability (next subsection).
 
-
-
 #### Hypothesis testing
 
-A content analysis as a scientific method should be "hypothetico-deductive". Therefore, an (automated) content analysis must have one or more theory driven hypotheses to be tested deductively. These hypotheses describe an anticipated prediction.  Research question can also be derived in a priori, if the existing theory is enough to support an anticipated prediction. Because of that, an (automated) content analysis must have an "a priori design" (the previous point). An exploratory analysis, such as text mining or data science approaches, is for hypothesis generation.
-
-
+A content analysis as a scientific method should be "hypothetico-deductive". Therefore, an (automated) content analysis must have one or more theory driven hypotheses to be tested deductively. These hypotheses describe an anticipated prediction.  Research question can also be derived in a priori, if the existing theory is enough to support an anticipated prediction. Because of that, an (automated) content analysis must have an "a priori design" (the previous point). An exploratory analysis, such as text mining or data science approaches that finds patterns in text data, is only for hypothesis generation.
 
 #### The measurement in (automated) content analysis
 
+As with all other scientific approachs, all measurements in content analysis must have an adequate level of reliability and validity. The difference between the two concepts can be explained by the oft-cited target metaphor. In this target metaphor, the target is like the one used in Archery. Or if you are from northern or western Europe, biathlon. There is a bullseye (the center of the target) which represent the actual reality. The distance between a dot (a measurement) to the bullseye represents how close the measurement is to the actual reality. 
+
+Reliability is about the consistency of a measurement. A measurement with high reliability should give a very consistent value from the same physical reality under different measurement situations. Examples of these different measurement situations are measurements made by different rater (inter-rater reliability), at different time point (test-retest reliability) or even at different stages of the measurement (split-form reliability, internal consistency). In the target metaphor, a measurement with high reliability is presented as dots fall in the same small area.
+
+Validity is about how close the measurement is to the actual reality. It is usually measured by subcatgories such as contruct validity (Does the operationalization of the construct to be measured theorectically justify?), content validity (Does the content of the measurement cover all aspects of measured construct?) and criterion validity (Does the measurement correlate with other measurements that are representative of the construct?).
+
+Let's take an example that all scholars love (and hate). If one want to measure academic success of a researcher, should one measure the total number of citations of this researcher's papers (e.g. H-index)? First, this measurement can have great variability by using different citation databases (Google Scholar, Scopus, Web of Science). Thus, this measurement does not have good reliability. Regarding criterion validity, [Richard Feynman](https://scholar.google.com/citations?user=B7vSqZsAAAAJ&hl=en) has an H-index of 40. [Albert Einstein](https://scholar.google.com/citations?user=qc6CJjYAAAAJ&hl=en) is a bit better, 63. With their H-index, probably they could not even get a postdoc position nowadays.
+
+In general, reliability and validity works antagonistically. Therefore, a measurement with very high validity usually has lower reliability and vice versa. Using the above example of measuring academic success of a researcher, a measurement with greater validity is to have a panel of experts to evaluate qualitatively the researcher's papers and their actual impact to the field. This method should have greater validity than barely using H-index, but it trades reliability for validity because the method introduces a new source of inter-rater reliability problem.
+
 ##### Reliability
+
+Traditional content analysis focuses a lot on reliability, especially inter-rater reliability. Klaus Krippendorff, the author of one of the "bibles", even has an inter-rater reliability measurement bearing his name (Krippendorff's $$\alpha$).
 
 ##### Validity
 

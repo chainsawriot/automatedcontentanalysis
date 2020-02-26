@@ -24,7 +24,7 @@
 <meta name="author" content="Chung-hong Chan" />
 
 
-<meta name="date" content="2020-02-20" />
+<meta name="date" content="2020-02-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -412,40 +412,40 @@ afinn</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dfm</span>(trump_tweet30_coded<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">dfm_lookup</span>(afinn) <span class="op">%&gt;%</span><span class="st"> </span>quanteda<span class="op">::</span><span class="kw">convert</span>(<span class="dt">to =</span> <span class="st">&quot;data.frame&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">matching_word_valence =</span> (neg5 <span class="op">*</span><span class="st"> </span><span class="dv">-5</span>) <span class="op">+</span><span class="st"> </span>(neg4 <span class="op">*</span><span class="st"> </span><span class="dv">-4</span>) <span class="op">+</span><span class="st"> </span>(neg3 <span class="op">*</span><span class="st"> </span><span class="dv">-3</span>) <span class="op">+</span><span class="st"> </span>(neg2 <span class="op">*</span><span class="st"> </span><span class="dv">-2</span>) <span class="op">+</span><span class="st"> </span>(neg1 <span class="op">*</span><span class="st"> </span><span class="dv">-1</span>) <span class="op">+</span><span class="st"> </span>(zero <span class="op">*</span><span class="st"> </span><span class="dv">0</span>) <span class="op">+</span><span class="st"> </span>(pos1 <span class="op">*</span><span class="st"> </span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>(pos2 <span class="op">*</span><span class="st"> </span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>(pos3 <span class="op">*</span><span class="st"> </span><span class="dv">3</span>) <span class="op">+</span><span class="st"> </span>(pos4 <span class="op">*</span><span class="st"> </span><span class="dv">4</span>) <span class="op">+</span><span class="st"> </span>(pos5 <span class="op">*</span><span class="st"> </span><span class="dv">5</span>), <span class="dt">base =</span> <span class="kw">ntoken</span>(trump_tweet30_coded<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>), <span class="dt">afinn_score =</span> matching_word_valence <span class="op">/</span><span class="st"> </span>base) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(afinn_score) -&gt;<span class="st"> </span>afinn_score
 afinn_score</code></pre></div>
 <pre><code>##       text1       text2       text3       text4       text5       text6 
-##  0.05000000  0.12000000  0.11111111  0.58333333  0.15000000  0.00000000 
+##  0.05000000  0.12000000  0.11111111  0.58333333  0.16666667  0.00000000 
 ##       text7       text8       text9      text10      text11      text12 
-##  0.16666667  0.08333333 -0.17391304 -0.26923077  0.00000000 -0.11764706 
+##  0.16666667  0.09090909 -0.19047619 -0.26923077  0.00000000 -0.13333333 
 ##      text13      text14      text15      text16      text17      text18 
-##  0.00000000  0.00000000 -0.13636364  0.00000000  0.47619048  0.20000000 
+##  0.00000000  0.00000000 -0.13636364  0.00000000  0.47619048  0.22222222 
 ##      text19      text20      text21      text22      text23      text24 
-##  0.13043478  0.70000000  0.00000000 -0.04347826 -0.06666667  0.53333333 
+##  0.14285714  0.77777778  0.00000000 -0.04761905 -0.06666667  0.53333333 
 ##      text25      text26      text27      text28      text29      text30 
-##  0.15000000  0.00000000  0.00000000  0.60000000  0.18750000  0.22222222</code></pre>
+##  0.16666667  0.00000000  0.00000000  0.69230769  0.18750000  0.25000000</code></pre>
 <p>Once again, this AFINN sentiment score is a surrogate measure of semantics. We can test the correlation between the AFINN score and the results from two human coders.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(trump_tweet30_coded<span class="op">$</span>rater1, afinn_score)</code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
 ## data:  trump_tweet30_coded$rater1 and afinn_score
-## t = 3.7219, df = 28, p-value = 0.0008811
+## t = 3.6976, df = 28, p-value = 0.0009395
 ## alternative hypothesis: true correlation is not equal to 0
 ## 95 percent confidence interval:
-##  0.2712705 0.7749591
+##  0.2677772 0.7734500
 ## sample estimates:
-##      cor 
-## 0.575314</code></pre>
+##       cor 
+## 0.5727884</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(trump_tweet30_coded<span class="op">$</span>rater2, afinn_score)</code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
 ## data:  trump_tweet30_coded$rater2 and afinn_score
-## t = 2.603, df = 28, p-value = 0.01461
+## t = 2.669, df = 28, p-value = 0.01251
 ## alternative hypothesis: true correlation is not equal to 0
 ## 95 percent confidence interval:
-##  0.09647393 0.69167781
+##  0.1075218 0.6974559
 ## sample estimates:
-##       cor 
-## 0.4414015</code></pre>
+##      cor 
+## 0.450346</code></pre>
 <p>The two correlation coefficients are statistically sigificant. The scatterplot of the two measures is like so:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweet30_coded <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">afinn_score =</span> afinn_score) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">avg_human =</span> (rater1 <span class="op">+</span><span class="st"> </span>rater2) <span class="op">/</span><span class="st"> </span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> avg_human, <span class="dt">y =</span> afinn_score)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
 <div class="figure">
@@ -482,14 +482,14 @@ trump_tweets_target</code></pre></div>
 <pre><code>## # A tibble: 9,384 x 3
 ##      afinn android `trump_tweets_target$text`                                   
 ##      &lt;dbl&gt; &lt;lgl&gt;   &lt;chr&gt;                                                        
-##  1  0.375  FALSE   &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\nhttps…
-##  2  0.5    FALSE   &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3hBz&quot;   
+##  1  0.5    FALSE   &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\nhttps…
+##  2  0.75   FALSE   &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3hBz&quot;   
 ##  3 -0.0714 TRUE    &quot;Happy New Year to all, including to my many enemies and tho…
 ##  4  0.0952 TRUE    &quot;Russians are playing @CNN and @NBCNews for such fools - fun…
-##  5  0.105  FALSE   &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimBrownN…
+##  5  0.118  FALSE   &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimBrownN…
 ##  6  0.214  TRUE    &quot;Great move on delay (by V. Putin) - I always knew he was ve…
 ##  7  0      FALSE   &quot;My Administration will follow two simple rules: https://t.c…
-##  8  0.25   FALSE   &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjGBgglI…
+##  8  0.333  FALSE   &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjGBgglI…
 ##  9 -0.0417 TRUE    &quot;not anymore. The beginning of the end was the horrible Iran…
 ## 10 -0.04   TRUE    &quot;We cannot continue to let Israel be treated with such total…
 ## # … with 9,374 more rows</code></pre>
@@ -498,15 +498,15 @@ trump_tweets_target</code></pre></div>
 <pre><code>## # A tibble: 2 x 4
 ##   mean_afinn  lower upper phone  
 ##        &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  
-## 1      0.104 0.0961 0.112 iPhone 
-## 2      0.100 0.0955 0.106 Android</code></pre>
+## 1      0.126 0.117  0.136 iPhone 
+## 2      0.101 0.0963 0.106 Android</code></pre>
 <p>Tweets from Android are having a slightly lower sentiment score (more negative) than those from iPhone. We can also conduct a test to study the statistical significance of the difference.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">wilcox.test</span>(afinn <span class="op">~</span><span class="st"> </span>android, <span class="dt">data =</span> .)</code></pre></div>
 <pre><code>## 
 ##  Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  afinn by android
-## W = 8581716, p-value = 0.01612
+## W = 8879860, p-value = 4.651e-07
 ## alternative hypothesis: true location shift is not equal to 0</code></pre>
 <p>It is statistically significant. You can see the distributions of AFINN scores of tweets from an Android and an iPhone with the following histogram.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> afinn, <span class="dt">fill =</span> android)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.05</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)</code></pre></div>
@@ -519,12 +519,12 @@ trump_tweets_target</code></pre></div>
 <pre><code>## # A tibble: 2 x 3
 ##   android mean_ntokens mean_afinn
 ##   &lt;lgl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
-## 1 FALSE           16.4      0.104
-## 2 TRUE            17.8      0.100</code></pre>
+## 1 FALSE           14.7      0.126
+## 2 TRUE            17.6      0.101</code></pre>
 <p>We can demonstrate it using a scatterplot.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android, <span class="dt">text =</span> trump_tweets_target<span class="op">$</span>text, <span class="dt">ntokens =</span> <span class="kw">ntoken</span>(text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> afinn, <span class="dt">x =</span> ntokens, <span class="dt">col =</span> android)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>)</code></pre></div>
 <p><img src="automatedcontentanalysis_files/figure-html/histo-1.png" width="672" /></p>
-<p>In Chapter 6, I will demonstrate further why we always need to check for the influence of content length. In our AFINN score calculation, we have adjusted for the effect of content length. However, our AFINN score is still correlated with content length with a correlation coefficient of -0.23.</p>
+<p>In Chapter 6, I will demonstrate further why we always need to check for the influence of content length. In our AFINN score calculation, we have adjusted for the effect of content length. However, our AFINN score is still correlated with content length with a correlation coefficient of -0.25.</p>
 <p>OK, enough. This is not a diss track. Let’s move on and go to the summary of this chapter, shall we?</p>
 </div>
 <div id="zusammenfassung" class="section level2">
@@ -630,6 +630,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
