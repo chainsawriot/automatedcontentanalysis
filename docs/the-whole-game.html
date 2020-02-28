@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 The whole game | Automated Content Analysis</title>
+  <title>Chapter 3 The whole game | Automated Content Analysis</title>
   <meta name="description" content="Make automated content analysis uncool again!" />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 The whole game | Automated Content Analysis" />
+  <meta property="og:title" content="Chapter 3 The whole game | Automated Content Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 The whole game | Automated Content Analysis" />
+  <meta name="twitter:title" content="Chapter 3 The whole game | Automated Content Analysis" />
   
   <meta name="twitter:description" content="Make automated content analysis uncool again!" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Chung-hong Chan" />
 
 
-<meta name="date" content="2020-02-27" />
+<meta name="date" content="2020-02-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,67 +53,41 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -134,8 +108,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="the-whole-game.html"><a href="the-whole-game.html"><i class="fa fa-check"></i><b>3</b> The whole game</a>
-<ul>
+<li class="chapter" data-level="3" data-path="the-whole-game.html"><a href="the-whole-game.html"><i class="fa fa-check"></i><b>3</b> The whole game</a><ul>
 <li class="chapter" data-level="3.1" data-path="the-whole-game.html"><a href="the-whole-game.html#analysing-trumps-tweets"><i class="fa fa-check"></i><b>3.1</b> Analysing Trump’s tweets</a></li>
 <li class="chapter" data-level="3.2" data-path="the-whole-game.html"><a href="the-whole-game.html#an-express-summary-of-tidyverse"><i class="fa fa-check"></i><b>3.2</b> An express summary of tidyverse</a></li>
 <li class="chapter" data-level="3.3" data-path="the-whole-game.html"><a href="the-whole-game.html#creating-ground-truth-data"><i class="fa fa-check"></i><b>3.3</b> Creating ground truth data</a></li>
@@ -143,26 +116,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="the-whole-game.html"><a href="the-whole-game.html#comparing-tweets-from-android-and-iphone"><i class="fa fa-check"></i><b>3.5</b> Comparing tweets from Android and iPhone</a></li>
 <li class="chapter" data-level="3.6" data-path="the-whole-game.html"><a href="the-whole-game.html#zusammenfassung"><i class="fa fa-check"></i><b>3.6</b> Zusammenfassung</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html"><i class="fa fa-check"></i><b>4</b> What is Content analysis</a>
-<ul>
+<li class="chapter" data-level="4" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html"><i class="fa fa-check"></i><b>4</b> What is Content analysis</a><ul>
 <li class="chapter" data-level="4.0.1" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html#definitions"><i class="fa fa-check"></i><b>4.0.1</b> Definitions</a></li>
 <li class="chapter" data-level="4.1" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html#what-gets-automated"><i class="fa fa-check"></i><b>4.1</b> What gets automated?</a></li>
 <li class="chapter" data-level="4.2" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html#best-practices"><i class="fa fa-check"></i><b>4.2</b> Best practices</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="creating-gold-standard-validation.html"><a href="creating-gold-standard-validation.html"><i class="fa fa-check"></i><b>5</b> Creating gold standard &amp; validation</a></li>
-<li class="chapter" data-level="6" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html"><i class="fa fa-check"></i><b>6</b> Typical automated content analytic methods</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#dictionary-based-method"><i class="fa fa-check"></i><b>6.1</b> dictionary-based method</a>
-<ul>
+<li class="chapter" data-level="6" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html"><i class="fa fa-check"></i><b>6</b> Typical automated content analytic methods</a><ul>
+<li class="chapter" data-level="6.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#dictionary-based-method"><i class="fa fa-check"></i><b>6.1</b> dictionary-based method</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#validation"><i class="fa fa-check"></i><b>6.1.1</b> validation</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#topic-model"><i class="fa fa-check"></i><b>6.2</b> topic-model</a>
-<ul>
+<li class="chapter" data-level="6.2" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#topic-model"><i class="fa fa-check"></i><b>6.2</b> topic-model</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#validation-1"><i class="fa fa-check"></i><b>6.2.1</b> validation</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="advance-topics.html"><a href="advance-topics.html"><i class="fa fa-check"></i><b>7</b> Advance topics</a>
-<ul>
+<li class="chapter" data-level="7" data-path="advance-topics.html"><a href="advance-topics.html"><i class="fa fa-check"></i><b>7</b> Advance topics</a><ul>
 <li class="chapter" data-level="7.1" data-path="advance-topics.html"><a href="advance-topics.html#bag-of-embeddings"><i class="fa fa-check"></i><b>7.1</b> bag-of-embeddings</a></li>
 <li class="chapter" data-level="7.2" data-path="advance-topics.html"><a href="advance-topics.html#semantic-network"><i class="fa fa-check"></i><b>7.2</b> semantic network</a></li>
 <li class="chapter" data-level="7.3" data-path="advance-topics.html"><a href="advance-topics.html#machine-learning"><i class="fa fa-check"></i><b>7.3</b> machine learning</a></li>
@@ -190,27 +158,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-whole-game" class="section level1" number="3">
-<h1 number="3"><span class="header-section-number">3</span> The whole game</h1>
+<div id="the-whole-game" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> The whole game</h1>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="figs/megamanx.png" alt="Screenshot of the first level of Megaman X (Capcom, 1993)" width="128" />
+<img src="figs/megamanx.png" alt="Screenshot of the first level of Megaman X (Capcom, 1993)"  />
 <p class="caption">
-Figure 1: Screenshot of the first level of Megaman X (Capcom, 1993)
+Figure 3.1: Screenshot of the first level of Megaman X (Capcom, 1993)
 </p>
 </div>
-<div id="analysing-trumps-tweets" class="section level2" number="3.1">
-<h2 number="3.1"><span class="header-section-number">3.1</span> Analysing Trump’s tweets</h2>
-<p>We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. This is called the “Play the Whole Game” approach by <span class="citation">Perkins (<a href="references.html#ref-perkins2010" role="doc-biblioref">2010</a>)</span>.<a href="references.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> In this example, we start with a simple research question or hypothesis. Let’s say I want to reproduce a very <a href="http://varianceexplained.org/r/trump-tweets/">famous analysis of Donald Trump’s tweets</a>. This example is very well-known in the data science world, probably because David Robinsom (one of the authors of the tidytext package) used this example to demonstrate the power of his package (and made him on the <a href="https://www.youtube.com/watch?v=vD11aSCpF4s&amp;feature=share">television</a>). In David Robinson’s TV-worthy conclusion, he found that tweets from an Android phone (probably from Trump himshelf) are more negative than tweets from an iPhone (probably from his campaign). We can refomulate this into a research question: are tweets from Donald Trump’s twitter account tweeted using an iPhone more positive than those tweeted using an Android phone?</p>
+<div id="analysing-trumps-tweets" class="section level2">
+<h2><span class="header-section-number">3.1</span> Analysing Trump’s tweets</h2>
+<p>We are going to use an example to illustrate the whole process of a typical automated content analysis scenario. This is called the “Play the Whole Game” approach by <span class="citation">Perkins (<a href="#ref-perkins2010">2010</a>)</span>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> In this example, we start with a simple research question or hypothesis. Let’s say I want to reproduce a very <a href="http://varianceexplained.org/r/trump-tweets/">famous analysis of Donald Trump’s tweets</a>. This example is very well-known in the data science world, probably because David Robinsom (one of the authors of the tidytext package) used this example to demonstrate the power of his package (and made him on the <a href="https://www.youtube.com/watch?v=vD11aSCpF4s&amp;feature=share">television</a>). In David Robinson’s TV-worthy conclusion, he found that tweets from an Android phone (probably from Trump himshelf) are more negative than tweets from an iPhone (probably from his campaign). We can refomulate this into a research question: are tweets from Donald Trump’s twitter account tweeted using an iPhone more positive than those tweeted using an Android phone?</p>
 <p>There are many elements to unpack from the above paragraph, but the above paragraph illustrates how data scientists and automated content analysis practitioners approach the problem differently. The utmost important element is: All automated content analysis project must have hypotheses to test or research questions to answer. If a project without hypotheses or research questions, it can hardly be called automated content analysis (see Chapter 2 for longer discussion). We also need to specify the context we are interested in analyzing (Donald Trump and his Twitter). Later on, we need to think about the operationalization of variables (<em>what is positive?</em>), data collection plan and data analysis strategy.</p>
-<p>In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is simple: It needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much to ask.<a href="references.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by <span class="citation">Liang and Zhu (<a href="references.html#ref-liang2017" role="doc-biblioref">2017</a>)</span> is probably a good start. <span class="citation">Munzert et al. (<a href="references.html#ref-munzert2014" role="doc-biblioref">2014</a>)</span> ’s <em>Automated Data Collection with R</em> is an in-depth manual.</p>
+<p>In this book, however, we are not going to focus on 1) how to form hypotheses or research questions and 2) how to collect your (text) data. The reason for excluding the former is simple: It needs to be supported by communication theories. As a book that is intented as an research methods book, it is probably a bit too much to ask.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> For the latter, the exclusion of it is due to the fact that there are good papers and textbooks available. The book chapter by <span class="citation">Liang and Zhu (<a href="#ref-liang2017">2017</a>)</span> is probably a good start. <span class="citation">Munzert et al. (<a href="#ref-munzert2014">2014</a>)</span> ’s <em>Automated Data Collection with R</em> is an in-depth manual.</p>
 <p>At this point, you should probably go to preregister the hypotheses of this automated content analysis project. And then you should study the rtweet package by the wonderful Michael Kearney. Let’s suppose your data is now magically available. In the companion website of this book, you can find the data file with tweets from Donald Trump’s tweet account before he assumes duty as the president of the United States (2015-Jan to 2016-Dec). We need to select this time range because Donald Trump’s account did not tweet anymore using an Android phone after March, 2017.</p>
 <p>The data looks like this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="the-whole-game.html#cb2-1"></a><span class="kw">require</span>(tidyverse)</span>
-<span id="cb2-2"><a href="the-whole-game.html#cb2-2"></a><span class="kw">require</span>(quanteda)</span>
-<span id="cb2-3"><a href="the-whole-game.html#cb2-3"></a><span class="kw">require</span>(rio)</span>
-<span id="cb2-4"><a href="the-whole-game.html#cb2-4"></a><span class="kw">require</span>(lubridate)</span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="the-whole-game.html#cb3-1"></a>trump_tweets &lt;-<span class="st"> </span><span class="kw">import</span>(<span class="st">&#39;./data/trump.json&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span>as_tibble <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">created_at =</span> <span class="kw">parse_date_time</span>(created_at, <span class="dt">orders =</span> <span class="st">&#39;%a %b %d %H:%M:%S %z %Y&#39;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(created_at <span class="op">&gt;=</span><span class="st"> </span><span class="kw">ymd_hms</span>(<span class="st">&#39;2015-01-01 00:00:00&#39;</span>) <span class="op">&amp;</span><span class="st"> </span>created_at <span class="op">&lt;=</span><span class="st"> </span><span class="kw">ymd_hms</span>(<span class="st">&#39;2016-12-31 23:59:59&#39;</span>)) </span>
-<span id="cb3-2"><a href="the-whole-game.html#cb3-2"></a>trump_tweets</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(tidyverse)
+<span class="kw">require</span>(quanteda)
+<span class="kw">require</span>(rio)
+<span class="kw">require</span>(lubridate)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets &lt;-<span class="st"> </span><span class="kw">import</span>(<span class="st">&#39;./data/trump.json&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span>as_tibble <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">created_at =</span> <span class="kw">parse_date_time</span>(created_at, <span class="dt">orders =</span> <span class="st">&#39;%a %b %d %H:%M:%S %z %Y&#39;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(created_at <span class="op">&gt;=</span><span class="st"> </span><span class="kw">ymd_hms</span>(<span class="st">&#39;2015-01-01 00:00:00&#39;</span>) <span class="op">&amp;</span><span class="st"> </span>created_at <span class="op">&lt;=</span><span class="st"> </span><span class="kw">ymd_hms</span>(<span class="st">&#39;2016-12-31 23:59:59&#39;</span>)) 
+trump_tweets</code></pre></div>
 <pre><code>## # A tibble: 11,761 x 7
 ##    source text  created_at          retweet_count favorite_count is_retweet
 ##    &lt;chr&gt;  &lt;chr&gt; &lt;dttm&gt;                      &lt;int&gt;          &lt;int&gt; &lt;lgl&gt;     
@@ -227,45 +195,45 @@ Figure 1: Screenshot of the first level of Megaman X (Capcom, 1993)
 ## # … with 11,751 more rows, and 1 more variable: id_str &lt;chr&gt;</code></pre>
 <p>Up to this point, you might notice this book uses tidyverse—or more precisely, dplyr—for data manipulation. Yes. If you are not familar with dplyr, it is a good idea for you to read the book R4DS (available online). The book you are reading now is not an introduction to dplyr. But as a refresher, let me show you all the dplyr you will need to deal with 80% of the situations. You probably only need to know 5 <em>verbs</em> and then combine them together. You may call these 6 verbs “Big Six” if you like.</p>
 </div>
-<div id="an-express-summary-of-tidyverse" class="section level2" number="3.2">
-<h2 number="3.2"><span class="header-section-number">3.2</span> An express summary of tidyverse</h2>
+<div id="an-express-summary-of-tidyverse" class="section level2">
+<h2><span class="header-section-number">3.2</span> An express summary of tidyverse</h2>
 <p>The first verb is <strong>select</strong>. It is used to select particular column(s) from a data frame. By the way, our data is a <strong>tibble</strong>, an arguably nicer version of data frame. Suppose we want to select only the columns source and text.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="the-whole-game.html#cb5-1"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(source, text)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(source, text)</code></pre></div>
 <pre><code>## # A tibble: 11,761 x 2
-##    source           text                                                   
-##    &lt;chr&gt;            &lt;chr&gt;                                                  
-##  1 Twitter for iPh… &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\…
-##  2 Twitter for iPh… &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3…
-##  3 Twitter for And… &quot;Happy New Year to all, including to my many enemies a…
-##  4 Twitter for And… &quot;Russians are playing @CNN and @NBCNews for such fools…
-##  5 Twitter for iPh… &quot;Join @AmerIcan32, founded by Hall of Fame legend @Jim…
-##  6 Twitter for And… &quot;Great move on delay (by V. Putin) - I always knew he …
-##  7 Twitter for iPh… &quot;My Administration will follow two simple rules: https…
-##  8 Twitter for iPh… &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/Sj…
-##  9 Twitter for And… &quot;not anymore. The beginning of the end was the horribl…
-## 10 Twitter for And… &quot;We cannot continue to let Israel be treated with such…
+##    source           text                                                        
+##    &lt;chr&gt;            &lt;chr&gt;                                                       
+##  1 Twitter for iPh… &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\nhttp…
+##  2 Twitter for iPh… &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3hBz&quot;  
+##  3 Twitter for And… &quot;Happy New Year to all, including to my many enemies and th…
+##  4 Twitter for And… &quot;Russians are playing @CNN and @NBCNews for such fools - fu…
+##  5 Twitter for iPh… &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimBrown…
+##  6 Twitter for And… &quot;Great move on delay (by V. Putin) - I always knew he was v…
+##  7 Twitter for iPh… &quot;My Administration will follow two simple rules: https://t.…
+##  8 Twitter for iPh… &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjGBggl…
+##  9 Twitter for And… &quot;not anymore. The beginning of the end was the horrible Ira…
+## 10 Twitter for And… &quot;We cannot continue to let Israel be treated with such tota…
 ## # … with 11,751 more rows</code></pre>
 <p>The second verb is <strong>filter</strong>. It is used to filter rows from a tibble based on certain criteria. Suppose you want to get all the rows which were tweeted from an Android phone.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="the-whole-game.html#cb7-1"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(source, text)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(source, text)</code></pre></div>
 <pre><code>## # A tibble: 7,015 x 2
-##    source           text                                                   
-##    &lt;chr&gt;            &lt;chr&gt;                                                  
-##  1 Twitter for And… Happy New Year to all, including to my many enemies an…
-##  2 Twitter for And… Russians are playing @CNN and @NBCNews for such fools …
-##  3 Twitter for And… Great move on delay (by V. Putin) - I always knew he w…
-##  4 Twitter for And… not anymore. The beginning of the end was the horrible…
-##  5 Twitter for And… We cannot continue to let Israel be treated with such …
-##  6 Twitter for And… Doing my best to disregard the many inflammatory Presi…
-##  7 Twitter for And… The U.S. Consumer Confidence Index for December surged…
-##  8 Twitter for And… President Obama campaigned hard (and personally) in th…
-##  9 Twitter for And… The DJT Foundation, unlike most foundations, never pai…
-## 10 Twitter for And… I gave millions of dollars to DJT Foundation, raised o…
+##    source           text                                                        
+##    &lt;chr&gt;            &lt;chr&gt;                                                       
+##  1 Twitter for And… Happy New Year to all, including to my many enemies and tho…
+##  2 Twitter for And… Russians are playing @CNN and @NBCNews for such fools - fun…
+##  3 Twitter for And… Great move on delay (by V. Putin) - I always knew he was ve…
+##  4 Twitter for And… not anymore. The beginning of the end was the horrible Iran…
+##  5 Twitter for And… We cannot continue to let Israel be treated with such total…
+##  6 Twitter for And… Doing my best to disregard the many inflammatory President …
+##  7 Twitter for And… The U.S. Consumer Confidence Index for December surged near…
+##  8 Twitter for And… President Obama campaigned hard (and personally) in the ver…
+##  9 Twitter for And… The DJT Foundation, unlike most foundations, never paid fee…
+## 10 Twitter for And… I gave millions of dollars to DJT Foundation, raised or rec…
 ## # … with 7,005 more rows</code></pre>
 <p>In the above example, we combine two verbs (<em>filter</em> and <em>select</em>) using the pipe (%&gt;%) operator. Some might disagree, but this method is more elegant. If you can tell a story using your dplyr code, it is probably a good code. For example, you can tell a story using the above code as such: We have our <em>trump_tweets</em> data, <strong>and then</strong> we <em>filter</em> all tweets where <em>source</em> contains “Android”, <strong>and then</strong> we <em>select</em> only the <em>source</em> and <em>text</em> columns.</p>
 <p>So, the pipe operators in the above code are corresponding to all “and then” in the story.</p>
 <p>From the above story, you might notice that the <em>source</em> column is recording from which device the tweet was tweeted, e.g. Android.</p>
 <p>It is a good idea to see what are the other variants of “source” in our data. The next verb that we need to know is <strong>group_by</strong>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="the-whole-game.html#cb9-1"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(source)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(source)</code></pre></div>
 <pre><code>## # A tibble: 11,761 x 7
 ## # Groups:   source [15]
 ##    source text  created_at          retweet_count favorite_count is_retweet
@@ -281,14 +249,14 @@ Figure 1: Screenshot of the first level of Megaman X (Capcom, 1993)
 ##  9 Twitt… &quot;not… 2016-12-28 14:25:11         34542         117710 FALSE     
 ## 10 Twitt… &quot;We … 2016-12-28 14:19:46         30237         106626 FALSE     
 ## # … with 11,751 more rows, and 1 more variable: id_str &lt;chr&gt;</code></pre>
-<p>It seems that we have done nothing here. But you might notice the output says “Groups: source [16]”. <em>group_by</em> works the best when it is combined with <strong>summarise</strong>. dplyr is smart enough to accept both British and American spellings. So you can use <em>summarize</em> if you want.<a href="references.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> We use <em>summarise</em> to generate one-element summary of your data. For example, you want to get the total number of rows of this data.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="the-whole-game.html#cb11-1"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">ntweets =</span> <span class="kw">n</span>())</span></code></pre></div>
+<p>It seems that we have done nothing here. But you might notice the output says “Groups: source [16]”. <em>group_by</em> works the best when it is combined with <strong>summarise</strong>. dplyr is smart enough to accept both British and American spellings. So you can use <em>summarize</em> if you want.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> We use <em>summarise</em> to generate one-element summary of your data. For example, you want to get the total number of rows of this data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">ntweets =</span> <span class="kw">n</span>())</code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   ntweets
 ##     &lt;int&gt;
 ## 1   11761</code></pre>
 <p>Using the above code, we can tell a story as such: We have our <em>trump_tweets</em> data, and then we want to summarise our data as <em>ntweets</em> whereas ntweets equals to n(), i.e. number of rows. Let’s try to use this verb with <em>group_by</em>:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="the-whole-game.html#cb13-1"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(source) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">ntweets =</span> <span class="kw">n</span>())</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(source) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">ntweets =</span> <span class="kw">n</span>())</code></pre></div>
 <pre><code>## # A tibble: 15 x 2
 ##    source                   ntweets
 ##    &lt;chr&gt;                      &lt;int&gt;
@@ -307,10 +275,10 @@ Figure 1: Screenshot of the first level of Megaman X (Capcom, 1993)
 ## 13 Twitter Mirror for iPad        1
 ## 14 Twitter QandA                 10
 ## 15 Twitter Web Client          2097</code></pre>
-<p>The story of the above code is: We have our <em>trump_tweets</em> … probably I can skip this part now, and then we group our data by <em>source</em> and then we summarise our data as <em>ntweets</em> whereas ntweets equals to n(), i.e. number of rows. So, what <em>group_by</em> does, is to split the data into groups by a certain column (or columns). The subsequent steps are then became group-based analysis. This principle is called “Split-Apply-Combine strategy” by <span class="citation">Wickham (<a href="references.html#ref-wickham2011" role="doc-biblioref">2011</a>)</span>.</p>
+<p>The story of the above code is: We have our <em>trump_tweets</em> … probably I can skip this part now, and then we group our data by <em>source</em> and then we summarise our data as <em>ntweets</em> whereas ntweets equals to n(), i.e. number of rows. So, what <em>group_by</em> does, is to split the data into groups by a certain column (or columns). The subsequent steps are then became group-based analysis. This principle is called “Split-Apply-Combine strategy” by <span class="citation">Wickham (<a href="#ref-wickham2011">2011</a>)</span>.</p>
 <p>this group-based analysis shows that there are many variants! In this analysis, we keep only those tweets from iPhone and Android only. So, which verb we should use? I give you 10 seconds to think.</p>
 <p>Well…</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="the-whole-game.html#cb15-1"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>))</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>))</code></pre></div>
 <pre><code>## # A tibble: 9,384 x 7
 ##    source text  created_at          retweet_count favorite_count is_retweet
 ##    &lt;chr&gt;  &lt;chr&gt; &lt;dttm&gt;                      &lt;int&gt;          &lt;int&gt; &lt;lgl&gt;     
@@ -326,173 +294,160 @@ Figure 1: Screenshot of the first level of Megaman X (Capcom, 1993)
 ## 10 Twitt… &quot;We … 2016-12-28 14:19:46         30237         106626 FALSE     
 ## # … with 9,374 more rows, and 1 more variable: id_str &lt;chr&gt;</code></pre>
 <p><strong>mutate</strong> is for creating new columns.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="the-whole-game.html#cb17-1"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">android =</span> <span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(android, text)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">android =</span> <span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(android, text)</code></pre></div>
 <pre><code>## # A tibble: 9,384 x 2
-##    android text                                                            
-##    &lt;lgl&gt;   &lt;chr&gt;                                                           
-##  1 FALSE   &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\nhttps://…
-##  2 FALSE   &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3hBz&quot;      
-##  3 TRUE    &quot;Happy New Year to all, including to my many enemies and those …
-##  4 TRUE    &quot;Russians are playing @CNN and @NBCNews for such fools - funny …
-##  5 FALSE   &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimBrownNFL3…
-##  6 TRUE    &quot;Great move on delay (by V. Putin) - I always knew he was very …
-##  7 FALSE   &quot;My Administration will follow two simple rules: https://t.co/Z…
-##  8 FALSE   &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjGBgglIuQ&quot; 
-##  9 TRUE    &quot;not anymore. The beginning of the end was the horrible Iran de…
-## 10 TRUE    &quot;We cannot continue to let Israel be treated with such total di…
+##    android text                                                                 
+##    &lt;lgl&gt;   &lt;chr&gt;                                                                
+##  1 FALSE   &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/…
+##  2 FALSE   &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3hBz&quot;           
+##  3 TRUE    &quot;Happy New Year to all, including to my many enemies and those who h…
+##  4 TRUE    &quot;Russians are playing @CNN and @NBCNews for such fools - funny to wa…
+##  5 FALSE   &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimBrownNFL32 on …
+##  6 TRUE    &quot;Great move on delay (by V. Putin) - I always knew he was very smart…
+##  7 FALSE   &quot;My Administration will follow two simple rules: https://t.co/ZWk0j4…
+##  8 FALSE   &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjGBgglIuQ&quot;      
+##  9 TRUE    &quot;not anymore. The beginning of the end was the horrible Iran deal, a…
+## 10 TRUE    &quot;We cannot continue to let Israel be treated with such total disdain…
 ## # … with 9,374 more rows</code></pre>
 <p>Last but not least, <strong>arrange</strong> is for sorting.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="the-whole-game.html#cb19-1"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">android =</span> <span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(android, text) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(android)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">android =</span> <span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(android, text) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(android)</code></pre></div>
 <pre><code>## # A tibble: 9,384 x 2
-##    android text                                                            
-##    &lt;lgl&gt;   &lt;chr&gt;                                                           
-##  1 FALSE   &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\nhttps://…
-##  2 FALSE   &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3hBz&quot;      
-##  3 FALSE   &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimBrownNFL3…
-##  4 FALSE   &quot;My Administration will follow two simple rules: https://t.co/Z…
-##  5 FALSE   &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjGBgglIuQ&quot; 
-##  6 FALSE   &quot;The world was gloomy before I won - there was no hope. Now the…
-##  7 FALSE   &quot;#MerryChristmas https://t.co/5GgDmJrGMS&quot;                       
-##  8 FALSE   &quot;Happy #Hanukkah https://t.co/UvZwtykV1E&quot;                       
-##  9 FALSE   &quot;As to the U.N., things will be different after Jan. 20th.&quot;     
-## 10 FALSE   &quot;The resolution being considered at the United Nations Security…
+##    android text                                                                 
+##    &lt;lgl&gt;   &lt;chr&gt;                                                                
+##  1 FALSE   &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/…
+##  2 FALSE   &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3hBz&quot;           
+##  3 FALSE   &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimBrownNFL32 on …
+##  4 FALSE   &quot;My Administration will follow two simple rules: https://t.co/ZWk0j4…
+##  5 FALSE   &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjGBgglIuQ&quot;      
+##  6 FALSE   &quot;The world was gloomy before I won - there was no hope. Now the mark…
+##  7 FALSE   &quot;#MerryChristmas https://t.co/5GgDmJrGMS&quot;                            
+##  8 FALSE   &quot;Happy #Hanukkah https://t.co/UvZwtykV1E&quot;                            
+##  9 FALSE   &quot;As to the U.N., things will be different after Jan. 20th.&quot;          
+## 10 FALSE   &quot;The resolution being considered at the United Nations Security Coun…
 ## # … with 9,374 more rows</code></pre>
 <p>It seems that it did nothing. We can set it to arrange by descending order. So that the tweets from Android are on top.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="the-whole-game.html#cb21-1"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">android =</span> <span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(android, text) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(android))</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">android =</span> <span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(android, text) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(android))</code></pre></div>
 <pre><code>## # A tibble: 9,384 x 2
-##    android text                                                            
-##    &lt;lgl&gt;   &lt;chr&gt;                                                           
-##  1 TRUE    Happy New Year to all, including to my many enemies and those w…
-##  2 TRUE    Russians are playing @CNN and @NBCNews for such fools - funny t…
-##  3 TRUE    Great move on delay (by V. Putin) - I always knew he was very s…
-##  4 TRUE    not anymore. The beginning of the end was the horrible Iran dea…
-##  5 TRUE    We cannot continue to let Israel be treated with such total dis…
-##  6 TRUE    Doing my best to disregard the many inflammatory President O st…
-##  7 TRUE    The U.S. Consumer Confidence Index for December surged nearly f…
-##  8 TRUE    President Obama campaigned hard (and personally) in the very im…
-##  9 TRUE    The DJT Foundation, unlike most foundations, never paid fees, r…
-## 10 TRUE    I gave millions of dollars to DJT Foundation, raised or recieve…
+##    android text                                                                 
+##    &lt;lgl&gt;   &lt;chr&gt;                                                                
+##  1 TRUE    Happy New Year to all, including to my many enemies and those who ha…
+##  2 TRUE    Russians are playing @CNN and @NBCNews for such fools - funny to wat…
+##  3 TRUE    Great move on delay (by V. Putin) - I always knew he was very smart! 
+##  4 TRUE    not anymore. The beginning of the end was the horrible Iran deal, an…
+##  5 TRUE    We cannot continue to let Israel be treated with such total disdain …
+##  6 TRUE    Doing my best to disregard the many inflammatory President O stateme…
+##  7 TRUE    The U.S. Consumer Confidence Index for December surged nearly four p…
+##  8 TRUE    President Obama campaigned hard (and personally) in the very importa…
+##  9 TRUE    The DJT Foundation, unlike most foundations, never paid fees, rent, …
+## 10 TRUE    I gave millions of dollars to DJT Foundation, raised or recieved mil…
 ## # … with 9,374 more rows</code></pre>
 <p>Oh, yea! We have our data! So we should do our sentiment analysis now, right?</p>
 <p><strong>NO!</strong> Nein! Non! いいえ! 唔係!</p>
 </div>
-<div id="creating-ground-truth-data" class="section level2" number="3.3">
-<h2 number="3.3"><span class="header-section-number">3.3</span> Creating ground truth data</h2>
+<div id="creating-ground-truth-data" class="section level2">
+<h2><span class="header-section-number">3.3</span> Creating ground truth data</h2>
 <p>This is another split-path between data scientists and automated content analysts.</p>
-<p>If you know nothing about automated content analysis, the traditional way of dealing with our data is to manually <strong>code</strong> all tweets. The word “code” as a verb can create confusion here, because it can also mean “programming.”<a href="references.html#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> In this programming-heavy book, I am going to use another verb for “coding” (in the social sciences’ sense): data categorizing. I believe this term can still capture most, but not all, nuances of the verb “coding” (in the social sciences’ sense). For the verb “coding” in the programming’s sense, I am going to use, as you can guess, programming.</p>
+<p>If you know nothing about automated content analysis, the traditional way of dealing with our data is to manually <strong>code</strong> all tweets. The word “code” as a verb can create confusion here, because it can also mean “programming.”<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> In this programming-heavy book, I am going to use another verb for “coding” (in the social sciences’ sense): data categorizing. I believe this term can still capture most, but not all, nuances of the verb “coding” (in the social sciences’ sense). For the verb “coding” in the programming’s sense, I am going to use, as you can guess, programming.</p>
 <p>Sorry for the detour. Traditionally, social scientists approach this problem by catagorizing the unstructured data into a form suitable for computer analysis. A tweet is a bunch of characters that a (naive) computer cannot extract meanings—or semantics—out of it. However, whether or not a tweet is positive is a semantic problem. Homo sapiens have a brain and some of us have the knowledge in English to determine the semantics of a piece of text. We need to tell the computer, what semantically is expressed in a tweet. This procedure is called data categorization.</p>
 <p>In an academic setting, it usually means the principal investigator of this project (i.e. you) would assemble a team of student assistants to categorize all tweets by reading them one by one and then asserting every one of them if they are positive or not. In order to ensure interrater reliability, we usually assign at least two student assistants to read one tweet.</p>
 <p>This procedure of data categorization is notoriously expensive. In Germany, for instance, one needs to pay a student assistant €15.8 per hour in 2020. Let’s assume a student assistant can read 4 tweets per minute. In order to read every single tweets (n = 15,267) by two students, it takes (15,267 x 2) / 4 = 7,633.5 man-minutes or 127.2 man-hours. Therefore, the principal investigator (i.e you) needs to pay €2009.76 just for the data categorization. It is not a handsome amount of money: You can buy 4464 packs of instant ramen that you can eat for about a year. But remember, now you are not doing this for your PhD thesis. It is just an exercise of a stupid book. If you are willing to pay this: “Danke schön!”, your student assistants say. If you are not willing to pay this, what should you do?</p>
-<p>Instead of asking your student assistants to categorize all data, we can use a computer to categorize the data. But as I said previously, a (naive) computer cannot extract semantics from a piece of text. However, it can extract an approximated version of semantics —or a <strong>surrogate measure</strong>— from text content. So, what is a surrogate surrogate? The dictionary by <span class="citation">Upton and Cook (<a href="references.html#ref-upton2014" role="doc-biblioref">2014</a>)</span> gives this definition: “A variable that can be measured (or is easy to measure) that is used in place of one that cannot be measured (or is difficult to measure)”. A very similar term is “proxy measure” but there is one crucial difference: Proxy measure is a variable that is used in place of one that cannot be measure. Period. There is no “or” after it. As indicated previously, we <strong>can</strong> measure the negativity or a tweet by manual data categorization, it is just “diffuclt to measure” due to the cost. Thus, we use a surrogate measure instead.</p>
+<p>Instead of asking your student assistants to categorize all data, we can use a computer to categorize the data. But as I said previously, a (naive) computer cannot extract semantics from a piece of text. However, it can extract an approximated version of semantics —or a <strong>surrogate measure</strong>— from text content. So, what is a surrogate surrogate? The dictionary by <span class="citation">Upton and Cook (<a href="#ref-upton2014">2014</a>)</span> gives this definition: “A variable that can be measured (or is easy to measure) that is used in place of one that cannot be measured (or is difficult to measure)”. A very similar term is “proxy measure” but there is one crucial difference: Proxy measure is a variable that is used in place of one that cannot be measure. Period. There is no “or” after it. As indicated previously, we <strong>can</strong> measure the negativity or a tweet by manual data categorization, it is just “diffuclt to measure” due to the cost. Thus, we use a surrogate measure instead.</p>
 <p>A good surrogate measure should have a strong correlation with the original variable. For example, it is difficult to assess the wealth of a family. It is just difficult, not impossible. As a surrogate measure, we can use the value of the family’s house as an approximation. We know that in normal circumstances, the two variables (the wealth of the family and the value of the family’s house) should be correlated. But for this correlation to be valid, there are many assumptions: people can actually afford a house, rich people buy expensive houses and the housing market is not regulated, just to name three. A surrogate measure is good only when the <strong>domain</strong> of the measurement can hold the assumptions that maintain the correlation between the surrogate measure and the actual measure. We will come back to this point in Chapter 4.</p>
 <p>We —as a practitioner of automated content analysis— cannot blindly accept a surrogate measure is always good. It is related to the fact that we are doing automated content analysis, which is actually a content analysis. In the next chapter, we will come back to the validity requirement of <strong>any</strong> content analysis, automated or not.</p>
 <p>Up to this point, we have a dilemma: Manual data categorization is too expensive but automated content analysis is just a surrogate measure. What should we do?</p>
 <p>A simple solution is to test whether the domain of our measurement fits the original assumptions. Therefore, we need to test the correlation between the approximated semantics extracted by the computer and the semantics extracted by humans. As said before, a good surrogate measure should have a strong correlation with the original measurement. For this, we do not need to manually categorize a lot of tweets. A randomly selected handful of tweets will do. We have a name for these manually categorized data for testing the validity of a tool: <strong>ground truth data</strong>.</p>
 <p>We will talk more on how to create ground truth data in Chapter 4. As an excercise of creating ground truth data, let’s say we want to create a set of ground truth data with a random sample of 30 tweets. It can be done easily with:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="the-whole-game.html#cb23-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb23-2"><a href="the-whole-game.html#cb23-2"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sample_n</span>(<span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(text) <span class="op">%&gt;%</span><span class="st"> </span>rio<span class="op">::</span><span class="kw">export</span>(<span class="st">&#39;data/trump_tweet30.rds&#39;</span>)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
+trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sample_n</span>(<span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(text) <span class="op">%&gt;%</span><span class="st"> </span>rio<span class="op">::</span><span class="kw">export</span>(<span class="st">&#39;data/trump_tweet30.rds&#39;</span>)</code></pre></div>
 <p>And then, I ask my team of two student assistants to manually categorize these 30 tweets. This task should take (30 x 2) / 4 = 15 man-minutes. The cost of it (€3.95) is only a few packs of instant ramen. Or, if you are middle class and don’t mind damaging the environment, it is the cost of a “coffee to go”.</p>
 <p>The coding procedure is simple, or even simplified. The two student assistants categorize the 30 tweets into a category of whether or not the tweet is negative with a 5-point likert scale, i.e.</p>
 <hr />
 <p><strong>Wow, I have had so many calls from high ranking people laughing at the stupidity of the failing @nytimes piece. Massive front page for that!</strong></p>
 <p>How negative is the above tweet?</p>
-<p>1.Very negative
-2.Negative
-3.Neutral
-4.Positive
-5.Very positive</p>
+<p>1.Very negative 2.Negative 3.Neutral 4.Positive 5.Very positive</p>
 <hr />
 <p>And the data looks like this:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="the-whole-game.html#cb24-1"></a>trump_tweet30_coded &lt;-<span class="st">  </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/trump_tweet30_coded.rds&quot;</span>)</span>
-<span id="cb24-2"><a href="the-whole-game.html#cb24-2"></a>trump_tweet30_coded</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweet30_coded &lt;-<span class="st">  </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/trump_tweet30_coded.rds&quot;</span>)
+trump_tweet30_coded</code></pre></div>
 <pre><code>## # A tibble: 30 x 3
-##    text                                                       rater1 rater2
-##    &lt;chr&gt;                                                       &lt;int&gt;  &lt;int&gt;
-##  1 &quot;\&quot;@RealityTVBliss: If I was ever on #CelebrityApprentice…      3      3
-##  2 &quot;Wow, I have had so many calls from high ranking people l…      2      2
-##  3 &quot;\&quot;@pjs307: @WalshFreedom Will be highest rated show ever…      4      4
-##  4 &quot;\&quot;@BizMotivationTV: Go to work, be smart, think positive…      4      4
-##  5 &quot;\&quot;@Jimbos2002:  @Morning_Joe Video: Hillary referring to…      2      2
-##  6 &quot;\&quot;@DavidNYCT: @realDonaldTrump We will!\&quot;&quot;                     3      3
-##  7 &quot;\&quot;@OscarBagPledge: Congrats @LeezaGibbons @ApprenticeNBC…      3      4
-##  8 &quot;Thank you Maine, New Hampshire and Iowa. The waiting is …      4      4
-##  9 &quot;Via @trscoop: “Mark Levin DEFENDS Trump: Hillary Clinton…      1      1
-## 10 &quot;National Review is a failing publication that has lost i…      1      2
+##    text                                                            rater1 rater2
+##    &lt;chr&gt;                                                            &lt;int&gt;  &lt;int&gt;
+##  1 &quot;\&quot;@RealityTVBliss: If I was ever on #CelebrityApprentice, the…      3      3
+##  2 &quot;Wow, I have had so many calls from high ranking people laughi…      2      2
+##  3 &quot;\&quot;@pjs307: @WalshFreedom Will be highest rated show ever, @re…      4      4
+##  4 &quot;\&quot;@BizMotivationTV: Go to work, be smart, think positively an…      4      4
+##  5 &quot;\&quot;@Jimbos2002:  @Morning_Joe Video: Hillary referring to blac…      2      2
+##  6 &quot;\&quot;@DavidNYCT: @realDonaldTrump We will!\&quot;&quot;                          3      3
+##  7 &quot;\&quot;@OscarBagPledge: Congrats @LeezaGibbons @ApprenticeNBC @rea…      3      4
+##  8 &quot;Thank you Maine, New Hampshire and Iowa. The waiting is OVER!…      4      4
+##  9 &quot;Via @trscoop: “Mark Levin DEFENDS Trump: Hillary Clinton is a…      1      1
+## 10 &quot;National Review is a failing publication that has lost it&#39;s w…      1      2
 ## # … with 20 more rows</code></pre>
 <p>We consider the two columns of <code>coder1</code> and <code>coder2</code> our ground truth data. In the next section, we will use these ground truth data to validate the automatically extracted semantics from Trump’s tweets.</p>
 </div>
-<div id="automated-sentiment-analysis-afinn" class="section level2" number="3.4">
-<h2 number="3.4"><span class="header-section-number">3.4</span> Automated sentiment analysis: AFINN</h2>
+<div id="automated-sentiment-analysis-afinn" class="section level2">
+<h2><span class="header-section-number">3.4</span> Automated sentiment analysis: AFINN</h2>
 <p>Now, with the ground truth data, we can finally do the so called ‘sentiment analysis’. Before, we really do it, I would like to remind you for one last time that the semantics extracted by these method are an approximated version of the true semantics. Thus, it is a surrogate at best.</p>
 <p>The simpliest method for doing a sentiment analysis is using a dictionary-based method. These methods are explained in Chapter 6. In short, these methods rely on two simple assumptions to calculate the overall sentiment of a piece of text. A dictionary is a collection of words. For example, a negative dictionary might have words that contain negative meanings, for example, f… <em>fool</em>, f… <em>foolish</em>, or f… <em>faulty</em>. A positive dictionary might have words such as <em>good</em>, <em>nice</em>, <em>wonderful</em>. A piece of text with a lot of words in the negative dictionary should have a higher negativity.</p>
-<p>There are many of these dictionaries available. These readily available dictionaries are called <strong>off-the-shelf dictionaries</strong>. In Chapter 6, we will discuss the problems of using them. But one way to avoid those problems is to first create ground truth data and validate these dictionaries before use. Another way to avoid those problems is a to use a theory-informed dictionary. We will also talk about how to choose a dictionary in Chapter 6. Here, we are going to use the AFINN dictionary <span class="citation">(Nielsen <a href="references.html#ref-nielsen2011" role="doc-biblioref">2011</a>)</span>. It is a dictionary designed for measuring sentiment of microblog data, e.g. tweets.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="the-whole-game.html#cb26-1"></a>afinn &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/afinn.RDS&quot;</span>)</span>
-<span id="cb26-2"><a href="the-whole-game.html#cb26-2"></a>afinn</span></code></pre></div>
+<p>There are many of these dictionaries available. These readily available dictionaries are called <strong>off-the-shelf dictionaries</strong>. In Chapter 6, we will discuss the problems of using them. But one way to avoid those problems is to first create ground truth data and validate these dictionaries before use. Another way to avoid those problems is a to use a theory-informed dictionary. We will also talk about how to choose a dictionary in Chapter 6. Here, we are going to use the AFINN dictionary <span class="citation">(Nielsen <a href="#ref-nielsen2011">2011</a>)</span>. It is a dictionary designed for measuring sentiment of microblog data, e.g. tweets.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">afinn &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/afinn.RDS&quot;</span>)
+afinn</code></pre></div>
 <pre><code>## Dictionary object with 11 key entries.
 ## - [neg5]:
 ##   - bastard, bastards, bitch, bitches, cock, cocksucker, cocksuckers, cunt, motherfucker, motherfucking, niggas, nigger, prick, slut, son-of-a-bitch, twat
 ## - [neg4]:
-##   - ass, assfucking, asshole, bullshit, catastrophic, damn, damned, damnit, dick, dickhead, fraud, frauds, fraudster, fraudsters, fraudulence, fraudulent, fuck, fucked, fucker, fuckers, fuckface, fuckhead, fucking, fucktard, fuked, fuking, hell, jackass, jackasses, piss, pissed, rape, rapist, scumbag, shit, shithead, shrew, torture, tortured, tortures, torturing, whore, wtf
+##   - ass, assfucking, asshole, bullshit, catastrophic, damn, damned, damnit, dick, dickhead, fraud, frauds, fraudster, fraudsters, fraudulence, fraudulent, fuck, fucked, fucker, fuckers [ ... and 23 more ]
 ## - [neg3]:
-##   - abhor, abhorred, abhorrent, abhors, abuse, abused, abuses, abusive, acrimonious, agonise, agonised, agonises, agonising, agonize, agonized, agonizes, agonizing, anger, angers, angry, anguish, anguished, apathetic, apathy, apeshit, arrested, assassination, assassinations, awful, bad, badass, badly, bankrupt, bankster, betray, betrayal, betrayed, betraying, betrays, bloody, boring, brainwashing, bribe, can&#39;t stand, catastrophe, charged, charmless, chastise, chastised, chastises, chastising, cheat, cheated, cheater, cheaters, cheats, colluding, conspiracy, cover-up, crap, crime, criminal, criminals, crisis, cruel, cruelty, damage, damages, dead, deceit, deceitful, deceive, deceived, deceives, deceiving, deception, defect, defects, despair, despairing, despairs, desperate, desperately, despondent, destroy, destroyed, destroying, destroys, destruction, destructive, die, died, dipshit, dire, direful, disastrous, disgust, disgusted, disgusting, distrust, distrustful, does not work, douche, douchebag, dreadful, dumb, dumbass, evil, fag, faggot, faggots, fake, fakes, faking, falsified, falsify, fatalities, fatality, fed up, felonies, felony, fiasco, frenzy, frightening, fud, furious, goddamn, greed, green wash, green washing, greenwash, greenwasher, greenwashers, greenwashing, guilt, guilty, hate, hated, haters, hates, hating, heartbreaking, heartbroken, horrendous, horrible, horrific, horrified, humiliated, humiliation, hysteria, hysterical, hysterics, idiot, idiotic, illegal, imbecile, irate, irritate, irritated, irritating, jerk, kill, killed, killing, kills, liar, liars, loathe, loathed, loathes, loathing, loose, looses, loser, losing, loss, lost, lunatic, lunatics, mad, maddening, madly, madness, mediocrity, miserable, misleading, moron, murdering, murderous, nasty, no fun, not working, nuts, obnoxious, outrage, outraged, panic, panicked, panics, perjury, pissing, pseudoscience, racism, racist, racists, rant, ranter, ranters, rants, ridiculous, scandal, scandalous, scandals, screwed up, selfish, selfishness, shitty, sinful, slavery, spammer, spammers, suck, sucks, swindle, swindles, swindling, terrible, terribly, terrified, terror, terrorize, terrorized, terrorizes, trauma, traumatic, treason, treasonous, ugly, victim, victimize, victimized, victimizes, victimizing, victims, vile, violence, violent, vitriolic, wanker, warning, warnings, whitewash, withdrawal, woeful, worried, worry, worrying, worse, worsen, worsened, worsening, worsens, worst, wrathful
+##   - abhor, abhorred, abhorrent, abhors, abuse, abused, abuses, abusive, acrimonious, agonise, agonised, agonises, agonising, agonize, agonized, agonizes, agonizing, anger, angers, angry [ ... and 244 more ]
 ## - [neg2]:
-##   - abandon, abandoned, abandons, abducted, abduction, abductions, accident, accidental, accidentally, accidents, accusation, accusations, accuse, accused, accuses, accusing, ache, aching, admonish, admonished, afraid, aggravate, aggravated, aggravates, aggravating, aggression, aggressions, aggressive, aghast, alarm, alarmed, alarmist, alarmists, alienation, allergic, alone, animosity, annoy, annoyance, annoyed, annoying, annoys, antagonistic, anxiety, anxious, apocalyptic, appalled, appalling, apprehensive, arrest, arrests, arrogant, ashame, ashamed, awkward, bailout, bamboozle, bamboozled, bamboozles, ban, banned, barrier, beaten, belittle, belittled, bereave, bereaved, bereaves, bereaving, biased, bitter, bitterly, bizarre, blah, blame, blamed, blames, blaming, blurry, boastful, bore, bored, bother, bothered, bothers, bothersome, boycott, boycotted, boycotting, boycotts, brooding, bullied, bully, bullying, bummer, burden, burdened, burdening, burdens, careless, cashing in, casualty, censor, censored, censors, chagrin, chagrined, chaos, chaotic, charges, cheerless, childish, choke, choked, chokes, choking, clash, clueless, cocky, coerced, collapse, collapsed, collapses, collapsing, collision, collisions, complacent, complain, complained, complains, condemn, condemnation, condemned, condemns, conflict, conflicting, conflictive, conflicts, confuse, confused, confusing, constrained, contagion, contagions, contempt, contemptuous, contemptuously, contentious, contestable, controversial, controversially, cornered, costly, coward, cowardly, crash, crazier, craziest, crazy, crestfallen, cried, cries, critic, criticism, criticize, criticized, criticizes, criticizing, critics, crushed, crying, cynic, cynical, cynicism, danger, darkest, deadlock, death, debt, defeated, defenseless, deficit, degrade, degraded, degrades, dehumanize, dehumanized, dehumanizes, dehumanizing, deject, dejected, dejecting, dejects, demoralized, denied, denier, deniers, denies, denounce, denounces, deny, denying, depressed, depressing, derail, derailed, derails, deride, derided, derides, deriding, derision, detain, detained, detention, devastate, devastated, devastating, diffident, dirt, dirtier, dirtiest, dirty, disadvantage, disadvantaged, disappoint, disappointed, disappointing, disappointment, disappointments, disappoints, disaster, disasters, disbelieve, disconsolate, disconsolation, discontented, discord, discouraged, discredited, disdain, disgrace, disgraced, disheartened, dishonest, disillusioned, disinclined, disjointed, dislike, dismal, dismayed, disorder, disorganized, disoriented, disparage, disparaged, disparages, disparaging, displeased, dispute, disputed, disputes, disputing, disqualified, disquiet, disregard, disregarded, disregarding, disregards, disrespect, disrespected, disruption, disruptions, disruptive, dissatisfied, distort, distorted, distorting, distorts, distract, distracted, distraction, distracts, distress, distressed, distresses, distressing, disturb, disturbed, disturbing, disturbs, dithering, dodging, dodgy, dolorous, dont like, doom, doomed, downcast, downhearted, downside, drained, dread, dreaded, dreading, dreary, droopy, drown, drowned, drowns, drunk, dubious, dud, dull, dumped, dupe, duped, dysfunction, eerie, eery, embarrass, embarrassed, embarrasses, embarrassing, embarrassment, embittered, emergency, enemies, enemy, ennui, enrage, enraged, enrages, enraging, enslave, enslaved, enslaves, envious, erroneous, error, errors, exaggerate, exaggerated, exaggerates, exaggerating, excluded, exhausted, expel, expelled, expelling, expels, exploit, exploited, exploiting, exploits, fad, fail, failed, failing, fails, failure, failures, fainthearted, fallen, fascist, fascists, fatigue, fatigued, fatigues, fatiguing, fear, fearful, fearing, fearsome, feeble, fidgety, fire, fired, firing, flop, flops, flu, flustered, fool, foolish, fools, foreclosure, foreclosures, forgetful, fright, frightened, frikin, frustrate, frustrated, frustrates, frustrating, frustration, fuming, gag, gagged, giddy, gloomy, glum, grave, greedy, grief, grieved, gross, gullibility, gullible, hapless, haplessness, hardship, harm, harmed, harmful, harming, harms, harried, harsh, harsher, harshest, haunted, havoc, heavyhearted, helpless, hesitant, hesitate, hindrance, hoax, homesick, hooligan, hooliganism, hooligans, hopeless, hopelessness, hostile, huckster, hunger, hurt, hurting, hurts, hypocritical, ignorance, ignorant, ignored, ill, illiteracy, illness, illnesses, impatient, imperfect, impotent, imprisoned, inability, inaction, inadequate, incapable, incapacitated, incensed, incompetence, incompetent, inconsiderate, inconvenience, inconvenient, indecisive, indifference, indifferent, indignant, indignation, indoctrinate, indoctrinated, indoctrinates, indoctrinating, ineffective, ineffectively, infected, inferior, inflamed, infringement, infuriate, infuriated, infuriates, infuriating, injured, injury, injustice, inquisition, insane, insanity, insecure, insensitive, insensitivity, insignificant, insipid, insult, insulted, insulting, insults, interrogated, interrupt, interrupted, interrupting, interruption, interrupts, intimidate, intimidated, intimidates, intimidating, intimidation, irresolute, itchy, jailed, jealous, jeopardy, joyless, lack, lackadaisical, lagged, lagging, lags, lame, lawsuit, lawsuits, lethargic, lethargy, libelous, lied, litigious, livid, lobby, lobbying, lonely, lonesome, lugubrious, meaningless, melancholy, menace, menaced, mess, messed, messing up, mindless, misbehave, misbehaved, misbehaves, misbehaving, misery, misgiving, misinformation, misinformed, misinterpreted, misreporting, misrepresentation, miss, missed, missing, mistake, mistaken, mistakes, mistaking, misunderstand, misunderstanding, misunderstands, misunderstood, moan, moaned, moaning, moans, mock, mocked, mocking, mocks, mongering, monopolize, monopolized, monopolizes, monopolizing, mourn, mourned, mournful, mourning, mourns, mumpish, murder, murderer, murders, n00b, naive, needy, negative, negativity, neglect, neglected, neglecting, neglects, nervous, nervously, nonsense, noob, nosey, not good, notorious, obliterate, obliterated, obscene, obsolete, obstacle, obstacles, obstinate, odd, offend, offended, offender, offending, offends, oppressed, oppressive, optionless, outcry, outmaneuvered, overreact, overreacted, overreaction, overreacts, oversell, overselling, oversells, oversimplification, oversimplified, oversimplifies, oversimplify, overstatement, overstatements, pain, pained, pathetic, penalty, peril, perpetrator, perpetrators, perplexed, persecute, persecuted, persecutes, persecuting, perturbed, pesky, pessimism, pessimistic, petrified, phobic, pique, piqued, piteous, pity, poised, poison, poisoned, poisons, pollute, polluted, polluter, polluters, pollutes, poor, poorer, poorest, possessive, powerless, prblm, prblms, pressured, prison, prisoner, prisoners, problem, problems, profiteer, propaganda, prosecuted, protest, protesters, protesting, protests, punish, punished, punishes, punitive, puzzled, quaking, questionable, rage, rageful, rash, rebellion, recession, reckless, refuse, refused, refusing, regret, regretful, regrets, regretted, regretting, remorse, repulsed, resentful, restless, restrict, restricted, restricting, restriction, restricts, retard, retarded, revenge, revengeful, riot, riots, risk, risks, rob, robber, robed, robing, robs, ruin, ruined, ruining, ruins, sabotage, sad, sadden, saddened, sadly, sarcastic, scam, scams, scapegoat, scapegoats, scare, scared, scary, sceptical, scold, scorn, scornful, scream, screamed, screaming, screams, screwed, sedition, seditious, self-deluded, sentence, sentenced, sentences, sentencing, severe, shaky, shame, shamed, shameful, shattered, shock, shocked, shocking, shocks, short-sighted, short-sightedness, shortage, shortages, sick, sigh, singleminded, skeptic, skeptical, skepticism, skeptics, slam, slash, slashed, slashes, slashing, sleeplessness, sluggish, smear, smog, snub, snubbed, snubbing, snubs, somber, sorrow, sorrowful, spam, spamming, speculative, spiritless, spiteful, stab, stabbed, stabs, stall, stalled, stalling, stampede, startled, starve, starved, starves, starving, steal, steals, stereotype, stereotyped, stingy, stolen, strangled, stressed, stressor, stressors, stricken, strikers, struggle, struggled, struggles, struggling, stubborn, stuck, stunned, stupid, stupidly, subversive, suffer, suffering, suffers, suicidal, suicide, suing, sulking, sulky, sullen, suspicious, swear, swearing, swears, tard, tears, tense, thorny, thoughtless, threat, threaten, threatened, threatening, threatens, threats, thwart, thwarted, thwarting, thwarts, timid, timorous, tired, tits, toothless, torn, totalitarian, totalitarianism, tout, touted, touting, touts, tragedy, tragic, trapped, travesty, trembling, tremulous, tricked, trickery, trouble, troubled, troubles, tumor, unacceptable, unappreciated, unapproved, unaware, uncomfortable, unconcerned, undermine, undermined, undermines, undermining, undeserving, undesirable, uneasy, unemployment, unethical, unfair, unfocused, unfulfilled, unhappy, unhealthy, unimpressed, unintelligent, unjust, unlovable, unloved, unmotivated, unprofessional, unresearched, unsatisfied, unsecured, unsophisticated, unstable, unsupported, unwanted, unworthy, upset, upsets, upsetting, uptight, useless, uselessness, vague, vexation, vexing, vicious, violate, violated, violates, violating, virulent, vulnerability, vulnerable, walkout, walkouts, war, warfare, warn, warned, warns, wasted, wasting, weak, weakness, weary, weep, weeping, weird, wicked, woebegone, worthless, wreck, wrong, wronged, yucky, zealot, zealots
+##   - abandon, abandoned, abandons, abducted, abduction, abductions, accident, accidental, accidentally, accidents, accusation, accusations, accuse, accused, accuses, accusing, ache, aching, admonish, admonished [ ... and 945 more ]
 ## - [neg1]:
-##   - absentee, absentees, admit, admits, admitted, affected, afflicted, affronted, alas, alert, ambivalent, anti, apologise, apologised, apologises, apologising, apologize, apologized, apologizes, apologizing, apology, attack, attacked, attacking, attacks, avert, averted, averts, avoid, avoided, avoids, await, awaited, awaits, axe, axed, banish, battle, battles, beating, bias, blind, block, blocked, blocking, blocks, bomb, broke, broken, cancel, cancelled, cancelling, cancels, cancer, cautious, challenge, chilling, clouded, collide, collides, colliding, combat, combats, contagious, contend, contender, contending, corpse, cramp, crush, crushes, crushing, cry, curse, cut, cuts, cutting, darkness, deafening, defer, deferring, defiant, delay, delayed, demand, demanded, demanding, demands, demonstration, detached, difficult, dilemma, disabling, disappear, disappeared, disappears, discard, discarded, discarding, discards, discounted, disguise, disguised, disguises, disguising, dizzy, doubt, doubted, doubtful, doubting, doubts, drag, dragged, drags, drop, dump, dumps, emptiness, empty, envies, envy, envying, escape, escapes, escaping, eviction, exclude, exclusion, excuse, exempt, expose, exposed, exposes, exposing, falling, farce, fight, flees, forced, forget, forgotten, frantic, frowning, funeral, funerals, ghost, gloom, gray, grey, gun, hacked, hard, haunt, haunts, hid, hide, hides, hiding, ignore, ignores, immobilized, impose, imposed, imposes, imposing, inhibit, ironic, irony, irrational, irreversible, isolated, jumpy, lag, lazy, leak, leaked, leave, limitation, limited, limits, litigation, longing, loom, loomed, looming, looms, lowest, lurk, lurking, lurks, made-up, mandatory, manipulated, manipulating, manipulation, mischief, mischiefs, misread, moody, mope, moping, myth, nerves, no, noisy, numb, offline, overload, overlooked, overweight, oxymoron, paradox, parley, passive, passively, pay, pensive, pileup, pitied, postpone, postponed, postpones, postponing, poverty, pressure, pretend, pretending, pretends, prevent, prevented, preventing, prevents, prosecute, prosecutes, prosecution, provoke, provoked, provokes, provoking, pushy, questioned, questioning, rainy, reject, rejected, rejecting, rejects, relentless, repulse, resign, resigned, resigning, resigns, retained, retreat, rig, rigged, sappy, seduced, shoot, shy, silencing, silly, sneaky, solemn, sore, sorry, squelched, stifled, stop, stopped, stopping, stops, strange, strangely, strike, strikes, struck, suspect, suspected, suspecting, suspects, suspend, suspended, tension, trap, unbelievable, unbelieving, uncertain, unclear, unconfirmed, unconvinced, uncredited, undecided, underestimate, underestimated, underestimates, underestimating, unequal, unsettled, unsure, urgent, verdict, verdicts, vociferous, waste, wavering, widowed, worn
+##   - absentee, absentees, admit, admits, admitted, affected, afflicted, affronted, alas, alert, ambivalent, anti, apologise, apologised, apologises, apologising, apologize, apologized, apologizes, apologizing [ ... and 289 more ]
 ## - [zero]:
 ##   - some kind
-## - [pos1]:
-##   - aboard, absorbed, accept, accepted, accepting, accepts, achievable, active, adequate, adopt, adopts, advanced, agree, agreed, agreement, agrees, alive, allow, anticipation, ardent, attract, attracted, attracts, authority, backed, backs, big, boost, boosted, boosting, boosts, bright, brightness, capable, carefree, certain, clear, cleared, clearly, clears, comedy, commit, commits, committed, committing, compelled, convince, convinced, convinces, cool, curious, decisive, desire, diamond, dream, dreams, easy, embrace, engage, engages, engrossed, ensure, ensuring, enterprising, entitled, expand, expands, exploration, explorations, extend, extends, faith, fame, feeling, fit, fitness, forgive, forgiving, free, fresh, god, grace, grant, granted, granting, grants, greet, greeted, greeting, greets, growing, guarantee, haunting, huge, immune, increase, increased, innovate, innovates, innovation, intense, interest, interests, intrigues, invite, inviting, jesus, jewel, jewels, join, keen, laugh, laughed, laughing, laughs, laughting, launched, legal, legally, lenient, lighthearted, matter, matters, meditative, motivate, motivation, natural, please, pray, praying, prays, prepared, pretty, promise, promised, promises, promote, promoted, promotes, promoting, prospect, prospects, protect, protected, protects, reach, reached, reaches, reaching, reassure, reassured, reassures, relieve, relieves, restore, restored, restores, restoring, safe, safely, safety, salient, share, shared, shares, significance, significant, smart, sobering, solution, solutions, solve, solved, solves, solving, spark, spirit, stimulate, stimulated, stimulates, straight, substantial, substantially, supporter, supporters, supporting, trust, unified, united, unmatched, validate, validated, validates, validating, vested, vision, visioning, visions, vitamin, want, warm, whimsical, wish, wishes, wishing, yeah, yearning, yes
-## - [pos2]:
-##   - abilities, ability, absolve, absolved, absolves, absolving, accomplish, accomplished, accomplishes, acquit, acquits, acquitted, acquitting, advantage, advantages, adventure, adventures, adventurous, agog, agreeable, amaze, amazed, amazes, ambitious, appease, appeased, appeases, appeasing, applaud, applauded, applauding, applauds, applause, appreciate, appreciated, appreciates, appreciating, appreciation, approval, approved, approves, asset, assets, astonished, attracting, attraction, attractions, avid, backing, bargain, benefit, benefits, benefitted, benefitting, better, bless, blesses, blithe, bold, boldly, brave, brightest, brisk, buoyant, calm, calmed, calming, calms, care, careful, carefully, cares, chance, chances, cheer, cheered, cheerful, cheering, cheers, cherish, cherished, cherishes, cherishing, chic, clarifies, clarity, clean, cleaner, clever, comfort, comfortable, comforting, comforts, commend, commended, commitment, compassionate, competent, competitive, comprehensive, conciliate, conciliated, conciliates, conciliating, confidence, confident, congrats, congratulate, congratulation, congratulations, consent, consents, consolable, convivial, courage, courageous, courteous, courtesy, coziness, creative, cute, daredevil, daring, dauntless, dear, debonair, dedicated, defender, defenders, desirable, desired, desirous, determined, eager, earnest, ease, effective, effectively, elegant, elegantly, empathetic, enchanted, encourage, encouraged, encouragement, encourages, endorse, endorsed, endorsement, endorses, energetic, enjoy, enjoying, enjoys, enlighten, enlightened, enlightening, enlightens, entertaining, entrusted, esteemed, ethical, exasperated, exclusive, exonerate, exonerated, exonerates, exonerating, fair, favor, favored, favorite, favorited, favorites, favors, fearless, fervent, fervid, festive, fine, flagship, focused, fond, fondness, fortunate, freedom, friendly, frisky, fulfill, fulfilled, fulfills, funky, futile, gain, gained, gaining, gains, generous, gift, glorious, glory, gratification, greetings, growth, ha, hail, hailed, hardier, hardy, healthy, heaven, help, helpful, helping, helps, hero, heroes, highlight, hilarious, honest, honor, honored, honoring, honour, honoured, honouring, hope, hopeful, hopefully, hopes, hoping, hug, hugs, humor, humorous, humour, humourous, immortal, importance, important, improve, improved, improvement, improves, improving, indestructible, infatuated, infatuation, influential, innovative, inquisitive, inspiration, inspirational, inspire, inspired, inspires, intact, integrity, intelligent, interested, interesting, intricate, invincible, invulnerable, irresistible, irresponsible, jaunty, jocular, joke, jokes, jolly, jovial, justice, justifiably, justified, kind, kinder, kiss, landmark, like, liked, likes, lively, loving, mature, meaningful, mercy, methodical, motivated, motivating, nifty, noble, novel, obsessed, oks, opportunities, opportunity, optimism, optimistic, outreach, pardon, pardoned, pardoning, pardons, passionate, peace, peaceful, peacefully, perfected, perfects, picturesque, playful, positive, positively, powerful, privileged, proactive, progress, prominent, proud, proudly, rapture, raptured, raptures, ratified, reassuring, recommend, recommended, recommends, redeemed, relaxed, reliant, relieved, relieving, relishing, remarkable, rescue, rescued, rescues, resolute, resolve, resolved, resolves, resolving, respected, responsible, responsive, restful, revered, revive, revives, reward, rewarded, rewarding, rewards, rich, robust, romance, satisfied, save, saved, secure, secured, secures, self-confident, serene, sincere, sincerely, sincerest, sincerity, slick, slicker, slickest, smarter, smartest, smile, smiled, smiles, smiling, solid, solidarity, sophisticated, spirited, sprightly, stable, stamina, steadfast, stimulating, stout, strength, strengthen, strengthened, strengthening, strengthens, strong, stronger, strongest, suave, success, sunshine, superior, support, supported, supportive, supports, survived, surviving, survivor, sweet, swift, swiftly, sympathetic, sympathy, tender, thank, thankful, thanks, thoughtful, tolerant, top, tops, tranquil, treasure, treasures, true, trusted, unbiased, unequaled, unstoppable, untarnished, useful, usefulness, vindicate, vindicated, vindicates, vindicating, virtuous, warmth, wealthy, welcome, welcomed, welcomes, willingness, worth, worthy, yeees, youthful, zealous
-## - [pos3]:
-##   - admire, admired, admires, admiring, adorable, adore, adored, adores, affection, affectionate, amuse, amused, amusement, amusements, astound, astounded, astounding, astoundingly, astounds, audacious, award, awarded, awards, beatific, beauties, beautiful, beautifully, beautify, beloved, best, blessing, bliss, blissful, blockbuster, breakthrough, captivated, celebrate, celebrated, celebrates, celebrating, charm, charming, cheery, classy, cool stuff, dearly, delight, delighted, delighting, delights, devoted, elated, elation, enrapture, enthral, enthusiastic, euphoria, excellence, excellent, excite, excited, excitement, exciting, exhilarated, exhilarates, exhilarating, exultant, exultantly, faithful, fan, fascinate, fascinated, fascinates, fascinating, ftw, gallant, gallantly, gallantry, genial, glad, glamorous, glamourous, glee, gleeful, good, goodness, gracious, grand, grateful, great, greater, greatest, haha, hahaha, hahahah, happiness, happy, heartfelt, heroic, humerous, impress, impressed, impresses, impressive, inspiring, joy, joyful, joyfully, joyous, jubilant, kudos, lawl, lol, lovable, love, loved, lovelies, lovely, loyal, loyalty, luck, luckily, lucky, marvel, marvelous, marvels, medal, merry, mirth, mirthful, mirthfully, nice, ominous, once-in-a-lifetime, paradise, perfect, perfectly, pleasant, pleased, pleasure, popular, praise, praised, praises, praising, prosperous, right direction, rigorous, rigorously, scoop, sexy, soothe, soothed, soothing, sparkle, sparkles, sparkling, splendid, successful, super, vibrant, vigilant, visionary, vitality, vivacious, wealth, winwin, won, woo, woohoo, worshiped, yummy
-## - [pos4]:
-##   - amazing, awesome, brilliant, ecstatic, euphoric, exuberant, fabulous, fantastic, fun, funnier, funny, godsend, heavenly, lifesaver, lmao, lmfao, masterpiece, masterpieces, miracle, overjoyed, rapturous, rejoice, rejoiced, rejoices, rejoicing, rofl, roflcopter, roflmao, rotfl, rotflmfao, rotflol, stunning, terrific, triumph, triumphant, win, winner, winning, wins, wonderful, wooo, woow, wow, wowow, wowww
-## - [pos5]:
-##   - breathtaking, hurrah, outstanding, superb, thrilled</code></pre>
+## [ reached max_nkey ... 5 more keys ]</code></pre>
 <p>Sorry for the strong language. AFINN contains categories of words sorted by valence values from -5 (neg5) to +5 (pos5). For example, the word ‘bastard’ is -5 in terms of valence value.</p>
-<p>According to original paper of AFINN <span class="citation">(Nielsen <a href="references.html#ref-nielsen2011" role="doc-biblioref">2011</a>)</span>, the AFINN sentiment score of a tweet is calculated as the total valence values of matching words divided by the total number of words. For example, the AFINN sentiment score of the tweet “He is a bastard” is -5 / 4 = 1.25. The total valence values of matching words is 5 because there is only one matching word (bastard) and its valence value is -5. In total, this tweet has 4 words.</p>
-<p>The following program calculates the correponding AFINN score of each tweet using the R package quanteda <span class="citation">(Benoit et al. <a href="references.html#ref-benoit2018" role="doc-biblioref">2018</a>)</span>. In short, this program creates a document-feature matrix (DFM) using Trump’s tweets and then look up this DFM by the AFINN dictionary to seek for matching words. And then, we convert this DFM into a data frame and then do our dplyr magic to calculate the AFINN sentiment score. It might look a bit scary and don’t worry, we will walk through this program again step-by-step in Chapter 6.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="the-whole-game.html#cb28-1"></a><span class="kw">dfm</span>(trump_tweet30_coded<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">dfm_lookup</span>(afinn) <span class="op">%&gt;%</span><span class="st"> </span>quanteda<span class="op">::</span><span class="kw">convert</span>(<span class="dt">to =</span> <span class="st">&quot;data.frame&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">matching_word_valence =</span> (neg5 <span class="op">*</span><span class="st"> </span><span class="dv">-5</span>) <span class="op">+</span><span class="st"> </span>(neg4 <span class="op">*</span><span class="st"> </span><span class="dv">-4</span>) <span class="op">+</span><span class="st"> </span>(neg3 <span class="op">*</span><span class="st"> </span><span class="dv">-3</span>) <span class="op">+</span><span class="st"> </span>(neg2 <span class="op">*</span><span class="st"> </span><span class="dv">-2</span>) <span class="op">+</span><span class="st"> </span>(neg1 <span class="op">*</span><span class="st"> </span><span class="dv">-1</span>) <span class="op">+</span><span class="st"> </span>(zero <span class="op">*</span><span class="st"> </span><span class="dv">0</span>) <span class="op">+</span><span class="st"> </span>(pos1 <span class="op">*</span><span class="st"> </span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>(pos2 <span class="op">*</span><span class="st"> </span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>(pos3 <span class="op">*</span><span class="st"> </span><span class="dv">3</span>) <span class="op">+</span><span class="st"> </span>(pos4 <span class="op">*</span><span class="st"> </span><span class="dv">4</span>) <span class="op">+</span><span class="st"> </span>(pos5 <span class="op">*</span><span class="st"> </span><span class="dv">5</span>), <span class="dt">base =</span> <span class="kw">ntoken</span>(trump_tweet30_coded<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>), <span class="dt">afinn_score =</span> matching_word_valence <span class="op">/</span><span class="st"> </span>base) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(afinn_score) -&gt;<span class="st"> </span>afinn_score</span>
-<span id="cb28-2"><a href="the-whole-game.html#cb28-2"></a>afinn_score</span></code></pre></div>
+<p>According to original paper of AFINN <span class="citation">(Nielsen <a href="#ref-nielsen2011">2011</a>)</span>, the AFINN sentiment score of a tweet is calculated as the total valence values of matching words divided by the total number of words. For example, the AFINN sentiment score of the tweet “He is a bastard” is -5 / 4 = 1.25. The total valence values of matching words is 5 because there is only one matching word (bastard) and its valence value is -5. In total, this tweet has 4 words.</p>
+<p>The following program calculates the correponding AFINN score of each tweet using the R package quanteda <span class="citation">(Benoit et al. <a href="#ref-benoit2018">2018</a>)</span>. In short, this program creates a document-feature matrix (DFM) using Trump’s tweets and then look up this DFM by the AFINN dictionary to seek for matching words. And then, we convert this DFM into a data frame and then do our dplyr magic to calculate the AFINN sentiment score. It might look a bit scary and don’t worry, we will walk through this program again step-by-step in Chapter 6.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dfm</span>(trump_tweet30_coded<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">dfm_lookup</span>(afinn) <span class="op">%&gt;%</span><span class="st"> </span>quanteda<span class="op">::</span><span class="kw">convert</span>(<span class="dt">to =</span> <span class="st">&quot;data.frame&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">matching_word_valence =</span> (neg5 <span class="op">*</span><span class="st"> </span><span class="dv">-5</span>) <span class="op">+</span><span class="st"> </span>(neg4 <span class="op">*</span><span class="st"> </span><span class="dv">-4</span>) <span class="op">+</span><span class="st"> </span>(neg3 <span class="op">*</span><span class="st"> </span><span class="dv">-3</span>) <span class="op">+</span><span class="st"> </span>(neg2 <span class="op">*</span><span class="st"> </span><span class="dv">-2</span>) <span class="op">+</span><span class="st"> </span>(neg1 <span class="op">*</span><span class="st"> </span><span class="dv">-1</span>) <span class="op">+</span><span class="st"> </span>(zero <span class="op">*</span><span class="st"> </span><span class="dv">0</span>) <span class="op">+</span><span class="st"> </span>(pos1 <span class="op">*</span><span class="st"> </span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>(pos2 <span class="op">*</span><span class="st"> </span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>(pos3 <span class="op">*</span><span class="st"> </span><span class="dv">3</span>) <span class="op">+</span><span class="st"> </span>(pos4 <span class="op">*</span><span class="st"> </span><span class="dv">4</span>) <span class="op">+</span><span class="st"> </span>(pos5 <span class="op">*</span><span class="st"> </span><span class="dv">5</span>), <span class="dt">base =</span> <span class="kw">ntoken</span>(trump_tweet30_coded<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>), <span class="dt">afinn_score =</span> matching_word_valence <span class="op">/</span><span class="st"> </span>base) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(afinn_score) -&gt;<span class="st"> </span>afinn_score
+afinn_score</code></pre></div>
 <pre><code>##       text1       text2       text3       text4       text5       text6 
-##  0.05000000  0.12000000  0.11111111  0.58333333  0.15000000  0.00000000 
+##  0.05000000  0.12000000  0.11111111  0.58333333  0.16666667  0.00000000 
 ##       text7       text8       text9      text10      text11      text12 
-##  0.16666667  0.08333333 -0.17391304 -0.26923077  0.00000000 -0.11764706 
+##  0.16666667  0.09090909 -0.19047619 -0.26923077  0.00000000 -0.13333333 
 ##      text13      text14      text15      text16      text17      text18 
-##  0.00000000  0.00000000 -0.13636364  0.00000000  0.47619048  0.20000000 
+##  0.00000000  0.00000000 -0.13636364  0.00000000  0.47619048  0.22222222 
 ##      text19      text20      text21      text22      text23      text24 
-##  0.13043478  0.70000000  0.00000000 -0.04347826 -0.06666667  0.53333333 
+##  0.14285714  0.77777778  0.00000000 -0.04761905 -0.06666667  0.53333333 
 ##      text25      text26      text27      text28      text29      text30 
-##  0.15000000  0.00000000  0.00000000  0.60000000  0.18750000  0.22222222</code></pre>
+##  0.16666667  0.00000000  0.00000000  0.69230769  0.18750000  0.25000000</code></pre>
 <p>Once again, this AFINN sentiment score is a surrogate measure of semantics. We can test the correlation between the AFINN score and the results from two human coders.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="the-whole-game.html#cb30-1"></a><span class="kw">cor.test</span>(trump_tweet30_coded<span class="op">$</span>rater1, afinn_score)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(trump_tweet30_coded<span class="op">$</span>rater1, afinn_score)</code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
 ## data:  trump_tweet30_coded$rater1 and afinn_score
-## t = 3.7219, df = 28, p-value = 0.0008811
+## t = 3.6976, df = 28, p-value = 0.0009395
 ## alternative hypothesis: true correlation is not equal to 0
 ## 95 percent confidence interval:
-##  0.2712705 0.7749591
+##  0.2677772 0.7734500
 ## sample estimates:
-##      cor 
-## 0.575314</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="the-whole-game.html#cb32-1"></a><span class="kw">cor.test</span>(trump_tweet30_coded<span class="op">$</span>rater2, afinn_score)</span></code></pre></div>
+##       cor 
+## 0.5727884</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(trump_tweet30_coded<span class="op">$</span>rater2, afinn_score)</code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
 ## data:  trump_tweet30_coded$rater2 and afinn_score
-## t = 2.603, df = 28, p-value = 0.01461
+## t = 2.669, df = 28, p-value = 0.01251
 ## alternative hypothesis: true correlation is not equal to 0
 ## 95 percent confidence interval:
-##  0.09647393 0.69167781
+##  0.1075218 0.6974559
 ## sample estimates:
-##       cor 
-## 0.4414015</code></pre>
+##      cor 
+## 0.450346</code></pre>
 <p>The two correlation coefficients are statistically sigificant. The scatterplot of the two measures is like so:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="the-whole-game.html#cb34-1"></a>trump_tweet30_coded <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">afinn_score =</span> afinn_score) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">avg_human =</span> (rater1 <span class="op">+</span><span class="st"> </span>rater2) <span class="op">/</span><span class="st"> </span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> avg_human, <span class="dt">y =</span> afinn_score)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweet30_coded <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">afinn_score =</span> afinn_score) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">avg_human =</span> (rater1 <span class="op">+</span><span class="st"> </span>rater2) <span class="op">/</span><span class="st"> </span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> avg_human, <span class="dt">y =</span> afinn_score)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
 <div class="figure">
 <img src="automatedcontentanalysis_files/figure-html/corafinn_human-1.png" alt="Scatterplot of the correlation between human categorization and AFINN score." width="672" />
 <p class="caption">
@@ -501,79 +456,79 @@ Figure 1: Screenshot of the first level of Megaman X (Capcom, 1993)
 </div>
 <p>It seems that we have evidence to show the AFINN score is a good surrogate measure of sentiment because it has a good correlation with human judgements. Only after this step, we can apply the method to all of the tweets.</p>
 </div>
-<div id="comparing-tweets-from-android-and-iphone" class="section level2" number="3.5">
-<h2 number="3.5"><span class="header-section-number">3.5</span> Comparing tweets from Android and iPhone</h2>
+<div id="comparing-tweets-from-android-and-iphone" class="section level2">
+<h2><span class="header-section-number">3.5</span> Comparing tweets from Android and iPhone</h2>
 <p>So, we have shown in the previous sections that AFINN score is a good surrogate measure of sentiment. Now, we can calculate the AFINN score of all tweets.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="the-whole-game.html#cb35-1"></a>trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">android =</span> <span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(android, text) -&gt;<span class="st"> </span>trump_tweets_target</span>
-<span id="cb35-2"><a href="the-whole-game.html#cb35-2"></a>trump_tweets_target</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweets <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(source, <span class="st">&quot;Android|iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">android =</span> <span class="kw">str_detect</span>(source, <span class="st">&quot;Android&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(android, text) -&gt;<span class="st"> </span>trump_tweets_target
+trump_tweets_target</code></pre></div>
 <pre><code>## # A tibble: 9,384 x 2
-##    android text                                                            
-##    &lt;lgl&gt;   &lt;chr&gt;                                                           
-##  1 FALSE   &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\nhttps://…
-##  2 FALSE   &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3hBz&quot;      
-##  3 TRUE    &quot;Happy New Year to all, including to my many enemies and those …
-##  4 TRUE    &quot;Russians are playing @CNN and @NBCNews for such fools - funny …
-##  5 FALSE   &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimBrownNFL3…
-##  6 TRUE    &quot;Great move on delay (by V. Putin) - I always knew he was very …
-##  7 FALSE   &quot;My Administration will follow two simple rules: https://t.co/Z…
-##  8 FALSE   &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjGBgglIuQ&quot; 
-##  9 TRUE    &quot;not anymore. The beginning of the end was the horrible Iran de…
-## 10 TRUE    &quot;We cannot continue to let Israel be treated with such total di…
+##    android text                                                                 
+##    &lt;lgl&gt;   &lt;chr&gt;                                                                
+##  1 FALSE   &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/…
+##  2 FALSE   &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3hBz&quot;           
+##  3 TRUE    &quot;Happy New Year to all, including to my many enemies and those who h…
+##  4 TRUE    &quot;Russians are playing @CNN and @NBCNews for such fools - funny to wa…
+##  5 FALSE   &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimBrownNFL32 on …
+##  6 TRUE    &quot;Great move on delay (by V. Putin) - I always knew he was very smart…
+##  7 FALSE   &quot;My Administration will follow two simple rules: https://t.co/ZWk0j4…
+##  8 FALSE   &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjGBgglIuQ&quot;      
+##  9 TRUE    &quot;not anymore. The beginning of the end was the horrible Iran deal, a…
+## 10 TRUE    &quot;We cannot continue to let Israel be treated with such total disdain…
 ## # … with 9,374 more rows</code></pre>
 <p>Once again, we use quanteda to calculate the AFINN score. The program below is actually the same as the one above.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="the-whole-game.html#cb37-1"></a><span class="kw">dfm</span>(trump_tweets_target<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">dfm_lookup</span>(afinn) <span class="op">%&gt;%</span><span class="st"> </span>quanteda<span class="op">::</span><span class="kw">convert</span>(<span class="dt">to =</span> <span class="st">&quot;data.frame&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">matching_word_valence =</span> (neg5 <span class="op">*</span><span class="st"> </span><span class="dv">-5</span>) <span class="op">+</span><span class="st"> </span>(neg4 <span class="op">*</span><span class="st"> </span><span class="dv">-4</span>) <span class="op">+</span><span class="st"> </span>(neg3 <span class="op">*</span><span class="st"> </span><span class="dv">-3</span>) <span class="op">+</span><span class="st"> </span>(neg2 <span class="op">*</span><span class="st"> </span><span class="dv">-2</span>) <span class="op">+</span><span class="st"> </span>(neg1 <span class="op">*</span><span class="st"> </span><span class="dv">-1</span>) <span class="op">+</span><span class="st"> </span>(zero <span class="op">*</span><span class="st"> </span><span class="dv">0</span>) <span class="op">+</span><span class="st"> </span>(pos1 <span class="op">*</span><span class="st"> </span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>(pos2 <span class="op">*</span><span class="st"> </span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>(pos3 <span class="op">*</span><span class="st"> </span><span class="dv">3</span>) <span class="op">+</span><span class="st"> </span>(pos4 <span class="op">*</span><span class="st"> </span><span class="dv">4</span>) <span class="op">+</span><span class="st"> </span>(pos5 <span class="op">*</span><span class="st"> </span><span class="dv">5</span>), <span class="dt">base =</span> <span class="kw">ntoken</span>(trump_tweets_target<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>), <span class="dt">afinn_score =</span> matching_word_valence <span class="op">/</span><span class="st"> </span>base) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(afinn_score) -&gt;<span class="st"> </span>all_afinn_score</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dfm</span>(trump_tweets_target<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">dfm_lookup</span>(afinn) <span class="op">%&gt;%</span><span class="st"> </span>quanteda<span class="op">::</span><span class="kw">convert</span>(<span class="dt">to =</span> <span class="st">&quot;data.frame&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">matching_word_valence =</span> (neg5 <span class="op">*</span><span class="st"> </span><span class="dv">-5</span>) <span class="op">+</span><span class="st"> </span>(neg4 <span class="op">*</span><span class="st"> </span><span class="dv">-4</span>) <span class="op">+</span><span class="st"> </span>(neg3 <span class="op">*</span><span class="st"> </span><span class="dv">-3</span>) <span class="op">+</span><span class="st"> </span>(neg2 <span class="op">*</span><span class="st"> </span><span class="dv">-2</span>) <span class="op">+</span><span class="st"> </span>(neg1 <span class="op">*</span><span class="st"> </span><span class="dv">-1</span>) <span class="op">+</span><span class="st"> </span>(zero <span class="op">*</span><span class="st"> </span><span class="dv">0</span>) <span class="op">+</span><span class="st"> </span>(pos1 <span class="op">*</span><span class="st"> </span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>(pos2 <span class="op">*</span><span class="st"> </span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>(pos3 <span class="op">*</span><span class="st"> </span><span class="dv">3</span>) <span class="op">+</span><span class="st"> </span>(pos4 <span class="op">*</span><span class="st"> </span><span class="dv">4</span>) <span class="op">+</span><span class="st"> </span>(pos5 <span class="op">*</span><span class="st"> </span><span class="dv">5</span>), <span class="dt">base =</span> <span class="kw">ntoken</span>(trump_tweets_target<span class="op">$</span>text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>), <span class="dt">afinn_score =</span> matching_word_valence <span class="op">/</span><span class="st"> </span>base) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(afinn_score) -&gt;<span class="st"> </span>all_afinn_score</code></pre></div>
 <p>So now, we have the information about the device and the AFINN score.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="the-whole-game.html#cb38-1"></a><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android, trump_tweets_target<span class="op">$</span>text)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android, trump_tweets_target<span class="op">$</span>text)</code></pre></div>
 <pre><code>## # A tibble: 9,384 x 3
-##      afinn android `trump_tweets_target$text`                              
-##      &lt;dbl&gt; &lt;lgl&gt;   &lt;chr&gt;                                                   
-##  1  0.375  FALSE   &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\n…
-##  2  0.5    FALSE   &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3h…
-##  3 -0.0714 TRUE    &quot;Happy New Year to all, including to my many enemies an…
-##  4  0.0952 TRUE    &quot;Russians are playing @CNN and @NBCNews for such fools …
-##  5  0.105  FALSE   &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimB…
-##  6  0.214  TRUE    &quot;Great move on delay (by V. Putin) - I always knew he w…
-##  7  0      FALSE   &quot;My Administration will follow two simple rules: https:…
-##  8  0.25   FALSE   &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjG…
-##  9 -0.0417 TRUE    &quot;not anymore. The beginning of the end was the horrible…
-## 10 -0.04   TRUE    &quot;We cannot continue to let Israel be treated with such …
+##      afinn android `trump_tweets_target$text`                                   
+##      &lt;dbl&gt; &lt;lgl&gt;   &lt;chr&gt;                                                        
+##  1  0.5    FALSE   &quot;RT @realDonaldTrump: Happy Birthday @DonaldJTrumpJr!\nhttps…
+##  2  0.75   FALSE   &quot;Happy Birthday @DonaldJTrumpJr!\nhttps://t.co/uRxyCD3hBz&quot;   
+##  3 -0.0714 TRUE    &quot;Happy New Year to all, including to my many enemies and tho…
+##  4  0.0952 TRUE    &quot;Russians are playing @CNN and @NBCNews for such fools - fun…
+##  5  0.118  FALSE   &quot;Join @AmerIcan32, founded by Hall of Fame legend @JimBrownN…
+##  6  0.214  TRUE    &quot;Great move on delay (by V. Putin) - I always knew he was ve…
+##  7  0      FALSE   &quot;My Administration will follow two simple rules: https://t.c…
+##  8  0.333  FALSE   &quot;&#39;Economists say Trump delivered hope&#39; https://t.co/SjGBgglI…
+##  9 -0.0417 TRUE    &quot;not anymore. The beginning of the end was the horrible Iran…
+## 10 -0.04   TRUE    &quot;We cannot continue to let Israel be treated with such total…
 ## # … with 9,374 more rows</code></pre>
 <p>We can see the mean AFINN scores of tweets from Android and iPhone.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="the-whole-game.html#cb40-1"></a><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean_afinn =</span> <span class="kw">mean</span>(afinn), <span class="dt">se =</span> <span class="kw">sd</span>(afinn) <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">n</span>()), <span class="dt">lower =</span> mean_afinn <span class="op">-</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>se), <span class="dt">upper =</span> mean_afinn <span class="op">+</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>se))  <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">phone =</span> <span class="kw">ifelse</span>(android, <span class="st">&quot;Android&quot;</span>, <span class="st">&quot;iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>se, <span class="op">-</span>android)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean_afinn =</span> <span class="kw">mean</span>(afinn), <span class="dt">se =</span> <span class="kw">sd</span>(afinn) <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">n</span>()), <span class="dt">lower =</span> mean_afinn <span class="op">-</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>se), <span class="dt">upper =</span> mean_afinn <span class="op">+</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>se))  <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">phone =</span> <span class="kw">ifelse</span>(android, <span class="st">&quot;Android&quot;</span>, <span class="st">&quot;iPhone&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>se, <span class="op">-</span>android)</code></pre></div>
 <pre><code>## # A tibble: 2 x 4
 ##   mean_afinn  lower upper phone  
 ##        &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  
-## 1      0.105 0.0967 0.112 iPhone 
-## 2      0.100 0.0952 0.105 Android</code></pre>
+## 1      0.126 0.117  0.136 iPhone 
+## 2      0.101 0.0963 0.106 Android</code></pre>
 <p>Tweets from Android are having a slightly lower sentiment score (more negative) than those from iPhone. We can also conduct a test to study the statistical significance of the difference.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="the-whole-game.html#cb42-1"></a><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">wilcox.test</span>(afinn <span class="op">~</span><span class="st"> </span>android, <span class="dt">data =</span> .)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">wilcox.test</span>(afinn <span class="op">~</span><span class="st"> </span>android, <span class="dt">data =</span> .)</code></pre></div>
 <pre><code>## 
 ##  Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  afinn by android
-## W = 8607784, p-value = 0.008369
+## W = 8879860, p-value = 4.651e-07
 ## alternative hypothesis: true location shift is not equal to 0</code></pre>
 <p>It is statistically significant. You can see the distributions of AFINN scores of tweets from an Android and an iPhone with the following histogram.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="the-whole-game.html#cb44-1"></a><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> afinn, <span class="dt">fill =</span> android)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.05</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> afinn, <span class="dt">fill =</span> android)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.05</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)</code></pre></div>
 <p><img src="automatedcontentanalysis_files/figure-html/dot-1.png" width="672" /></p>
 <p>In summary, Trump’s tweets from an Android phone are more negative than those from an iPhone. We have arrived at a very similar conclusion to Robinson’s, although the effect size is much smaller.</p>
 <p>The obvious question you may ask is: Why could Robinson get such a large effect size? A more important question: Whom should you trust?</p>
 <p>In Chapter 6, we will have a more detailed discussion about the pros and cons of using dictionary-based methods. Regarding the question of “whom should you trust?”, our approach has face validity and criterion validity. For face validity, We have used a dictionary designed for studying social media data (AFINN), whereas David Robinson used NRC dictionaries which are not designed for studying social media data. For criterion validity, we have validated our AFINN scores with some human-categorized tweets. We have evidence that our AFINN scores correlate well with human judgements of sentiment. David Robinson had no such information.</p>
 <p>There are some information which is important. Dictionary-based methods are very sensitive to content length. One thing you need to know is that Trump’s tweets from an android are in general longer than tweets from an iPhone. Also, these tweets are in general more negative.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="the-whole-game.html#cb45-1"></a><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android, <span class="dt">text =</span> trump_tweets_target<span class="op">$</span>text, <span class="dt">ntokens =</span> <span class="kw">ntoken</span>(text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean_ntokens =</span> <span class="kw">mean</span>(ntokens), <span class="dt">mean_afinn =</span> <span class="kw">mean</span>(afinn))</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android, <span class="dt">text =</span> trump_tweets_target<span class="op">$</span>text, <span class="dt">ntokens =</span> <span class="kw">ntoken</span>(text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(android) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean_ntokens =</span> <span class="kw">mean</span>(ntokens), <span class="dt">mean_afinn =</span> <span class="kw">mean</span>(afinn))</code></pre></div>
 <pre><code>## # A tibble: 2 x 3
 ##   android mean_ntokens mean_afinn
 ##   &lt;lgl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
-## 1 FALSE           16.3      0.105
-## 2 TRUE            17.8      0.100</code></pre>
+## 1 FALSE           14.7      0.126
+## 2 TRUE            17.6      0.101</code></pre>
 <p>We can demonstrate it using a scatterplot.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="the-whole-game.html#cb47-1"></a><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android, <span class="dt">text =</span> trump_tweets_target<span class="op">$</span>text, <span class="dt">ntokens =</span> <span class="kw">ntoken</span>(text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> afinn, <span class="dt">x =</span> ntokens, <span class="dt">col =</span> android)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tibble</span>(<span class="dt">afinn =</span> all_afinn_score, <span class="dt">android =</span> trump_tweets_target<span class="op">$</span>android, <span class="dt">text =</span> trump_tweets_target<span class="op">$</span>text, <span class="dt">ntokens =</span> <span class="kw">ntoken</span>(text, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> afinn, <span class="dt">x =</span> ntokens, <span class="dt">col =</span> android)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>)</code></pre></div>
 <p><img src="automatedcontentanalysis_files/figure-html/histo-1.png" width="672" /></p>
-<p>In Chapter 6, I will demonstrate further why we always need to check for the influence of content length. In our AFINN score calculation, we have adjusted for the effect of content length. However, our AFINN score is still correlated with content length with a correlation coefficient of -0.23.</p>
+<p>In Chapter 6, I will demonstrate further why we always need to check for the influence of content length. In our AFINN score calculation, we have adjusted for the effect of content length. However, our AFINN score is still correlated with content length with a correlation coefficient of -0.25.</p>
 <p>OK, enough. This is not a diss track. Let’s move on and go to the summary of this chapter, shall we?</p>
 </div>
-<div id="zusammenfassung" class="section level2" number="3.6">
-<h2 number="3.6"><span class="header-section-number">3.6</span> Zusammenfassung</h2>
+<div id="zusammenfassung" class="section level2">
+<h2><span class="header-section-number">3.6</span> Zusammenfassung</h2>
 <p>In this chapter, I have used a “whole game” to demonstrate the differences between automated content analysis and other approaches. It can be summarized into a few bullet points:</p>
 <ol style="list-style-type: decimal">
 <li>Automated content analysis always starts with research questions or hypotheses.</li>
@@ -585,6 +540,39 @@ Figure 1: Screenshot of the first level of Megaman X (Capcom, 1993)
 <p>I hope this chapter is a eye-opener for you and you want to dig deeper into the world of automated content analysis. In the next chapter, we are going to define (automated) content analysis and establish some best practices.</p>
 
 </div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-benoit2018">
+<p>Benoit, Kenneth, Kohei Watanabe, Haiyan Wang, Paul Nulty, Adam Obeng, Stefan Müller, and Akitaka Matsuo. 2018. “Quanteda: An R Package for the Quantitative Analysis of Textual Data.” <em>Journal of Open Source Software</em> 3 (30): 774.</p>
+</div>
+<div id="ref-liang2017">
+<p>Liang, Hai, and Jonathan JH Zhu. 2017. “Big Data, Collection of (Social Media, Harvesting).” <em>The International Encyclopedia of Communication Research Methods</em>. Wiley Online Library, 1–18. doi:<a href="https://doi.org/10.1002/9781118901731.iecrm0015">10.1002/9781118901731.iecrm0015</a>.</p>
+</div>
+<div id="ref-munzert2014">
+<p>Munzert, Simon, Christian Rubba, Peter Meißner, and Dominic Nyhuis. 2014. <em>Automated Data Collection with R: A Practical Guide to Web Scraping and Text Mining</em>. John Wiley &amp; Sons.</p>
+</div>
+<div id="ref-nielsen2011">
+<p>Nielsen, Finn Årup. 2011. “A New Anew: Evaluation of a Word List for Sentiment Analysis in Microblogs.” <em>arXiv Preprint arXiv:1103.2903</em>.</p>
+</div>
+<div id="ref-perkins2010">
+<p>Perkins, David. 2010. <em>Making Learning Whole: How Seven Principles of Teaching Can Transform Education</em>. John Wiley &amp; Sons.</p>
+</div>
+<div id="ref-upton2014">
+<p>Upton, Graham, and Ian Cook. 2014. <em>A Dictionary of Statistics 3e</em>. Oxford university press.</p>
+</div>
+<div id="ref-wickham2011">
+<p>Wickham, Hadley. 2011. “The Split-Apply-Combine Strategy for Data Analysis.” <em>Journal of Statistical Software</em> 40 (1). Citeseer: 1–29. doi:<a href="https://doi.org/10.18637/jss.v040.i01">10.18637/jss.v040.i01</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Well, to the author of this book, this chapter is like the first level of the SNES hame ‘Megaman X’. This level demonstrates the mechanic of the game.<a href="the-whole-game.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>The author of this book admits that he is not an expert in communication theories.<a href="the-whole-game.html#fnref2">↩</a></p></li>
+<li id="fn3"><p>This code should be replaced with <strong>count()</strong>, but for the sake of education, let’s bear with me with a combination of <em>group_by</em> and <em>summarise</em><a href="the-whole-game.html#fnref3">↩</a></p></li>
+<li id="fn4"><p>Probably social scientists used the word “code” as a verb earlier than programmers. This is a problem of English. German has two different verbs: kodieren and coden.<a href="the-whole-game.html#fnref4">↩</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -611,12 +599,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -628,6 +615,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -644,7 +635,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

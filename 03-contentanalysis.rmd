@@ -58,7 +58,11 @@ In general, reliability and validity works antagonistically. Therefore, a measur
 
 Traditional content analysis focuses a lot on reliability, especially inter-rater reliability. Klaus Krippendorff, the author of one of the "bibles", even has an inter-rater reliability measurement bearing his name (Krippendorff's $\alpha$).
 
-This emphasis on inter-rater reliability is because of the dependency of human reading in traditional manual content analysis. Two humans can have two very different understandings of the same constructs, especially latent ones such as sentiment, liberal, populistic, or probably the most popular one, frames.
+This emphasis on inter-rater reliability is because of the dependency of human reading in traditional manual content analysis. Two humans can have two very different understandings of the same constructs, especially latent ones such as sentiment, liberal, populistic, or probably the most popular one, frames. Usually, researchers are advised to conduct coder training to standardize the coding among coders, an effort to improve inter-rater reliability. Using a cliche language, we train our coders to work like a computer.
+
+Computer is a determinist machine. If the algorithm does not involve any randomization, the same input always gives the same output. Therefore, inter-rater reliability is basically a non-issue for computer's coding. There may still some reliability issues, but they manifest differently. We will discuss these issues in the next chapter.
+
+Remember reliability and validity work antagonistically? If computer's coding can achieve very high reliability, what would be the validity of it?
 
 ##### Validity
 

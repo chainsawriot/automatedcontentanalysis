@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Introduction | Automated Content Analysis</title>
+  <title>Chapter 2 Introduction | Automated Content Analysis</title>
   <meta name="description" content="Make automated content analysis uncool again!" />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Introduction | Automated Content Analysis" />
+  <meta property="og:title" content="Chapter 2 Introduction | Automated Content Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Introduction | Automated Content Analysis" />
+  <meta name="twitter:title" content="Chapter 2 Introduction | Automated Content Analysis" />
   
   <meta name="twitter:description" content="Make automated content analysis uncool again!" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Chung-hong Chan" />
 
 
-<meta name="date" content="2020-02-27" />
+<meta name="date" content="2020-02-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,67 +53,41 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -134,8 +108,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="the-whole-game.html"><a href="the-whole-game.html"><i class="fa fa-check"></i><b>3</b> The whole game</a>
-<ul>
+<li class="chapter" data-level="3" data-path="the-whole-game.html"><a href="the-whole-game.html"><i class="fa fa-check"></i><b>3</b> The whole game</a><ul>
 <li class="chapter" data-level="3.1" data-path="the-whole-game.html"><a href="the-whole-game.html#analysing-trumps-tweets"><i class="fa fa-check"></i><b>3.1</b> Analysing Trump’s tweets</a></li>
 <li class="chapter" data-level="3.2" data-path="the-whole-game.html"><a href="the-whole-game.html#an-express-summary-of-tidyverse"><i class="fa fa-check"></i><b>3.2</b> An express summary of tidyverse</a></li>
 <li class="chapter" data-level="3.3" data-path="the-whole-game.html"><a href="the-whole-game.html#creating-ground-truth-data"><i class="fa fa-check"></i><b>3.3</b> Creating ground truth data</a></li>
@@ -143,26 +116,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="the-whole-game.html"><a href="the-whole-game.html#comparing-tweets-from-android-and-iphone"><i class="fa fa-check"></i><b>3.5</b> Comparing tweets from Android and iPhone</a></li>
 <li class="chapter" data-level="3.6" data-path="the-whole-game.html"><a href="the-whole-game.html#zusammenfassung"><i class="fa fa-check"></i><b>3.6</b> Zusammenfassung</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html"><i class="fa fa-check"></i><b>4</b> What is Content analysis</a>
-<ul>
+<li class="chapter" data-level="4" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html"><i class="fa fa-check"></i><b>4</b> What is Content analysis</a><ul>
 <li class="chapter" data-level="4.0.1" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html#definitions"><i class="fa fa-check"></i><b>4.0.1</b> Definitions</a></li>
 <li class="chapter" data-level="4.1" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html#what-gets-automated"><i class="fa fa-check"></i><b>4.1</b> What gets automated?</a></li>
 <li class="chapter" data-level="4.2" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html#best-practices"><i class="fa fa-check"></i><b>4.2</b> Best practices</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="creating-gold-standard-validation.html"><a href="creating-gold-standard-validation.html"><i class="fa fa-check"></i><b>5</b> Creating gold standard &amp; validation</a></li>
-<li class="chapter" data-level="6" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html"><i class="fa fa-check"></i><b>6</b> Typical automated content analytic methods</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#dictionary-based-method"><i class="fa fa-check"></i><b>6.1</b> dictionary-based method</a>
-<ul>
+<li class="chapter" data-level="6" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html"><i class="fa fa-check"></i><b>6</b> Typical automated content analytic methods</a><ul>
+<li class="chapter" data-level="6.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#dictionary-based-method"><i class="fa fa-check"></i><b>6.1</b> dictionary-based method</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#validation"><i class="fa fa-check"></i><b>6.1.1</b> validation</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#topic-model"><i class="fa fa-check"></i><b>6.2</b> topic-model</a>
-<ul>
+<li class="chapter" data-level="6.2" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#topic-model"><i class="fa fa-check"></i><b>6.2</b> topic-model</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#validation-1"><i class="fa fa-check"></i><b>6.2.1</b> validation</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="advance-topics.html"><a href="advance-topics.html"><i class="fa fa-check"></i><b>7</b> Advance topics</a>
-<ul>
+<li class="chapter" data-level="7" data-path="advance-topics.html"><a href="advance-topics.html"><i class="fa fa-check"></i><b>7</b> Advance topics</a><ul>
 <li class="chapter" data-level="7.1" data-path="advance-topics.html"><a href="advance-topics.html#bag-of-embeddings"><i class="fa fa-check"></i><b>7.1</b> bag-of-embeddings</a></li>
 <li class="chapter" data-level="7.2" data-path="advance-topics.html"><a href="advance-topics.html#semantic-network"><i class="fa fa-check"></i><b>7.2</b> semantic network</a></li>
 <li class="chapter" data-level="7.3" data-path="advance-topics.html"><a href="advance-topics.html#machine-learning"><i class="fa fa-check"></i><b>7.3</b> machine learning</a></li>
@@ -190,12 +158,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1" number="2">
-<h1 number="2"><span class="header-section-number">2</span> Introduction</h1>
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
 <p>When I was a high-school student, biology was my favourite subject. Of course, I need to have the biology textbook to study and my school had assigned me to buy one. My older brother are 7 years older than me and he had the same textbook but an outdated edition. Hence, I didn’t need to buy one, I just used his book. My classmates were using the newer edition, but I enjoyed reading the old edition from my brother. That book had over 1,000 pages and was completely in black and white. Students and teachers alike spotted me reading that book almost all the time at the corner of the spectator stand. At the time of my graduation, that 1,000-page book was broken into multiple ‘volumes’, due to my very frequent reading.</p>
 <p>Why do I need to bring this little irrelevant story up? Francis Crick, James Watson and the oft-ignored female post-graduate student Rosalind Franklin discovered the double-helix structure of DNA in 1953. By the time I was reading the biology textbook printed in the early 90s, it was almost 40 years ago. The biology textbook of the period had an introduction to the double helix structure of DNA, as you can imagine, in a boring way. I would say the discovery of the double helix structure is probably one of the most important discovery in science, the textbook of the period did not describe it as a “hype”. Instead, it was described as if it was as boring as counting sheep. When something was written in the textbook, that something is instantly became uncool.</p>
 <p>But still, why do I need to bring this little irrelevant story up? Some would dispute this, but the world first automated content analysis system is probably the General Inquirer system. The original paper about the system was published in 1962 by the late Philip J. Stone and his colleagues at the Harvard Laboratory of Social Relations. The General Inquirer (GI) uses a method—that is called “dictionary-based method” now—to quantify the characteristics of a piece of text.</p>
-<p>At the time of writing, it is 2020 now. The world first automated content analysis was 58 years old. If there is still an innovation factor of using a 58-year old technology and hype about it, it is actually absurd. Although mew dictionaries are developed almost every month, many communication researchers—myself included—are doing automated content analysis the way very similar to Philip J. Stone and Co. did back in 1962. The discouse about automated content analysis should be very similar to way I read about the double helix structure when I was a high-school student in the mid 90s: it should be boring and uncool.</p>
+<p>At the time of writing, it is 2020 now. The world first automated content analysis was 58 years old. If there is still an innovation factor of using a 58-year old technology and hype about it, it is actually absurd. Although mew dictionaries are developed almost every month, many communication researchers—myself included—are doing automated content analysis the way very similar to Philip J. Stone and Co. did back in 1962. The discouse about automated content analysis should be very similar to way I read about the double helix structure when I was a high-school student in the mid 90s: it should be boring and uncool.</p>
 <p>The motto of this book is simple: <em>Making automated content analysis uncool again.</em> I must admit that I stole this motto from another project: The folks at <a href="https://www.fast.ai/">fast.ai</a> have used the motto <em>“Making neural nets uncool again”</em> since the website’s inception. The founders of the MOOC site feel that the hype around deep learning or artificial intelligence is very unhealthy. They says in their mission statement that being cool is about being exclusive. They want to make deep learning as accessible as possible —including those using uncool operating systems like Windows and with uncool backgrounds (e.g. those did not go to Stanford).</p>
 <p>As a person using an uncool text editor —emacs, a now 44-year-old technology— to write this book, I agree with their vision. I want to make automated content analysis as accessible as possible so that there is no more hype around it. Everyone can do it and everyone can then do it correctly. As everyone, cool and uncool people included, can do automated content analysis by reading this open access book, we should ask more important questions such as: Are we doing automated content analysis in a way that has adequate validity and reliability?</p>
 <p>I hope you will enjoy reading this book.</p>
@@ -226,12 +194,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -243,6 +210,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -259,7 +230,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

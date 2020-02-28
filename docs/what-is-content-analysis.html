@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 What is Content analysis | Automated Content Analysis</title>
+  <title>Chapter 4 What is Content analysis | Automated Content Analysis</title>
   <meta name="description" content="Make automated content analysis uncool again!" />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 What is Content analysis | Automated Content Analysis" />
+  <meta property="og:title" content="Chapter 4 What is Content analysis | Automated Content Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 What is Content analysis | Automated Content Analysis" />
+  <meta name="twitter:title" content="Chapter 4 What is Content analysis | Automated Content Analysis" />
   
   <meta name="twitter:description" content="Make automated content analysis uncool again!" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Chung-hong Chan" />
 
 
-<meta name="date" content="2020-02-27" />
+<meta name="date" content="2020-02-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,67 +53,41 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -134,8 +108,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="the-whole-game.html"><a href="the-whole-game.html"><i class="fa fa-check"></i><b>3</b> The whole game</a>
-<ul>
+<li class="chapter" data-level="3" data-path="the-whole-game.html"><a href="the-whole-game.html"><i class="fa fa-check"></i><b>3</b> The whole game</a><ul>
 <li class="chapter" data-level="3.1" data-path="the-whole-game.html"><a href="the-whole-game.html#analysing-trumps-tweets"><i class="fa fa-check"></i><b>3.1</b> Analysing Trump’s tweets</a></li>
 <li class="chapter" data-level="3.2" data-path="the-whole-game.html"><a href="the-whole-game.html#an-express-summary-of-tidyverse"><i class="fa fa-check"></i><b>3.2</b> An express summary of tidyverse</a></li>
 <li class="chapter" data-level="3.3" data-path="the-whole-game.html"><a href="the-whole-game.html#creating-ground-truth-data"><i class="fa fa-check"></i><b>3.3</b> Creating ground truth data</a></li>
@@ -143,26 +116,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="the-whole-game.html"><a href="the-whole-game.html#comparing-tweets-from-android-and-iphone"><i class="fa fa-check"></i><b>3.5</b> Comparing tweets from Android and iPhone</a></li>
 <li class="chapter" data-level="3.6" data-path="the-whole-game.html"><a href="the-whole-game.html#zusammenfassung"><i class="fa fa-check"></i><b>3.6</b> Zusammenfassung</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html"><i class="fa fa-check"></i><b>4</b> What is Content analysis</a>
-<ul>
+<li class="chapter" data-level="4" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html"><i class="fa fa-check"></i><b>4</b> What is Content analysis</a><ul>
 <li class="chapter" data-level="4.0.1" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html#definitions"><i class="fa fa-check"></i><b>4.0.1</b> Definitions</a></li>
 <li class="chapter" data-level="4.1" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html#what-gets-automated"><i class="fa fa-check"></i><b>4.1</b> What gets automated?</a></li>
 <li class="chapter" data-level="4.2" data-path="what-is-content-analysis.html"><a href="what-is-content-analysis.html#best-practices"><i class="fa fa-check"></i><b>4.2</b> Best practices</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="creating-gold-standard-validation.html"><a href="creating-gold-standard-validation.html"><i class="fa fa-check"></i><b>5</b> Creating gold standard &amp; validation</a></li>
-<li class="chapter" data-level="6" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html"><i class="fa fa-check"></i><b>6</b> Typical automated content analytic methods</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#dictionary-based-method"><i class="fa fa-check"></i><b>6.1</b> dictionary-based method</a>
-<ul>
+<li class="chapter" data-level="6" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html"><i class="fa fa-check"></i><b>6</b> Typical automated content analytic methods</a><ul>
+<li class="chapter" data-level="6.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#dictionary-based-method"><i class="fa fa-check"></i><b>6.1</b> dictionary-based method</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#validation"><i class="fa fa-check"></i><b>6.1.1</b> validation</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#topic-model"><i class="fa fa-check"></i><b>6.2</b> topic-model</a>
-<ul>
+<li class="chapter" data-level="6.2" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#topic-model"><i class="fa fa-check"></i><b>6.2</b> topic-model</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="typical-automated-content-analytic-methods.html"><a href="typical-automated-content-analytic-methods.html#validation-1"><i class="fa fa-check"></i><b>6.2.1</b> validation</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="advance-topics.html"><a href="advance-topics.html"><i class="fa fa-check"></i><b>7</b> Advance topics</a>
-<ul>
+<li class="chapter" data-level="7" data-path="advance-topics.html"><a href="advance-topics.html"><i class="fa fa-check"></i><b>7</b> Advance topics</a><ul>
 <li class="chapter" data-level="7.1" data-path="advance-topics.html"><a href="advance-topics.html#bag-of-embeddings"><i class="fa fa-check"></i><b>7.1</b> bag-of-embeddings</a></li>
 <li class="chapter" data-level="7.2" data-path="advance-topics.html"><a href="advance-topics.html#semantic-network"><i class="fa fa-check"></i><b>7.2</b> semantic network</a></li>
 <li class="chapter" data-level="7.3" data-path="advance-topics.html"><a href="advance-topics.html#machine-learning"><i class="fa fa-check"></i><b>7.3</b> machine learning</a></li>
@@ -190,14 +158,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="what-is-content-analysis" class="section level1" number="4">
-<h1 number="4"><span class="header-section-number">4</span> What is Content analysis</h1>
+<div id="what-is-content-analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> What is Content analysis</h1>
 <p>In the previous chapter, we have gone through together in a whole game approach a typical scenario of automated content analysis.</p>
 <p>In this chapter, we are going to go back to the theorectical foundation of automated content analysis. Unless the adjective before an objective functions is a negation, one should expect an object with an adjective should still belong to the category of that object. For example, a flying cat is still a cat. A liberal, popular, male dictator is still a dictator. However, fake news is not news, because ‘fake’ functions as a negation.</p>
-<p>Based on this logic, in the previous chapter I have made a proclaimation that automated content analysis is still content analysis. It is similar to the fact that quantative content analysis is still content analysis. This seems to be a reasonable expectation, but one cannot always assume these long compound nouns created by researchers always have this simple, logical property. For example, thematic meta-analysis is not meta-analysis, eventhough ‘thematic’ does not function as a negation.<a href="references.html#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+<p>Based on this logic, in the previous chapter I have made a proclaimation that automated content analysis is still content analysis. It is similar to the fact that quantative content analysis is still content analysis. This seems to be a reasonable expectation, but one cannot always assume these long compound nouns created by researchers always have this simple, logical property. For example, thematic meta-analysis is not meta-analysis, eventhough ‘thematic’ does not function as a negation.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
 <p>So, what is automated content analysis all about? It is better for us to go back to the basic form: What is content analysis?</p>
-<div id="definitions" class="section level3" number="4.0.1">
-<h3 number="4.0.1"><span class="header-section-number">4.0.1</span> Definitions</h3>
+<div id="definitions" class="section level3">
+<h3><span class="header-section-number">4.0.1</span> Definitions</h3>
 <p>In the realm of content analysis, there are two bibles, so to speak. They are <em>“Content Analysis: An Introduction to Its Methodology”</em> by Klaus Krippendorff and <em>“The Content Analysis Guidebook”</em> by Kimberley A. Neuendorf. Except the fact that both books are written by communication researcher, both books give a very similar definition of content analysis.</p>
 <p>Krippendorff defines content analysis as follow:</p>
 <hr />
@@ -208,41 +176,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Content analysis is a summarizing, quantitative analysis of messages that relies on the scientific method (including attention to objectivity-intersubjectivity, a priori design, reliability, validity, generalizability, replicability, and hypothesis testing) and is not limited as to the types of variables that may be measured or the context in which the message are created or presented.</em></p>
 <hr />
 <p>Both definitions emphasize the scientific aspect of the technique. Neuendorf has a six-part definition of content analysis as a scientific method, which explains each of the six elements inside the parenthesis of her definition. Once again, all six elements define how content analysis is a scientific method. In this discussion, I focus only on four important elements: a priori design, hypothesis testing, reliability and validity. These four elements are important for our discussion of automated content analysis and can draw distinctions between automated content analysis and other forms of text analysis, e.g. text mining. In the following two subsection, the four elements are discussed in the following two subsections: Principle and measurement.</p>
-<div id="the-principle-of-automated-content-analysis" class="section level4" number="4.0.1.1">
-<h4 number="4.0.1.1"><span class="header-section-number">4.0.1.1</span> The principle of (automated) content analysis</h4>
-<div id="an-a-priori-design" class="section level5" number="4.0.1.1.1">
-<h5 number="4.0.1.1.1"><span class="header-section-number">4.0.1.1.1</span> An a priori Design</h5>
-<p>A content analysis should have an <em>a priori</em> (i.e. “before the fact”) design. Therefore, the research questions, hypotheses and operationalization of variables must be available before the text data were collected. A valid content analysis should be no room for researchers to play with the data and then choose the variables or even the hypotheses they want to study, thereby makes any content analysis be confirmatory, not exploratory. Thus, any exploratory work should not be labeled as an (automated) content analysis. This draws a major distinct between (automated) content analysis and other text analytic approaches such as text mining, “big data” or data science.</p>
-<p>Data science, as defined in <span class="citation">Wickham and Grolemund (<a href="references.html#ref-wickham2016" role="doc-biblioref">2016</a>)</span> , is <a href="https://r4ds.had.co.nz/explore-intro.html">a circular process</a> of “transform” (coding / data manipulation), “visualize” (data visualization) and “model” (data modeling). This repeated circular procedure – for instance, it is possible to go back from an analytic step of data modling back to coding, is not compatible with the strict <em>a priori</em> requirement of (automated) content analysis. (Automated) content analysis must be a linear process. In Neuendorf’s book, she derive a flowchart of content analysis.<a href="references.html#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> In that flowchart, there is no split-path and the linear process consists of nine steps: theory and rationale, conceptualization decisions, operationalization measures, creation of coding schemes, sampling, training and initial reliability, coding, and, final reliability and tabulation and reporting. If (automated) content analysis is content analysis, it should follow the same linear process. There is only a slight difference in the assessment of reliability (next subsection).</p>
+<div id="the-principle-of-automated-content-analysis" class="section level4">
+<h4><span class="header-section-number">4.0.1.1</span> The principle of (automated) content analysis</h4>
+<div id="an-a-priori-design" class="section level5">
+<h5><span class="header-section-number">4.0.1.1.1</span> An a priori Design</h5>
+<p>A content analysis should have an <em>a priori</em> (i.e. “before the fact”) design. Therefore, the research questions, hypotheses and operationalization of variables must be available before the text data were collected. A valid content analysis should be no room for researchers to play with the data and then choose the variables or even the hypotheses they want to study, thereby makes any content analysis be confirmatory, not exploratory. Thus, any exploratory work should not be labeled as an (automated) content analysis. This draws a major distinct between (automated) content analysis and other text analytic approaches such as text mining, “big data” or data science.</p>
+<p>Data science, as defined in <span class="citation">Wickham and Grolemund (<a href="#ref-wickham2016">2016</a>)</span> , is <a href="https://r4ds.had.co.nz/explore-intro.html">a circular process</a> of “transform” (coding / data manipulation), “visualize” (data visualization) and “model” (data modeling). This repeated circular procedure – for instance, it is possible to go back from an analytic step of data modling back to coding, is not compatible with the strict <em>a priori</em> requirement of (automated) content analysis. (Automated) content analysis must be a linear process. In Neuendorf’s book, she derive a flowchart of content analysis.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> In that flowchart, there is no split-path and the linear process consists of nine steps: theory and rationale, conceptualization decisions, operationalization measures, creation of coding schemes, sampling, training and initial reliability, coding, and, final reliability and tabulation and reporting. If (automated) content analysis is content analysis, it should follow the same linear process. There is only a slight difference in the assessment of reliability (next subsection).</p>
 </div>
-<div id="hypothesis-testing" class="section level5" number="4.0.1.1.2">
-<h5 number="4.0.1.1.2"><span class="header-section-number">4.0.1.1.2</span> Hypothesis testing</h5>
+<div id="hypothesis-testing" class="section level5">
+<h5><span class="header-section-number">4.0.1.1.2</span> Hypothesis testing</h5>
 <p>A content analysis as a scientific method should be “hypothetico-deductive”. Therefore, an (automated) content analysis must have one or more theory driven hypotheses to be tested deductively. These hypotheses describe an anticipated prediction. Research question can also be derived <em>a priori</em>, if the existing theory is enough to support an anticipated prediction. Because of that, an (automated) content analysis must have an “a priori design” (the previous point). An exploratory analysis, such as text mining or data science approaches that finds patterns in text data, is only for hypothesis generation.</p>
 </div>
 </div>
-<div id="the-measurement-in-automated-content-analysis" class="section level4" number="4.0.1.2">
-<h4 number="4.0.1.2"><span class="header-section-number">4.0.1.2</span> The measurement in (automated) content analysis</h4>
+<div id="the-measurement-in-automated-content-analysis" class="section level4">
+<h4><span class="header-section-number">4.0.1.2</span> The measurement in (automated) content analysis</h4>
 <p>As with all other scientific approachs, all measurements in content analysis must have an adequate level of reliability and validity. The difference between the two concepts can be explained by the oft-cited target metaphor. In this target metaphor, the target is like the one used in Archery. Or if you are from northern or western Europe, biathlon. There is a bullseye (the center of the target) which represent the actual reality. The distance between a dot (a measurement) to the bullseye represents how close the measurement is to the actual reality.</p>
 <p>Reliability is about the consistency of a measurement. A measurement with high reliability should give a very consistent value from the same physical reality under different measurement situations. Examples of these different measurement situations are measurements made by different rater (inter-rater reliability), at different time point (test-retest reliability) or even at different stages of the measurement (split-form reliability, internal consistency). In the target metaphor, a measurement with high reliability is presented as dots fall in the same small area.</p>
 <p>Validity is about how close the measurement is to the actual reality. It is usually measured by subcatgories such as contruct validity (Does the operationalization of the construct to be measured theorectically justify?), content validity (Does the content of the measurement cover all aspects of measured construct?) and criterion validity (Does the measurement correlate with other measurements that are representative of the construct?).</p>
 <p>Let’s take an example that all scholars love (and hate). If one want to measure academic success of a researcher, should one use measurements based on number of citations of this researcher’s papers (e.g. H-index)? First, this measurement can have great variability by using different citation databases (Google Scholar, Scopus, Web of Science). Thus, this measurement does not have good reliability. Regarding criterion validity, <a href="https://scholar.google.com/citations?user=B7vSqZsAAAAJ&amp;hl=en">Richard Feynman</a> has an H-index of 40. <a href="https://scholar.google.com/citations?user=qc6CJjYAAAAJ&amp;hl=en">Albert Einstein</a> is a bit better, 63. With their H-index, probably they could not even get a postdoc position nowadays.</p>
 <p>In general, reliability and validity works antagonistically. Therefore, a measurement with very high validity usually has lower reliability and vice versa. Using the above example of measuring academic success of a researcher, a measurement with greater validity is to have a panel of experts to evaluate qualitatively the researcher’s papers and their actual impact to the field. This method should have greater validity than barely using H-index, but it trades reliability for validity because the method introduces a new source of inter-rater reliability problem.</p>
-<div id="reliability" class="section level5" number="4.0.1.2.1">
-<h5 number="4.0.1.2.1"><span class="header-section-number">4.0.1.2.1</span> Reliability</h5>
+<div id="reliability" class="section level5">
+<h5><span class="header-section-number">4.0.1.2.1</span> Reliability</h5>
 <p>Traditional content analysis focuses a lot on reliability, especially inter-rater reliability. Klaus Krippendorff, the author of one of the “bibles”, even has an inter-rater reliability measurement bearing his name (Krippendorff’s <span class="math inline">\(\alpha\)</span>).</p>
-<p>This emphasis on inter-rater reliability is because of the dependency of human reading in traditional manual content analysis. Two humans can have two very different understandings of the same constructs, especially latent ones such as sentiment, liberal, populistic, or probably the most popular one, frames.</p>
+<p>This emphasis on inter-rater reliability is because of the dependency of human reading in traditional manual content analysis. Two humans can have two very different understandings of the same constructs, especially latent ones such as sentiment, liberal, populistic, or probably the most popular one, frames. Usually, researchers are advised to conduct coder training to standardize the coding among coders, an effort to improve inter-rater reliability. Using a cliche language, we train our coders to work like a computer.</p>
+<p>Computer is a determinist machine. If the algorithm does not involve any randomization, the same input always gives the same output. Therefore, inter-rater reliability is basically a non-issue for computer’s coding. There may still some reliability issues, but they manifest differently. We will discuss these issues in the next chapter.</p>
+<p>Remember reliability and validity work antagonistically? If computer’s coding can achieve very high reliability, what would be the validity of it?</p>
 </div>
-<div id="validity" class="section level5" number="4.0.1.2.2">
-<h5 number="4.0.1.2.2"><span class="header-section-number">4.0.1.2.2</span> Validity</h5>
+<div id="validity" class="section level5">
+<h5><span class="header-section-number">4.0.1.2.2</span> Validity</h5>
 </div>
 </div>
 </div>
-<div id="what-gets-automated" class="section level2" number="4.1">
-<h2 number="4.1"><span class="header-section-number">4.1</span> What gets automated?</h2>
+<div id="what-gets-automated" class="section level2">
+<h2><span class="header-section-number">4.1</span> What gets automated?</h2>
 <p>What the current literature says about ACA.</p>
 </div>
-<div id="best-practices" class="section level2" number="4.2">
-<h2 number="4.2"><span class="header-section-number">4.2</span> Best practices</h2>
+<div id="best-practices" class="section level2">
+<h2><span class="header-section-number">4.2</span> Best practices</h2>
 <ul>
 <li><p>Validation</p></li>
 <li><p>Contrasting Confirmatory / exploratory</p></li>
@@ -250,6 +220,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 
 </div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-wickham2016">
+<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. “ O’Reilly Media, Inc.”</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p>The reason for it is that the term was incorrectly coined. The coining this term has not carefully considered the original definition of meta-analysis.<a href="what-is-content-analysis.html#fnref5">↩</a></p></li>
+<li id="fn6"><p>This flowchart is also <a href="https://academic.csuohio.edu/neuendorf_ka/content/flowchart.html">available online</a><a href="what-is-content-analysis.html#fnref6">↩</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -276,12 +259,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -293,6 +275,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -309,7 +295,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
