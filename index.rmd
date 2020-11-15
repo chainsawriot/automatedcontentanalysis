@@ -26,6 +26,3 @@ This book is written in RMarkdown with bookdown.
 
 _Dr. Chung-hong Chan, Mannheim, Germany, 2020._
 
-
-
-
