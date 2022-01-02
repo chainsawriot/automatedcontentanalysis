@@ -14,19 +14,11 @@ In the realm of content analysis, there are two bibles, so to speak. They are *"
 
 Krippendorff defines content analysis as follow:
 
----
-
-*Content analysis is a research technique for making replicable and valid inferences from text (or other meaningful matter) to the context of their use.*
-
----
+> Content analysis is a research technique for making replicable and valid inferences from text (or other meaningful matter) to the context of their use.*
 
 Neuendorf defines content analysis as follow:
 
----
-
-*Content analysis is a summarizing, quantitative analysis of messages that relies on the scientific method (including attention to objectivity-intersubjectivity, a priori design, reliability, validity, generalizability, replicability, and hypothesis testing) and is not limited as to the types of variables that may be measured or the context in which the message are created or presented.*
-
----
+> Content analysis is a summarizing, quantitative analysis of messages that relies on the scientific method (including attention to objectivity-intersubjectivity, a priori design, reliability, validity, generalizability, replicability, and hypothesis testing) and is not limited as to the types of variables that may be measured or the context in which the message are created or presented.*
 
 Both definitions emphasize the scientific aspect of the technique. Neuendorf has a six-part definition of content analysis as a scientific method, which explains each of the six elements inside the parenthesis of her definition. Once again, all six elements define how content analysis is a scientific method. In this discussion, I focus only on four important elements: a priori design, hypothesis testing, reliability and validity. These four elements are important for our discussion of automated content analysis and can draw distinctions between automated content analysis and other forms of text analysis, e.g. text mining. In the following two subsection, the four elements are discussed in the following two subsections: Principle and measurement.
 

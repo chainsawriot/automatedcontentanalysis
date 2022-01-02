@@ -24,5 +24,5 @@ The website is (and will always be) free to use, and is licensed under the Creat
 
 This book is written in RMarkdown with bookdown.
 
-_Dr. Chung-hong Chan, Mannheim, Germany, 2020._
+_Dr. Chung-hong Chan, Mannheim, Germany, 2021._
 

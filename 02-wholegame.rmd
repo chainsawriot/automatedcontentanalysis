@@ -111,7 +111,7 @@ Oh, yea! We have our data! So we should do our sentiment analysis now, right?
 
 This is another split-path between data scientists and automated content analysts. 
 
-If you know nothing about automated content analysis, the traditional way of dealing with our data is to manually **code** all tweets. The word "code" as a verb can create confusion here, because it can also mean "programming" ^[Probably social scientists used the word "code" as a verb earlier than programmers. This is a problem of English. German has two different verbs: kodieren and coden.]. In this programming-heavy book, I am going to use another verb for "code" (in the social sciences' sense): annotate. I believe this term can still capture most, but not all, nuances of the verb "code" (in the social sciences' sense). For "coding" in programmers' sense, I am going to use "programming".
+If you know nothing about automated content analysis, the traditional way of dealing with our data is to manually **code** all tweets. The word "code" as a verb can create confusion here, because it can also mean "programming" ^[Probably social scientists used the word "code" as a verb earlier than programmers. This is a problem of English. German has two different verbs: *kodieren* and *coden*.]. In this programming-heavy book, I am going to use another verb for "code" (in the social sciences' sense): annotate. I believe this term can still capture most, but not all, nuances of the verb "code" (in the social sciences' sense). For "coding" in programmers' sense, I am going to use "programming".
 
 Sorry for the detour. Traditionally, social scientists approach this problem by annotating the unstructured data into a form suitable for computer analysis. A tweet is a bunch of characters that a (naive) computer cannot extract meanings---or semantics---out of it. However, whether or not a tweet is positive is a semantic problem. *Homo sapiens* have a brain and some of us have the knowledge in English to determine the semantics of a piece of English text. We need to tell the computer, what semantically is expressed in a tweet. This procedure is called annotation.
 
@@ -138,21 +138,13 @@ trump_tweets %>% sample_n(30) %>% select(text) %>% rio::export('data/trump_tweet
 
 And then, I ask my team of two student assistants to manually categorize these 30 tweets. This task should take (30 x 2) / 4 = 15 man-minutes. The cost of it (€3.95) is only a few packs of instant ramen. Or, if you are middle class and don't mind damaging the environment, it is the cost of a "coffee to go".
 
-The coding procedure is simple, or even simplified. The two student assistants annotate the 30 tweets into a category of whether or not the tweet is negative with a 5-point likert scale, i.e.
+The annotation procedure is simple, or even simplified. We will talk about the setup of such annotation task using the R package oolong [@chan:oolong] in Chapter 5. 
 
----
+The two student assistants annotate the 30 tweets based on the level of positive sentiment with a 5-point Likert (visual analog) scale, i.e.
 
-__Wow, I have had so many calls from high ranking people laughing at the stupidity of the failing \@nytimes piece. Massive front page for that!__
-	 
-How negative is the above tweet? 
-
-1.Very negative
-2.Negative
-3.Neutral
-4.Positive
-5.Very positive
-
----
+```{r, echo = FALSE, fig.align = "center", fig.cap = "Annotating the sentiment of a random tweet from Trump"}
+knitr::include_graphics("figs/oolong_coding.png")
+```
 
 And the data looks like this:
 
@@ -169,7 +161,7 @@ Now, with the ground truth data, we can finally do the so called 'sentiment anal
 
 The simpliest method for doing a sentiment analysis is using a dictionary-based method. These methods will be explained in Chapter 6. In short, these methods rely on three simple assumptions to calculate the overall sentiment of a piece of text. A dictionary is a collection of words. For example, a negative dictionary might have words that contain negative meanings, for example, f-words. A positive dictionary might have words such as _good_, _nice_, _wonderful_. A piece of text with a lot of words in the negative dictionary should have a higher negativity and vice versa.
 
-There are many of these dictionaries available. These readily available dictionaries are called __off-the-shelf dictionaries__. In Chapter 6, we will discuss the problems of using them. But one way to avoid those problems is to first create ground truth data and validate these dictionaries before use. Here, we are going to use the AFINN dictionary [@nielsen2011]. It is a dictionary designed for measuring sentiment of microblog data, e.g. tweets.
+There are many of these dictionaries available. These readily available dictionaries are called __off-the-shelf dictionaries__. In Chapter 6, we will discuss the problems of using them. But one way to avoid those problems is to first create ground truth data and validate these dictionaries before use. Here, we are going to use the AFINN dictionary [@nielsen2011new]. It is a dictionary designed for measuring sentiment of microblog data, e.g. tweets.
 
 ```{r}
 afinn <- readRDS("data/afinn.RDS")
@@ -178,9 +170,9 @@ afinn
 
 Sorry for the strong language. AFINN contains categories of words sorted by valence values from -5 (neg5) to +5 (pos5). For example, the word 'bastard' is -5 in terms of valence value.
 
-According to original paper of AFINN [@nielsen2011], the AFINN sentiment score of a tweet is calculated as the total valence values of matching words divided by the total number of words. For example, the AFINN sentiment score of the tweet "He is a bastard" is -5 / 4 = 1.25. The total valence values of matching words is 5 because there is only one matching word (bastard) and its valence value is -5. In total, this tweet has 4 words.
+According to original paper of AFINN [@nielsen2011new], the AFINN sentiment score of a tweet is calculated as the total valence values of matching words divided by the total number of words. For example, the AFINN sentiment score of the tweet "He is a bastard" is -5 / 4 = 1.25. The total valence values of matching words is 5 because there is only one matching word (bastard) and its valence value is -5. In total, this tweet has 4 words.
 
-The following program calculates the correponding AFINN score of each tweet using the R package quanteda [@benoit2018]. In short, this program creates a document-feature matrix (DFM) using Trump's tweets and then look up this DFM by the AFINN dictionary to seek for matching words. And then, we convert this DFM into a data frame and then do our dplyr magic to calculate the AFINN sentiment score. It might look a bit scary and don't worry, we will walk through this program again step-by-step in Chapter 6.
+The following program calculates the correponding AFINN score of each tweet using the R package quanteda [@benoit:2018]. In short, this program creates a document-feature matrix (DFM) using Trump's tweets and then look up this DFM by the AFINN dictionary to seek for matching words. And then, we convert this DFM into a data frame and then do our dplyr magic to calculate the AFINN sentiment score. It might look a bit scary and don't worry, we will walk through this program again step-by-step in Chapter 6.
 
 ```{r}
 dfm(trump_tweet30_coded$text, remove_punct = TRUE) %>% dfm_lookup(afinn) %>% quanteda::convert(to = "data.frame") %>% mutate(matching_word_valence = (neg5 * -5) + (neg4 * -4) + (neg3 * -3) + (neg2 * -2) + (neg1 * -1) + (zero * 0) + (pos1 * 1) + (pos2 * 2) + (pos3 * 3) + (pos4 * 4) + (pos5 * 5), base = ntoken(trump_tweet30_coded$text, remove_punct = TRUE), afinn_score = matching_word_valence / base) %>% pull(afinn_score) -> afinn_score
